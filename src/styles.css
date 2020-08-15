@@ -13,5 +13,6 @@
 
 .social {
   width: 5%;
+  max-width: 20px;
   padding: 16px;
 }
