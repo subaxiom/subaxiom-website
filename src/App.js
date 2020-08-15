@@ -13,13 +13,15 @@ export default function App() {
   return (
     <div className="App">
       <img src={logoUrl} alt="subaxiom logo" className="logoImg" />
-      <img src={twitter} alt="twitter" className="social" />
-      <img src={parler} alt="twitter" className="social" />
-      <img src={minds} alt="twitter" className="social" />
-      <img src={medium} alt="twitter" className="social" />
-      <img src={publish0x} alt="twitter" className="social" />
-      <img src={youtube} alt="twitter" className="social" />
-      <img src={lbry} alt="twitter" className="social" />
+      <div className="social-wrapper">
+        <img src={twitter} alt="twitter" className="social" />
+        <img src={parler} alt="parler" className="social" />
+        <img src={minds} alt="minds" className="social" />
+        <img src={medium} alt="medium" className="social" />
+        <img src={publish0x} alt="publish0x" className="social" />
+        <img src={youtube} alt="youtube" className="social" />
+        <img src={lbry} alt="lbry" className="social" />
+      </div>
     </div>
   );
 }
