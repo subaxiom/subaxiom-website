@@ -2,3 +2,12 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.logoImg {
+  max-width: 100%;
+}
+
+.social {
+  width: 16px;
+  padding: 16px;
+}
