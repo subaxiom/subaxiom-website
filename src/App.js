@@ -1,11 +1,11 @@
 import React from "react";
 import "./styles.css";
+import logoUrl from "../img/subaxiom-website-800x400.png";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello Subaxiom4</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <img src={logoUrl} alt="subaxiom logo" />
     </div>
   );
 }
