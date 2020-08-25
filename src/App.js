@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import logoUrl from "./img/subaxiom-website-800x340.png";
+import logoUrl from "./img/subaxiom-website-1000x225.png";
 import twitter from "./img/twitter-100x100.png";
 import parler from "./img/parler-100x100.png";
 import minds from "./img/minds-100x100.png";
