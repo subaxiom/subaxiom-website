@@ -1,14 +1,24 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  padding: 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
 
 .logoImg {
   max-width: 100%;
+  border-top: 6px double lime;
+  border-bottom: 8px double orchid;
 }
 
 .social-wrapper {
   width: 100%;
+  border-bottom: 3px solid #181818;
 }
 
 .social {
