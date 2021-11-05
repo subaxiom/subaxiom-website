@@ -18,7 +18,7 @@ export default function App() {
         <img src={minds} alt="minds" className="social" />
         <img src={medium} alt="medium" className="social" />
         <img src={publish0x} alt="publish0x" className="social" />
-        <img src={youtube} alt="youtuber3" className="social" />
+        <img src={youtube} alt="youtuber4" className="social" />
       </div>
     </div>
   );
