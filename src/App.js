@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles.css";
-import { ProductGrid } from "./ProductGrid";
+import { Gallery } from "./Gallery";
 import { Social } from "./Social";
 import logoUrl from "./img/subAxiomBannerBigv11.jpg";
-
 
 export default function App() {
   return (
@@ -11,13 +10,13 @@ export default function App() {
       <div className="logoImgWrapper">
         <img src={logoUrl} alt="subaxiom logo" className="logoImg" />
       </div>
-        <Social />
+      <Social />
 
       <div>
-        <ProductGrid />
+        <Gallery />
       </div>
 
-        <Social />
+      <Social />
     </div>
   );
 }

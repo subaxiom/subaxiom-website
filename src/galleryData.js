@@ -1,4 +1,4 @@
-export const productData = [
+export const galleryData = [
   {
     id: 1,
     company: "Twitter Inc 3",
