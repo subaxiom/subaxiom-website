@@ -10,19 +10,21 @@
   background-color: black;
 }
 
+.logoImgWrapper {
+  max-width: 100%;
+  border-top: 1px solid lime;
+  border-bottom: 1px solid orchid;
+}
+
 .logoImg {
   max-width: 100%;
-  border-top: 6px double lime;
-  border-bottom: 8px double orchid;
 }
 
 .social-wrapper {
   width: 100%;
-  border-bottom: 3px solid #181818;
+  border-bottom: 1px solid #202020;
 }
 
 .social {
-  width: 5%;
-  max-width: 30px;
   padding: 16px;
 }
