@@ -20,8 +20,16 @@
   max-width: 100%;
 }
 
+.product-grid-wrapper {
+  width: 100%;
+  color:white;
+  padding: 20px;
+}
+
+
 .social-wrapper {
   width: 100%;
+  border-top: 1px solid #202020;
   border-bottom: 1px solid #202020;
 }
 

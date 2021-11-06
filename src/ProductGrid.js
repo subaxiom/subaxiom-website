@@ -15,7 +15,7 @@ function ProductGridComponent() {
 
 export const ProductGrid = () => {
   return (
-    <div style={{ color: "#ffffff" }}>
+    <div className="product-grid-wrapper">
       <ProductGridComponent />
     </div>
   );
