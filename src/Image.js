@@ -23,10 +23,12 @@ const ImageComponent = () => {
   );
 };
 
-export const Image = () => {
+export const ImagePreview = () => {
   return (
     <div>
       <ImageComponent />
     </div>
   );
 };
+
+export default ImageComponent;
