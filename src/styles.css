@@ -21,9 +21,34 @@
 }
 
 .gallery-wrapper {
+  display: inline-block;
   width: 100%;
   color: white;
   padding: 20px;
+}
+
+.gallery-wrapper img {
+  width: 250px;
+  margin: 20px 20px 1000px 20px;
+  float: left;
+  border: double #404040 4px;
+}
+
+.image-page-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: solid 1px #505050;
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 8px;
+  color: white;
+}
+
+.x-close-image {
+  float: right;
 }
 
 .social-wrapper {
