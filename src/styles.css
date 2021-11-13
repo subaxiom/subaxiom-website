@@ -24,17 +24,30 @@
   display: inline-block;
   width: 100%;
   color: white;
-  padding: 20px;
+  padding: 20px 20px 1000px 20px;
 }
 
 .gallery-wrapper img {
   width: 250px;
-  margin: 20px 20px 1000px 20px;
+  margin: 20px;
   float: left;
   border: double #404040 4px;
+  cursor: pointer;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
 }
 
 .image-page-wrapper {
+  animation: 0.2s ease-out 0s 1 zoom-in;
   position: fixed;
   top: 20px;
   left: 20px;
@@ -42,13 +55,22 @@
   bottom: 20px;
   border: solid 1px #505050;
   background-color: black;
-  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
   color: white;
 }
 
+.image-preview {
+  float: left;
+  border: double #404040 4px;
+  margin: 20px;
+  opacity: 1;
+}
+
 .x-close-image {
   float: right;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .social-wrapper {

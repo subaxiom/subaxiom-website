@@ -4,7 +4,7 @@ import "./styles.css";
 import { Gallery } from "./Gallery";
 import { ImagePreview } from "./Image";
 import { Social } from "./Social";
-import logoUrl from "./img/subAxiomBannerBigv11.jpg";
+import logoUrl from "./img/subAxiomBannerBigv13.jpg";
 import { useNavigate } from "react-router-dom";
 
 export default function App() {
