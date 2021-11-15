@@ -2,9 +2,11 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import App from "./App";
-import Image from "./Image";
+//import history from './history';
 
+import App from "./App";
+import ImagePreview from "./Image";
+//import Gallery from "./Gallery";
 /*
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -15,12 +17,18 @@ ReactDOM.render(
 );
 */
 
+var addToCart = function (imageId) {
+  alert(imageId);
+};
+
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="image/:imageId" element={<Image />} />
-      </Route>
+      <Route path="/" element={<App />} />
+      <Route
+        path="image/:imageId"
+        element={<ImagePreview addToCart={addToCart} />}
+      />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

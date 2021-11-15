@@ -13,7 +13,7 @@ const GalleryComponent = () => {
         src={value}
         alt={value.alt}
         onClick={async (event) => {
-          navigate(`/image/${key}`);
+          navigate(`/image/${key}`, { replace: true });
         }}
       />
     );
@@ -28,3 +28,5 @@ export const Gallery = () => {
     </div>
   );
 };
+
+export default GalleryComponent;
