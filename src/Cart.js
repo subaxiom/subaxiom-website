@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
@@ -33,6 +33,11 @@ const CartComponent = (props) => {
     <div className="viewCart">
       <NavBar cartMap={cartMap} />
       {images}
+      <br />
+      <br />
+      <Link className="return-link" to="/">
+        ⮢ return to gallery
+      </Link>
     </div>
   );
 };

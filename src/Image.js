@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
+import { useParams, Link } from "react-router-dom";
 import x_close from "./img/x_close4.png";
 import { galleryMap } from "./galleryData";
 import { useNavigate } from "react-router-dom";
@@ -35,15 +35,29 @@ const ImageComponent = (props) => {
           src={image}
           alt="alt text"
         />
-
-        <div
-          className="imageInfo"
-          onClick={async (event) => {
-            addToCart(imageId);
-            navigate(`/cart`, { replace: true });
-          }}
-        >
-          Add to Cart
+        <div className="caption-wrapper">
+          <div className="caption">
+            $19.99 for hi-res 4000 x 3000 png image
+            <br />
+            (subAxiom.com watermark removed)
+            <br />
+            <br />
+            <br />
+            <div
+              className="greenButton"
+              onClick={async (event) => {
+                addToCart(imageId);
+                navigate(`/cart`, { replace: true });
+              }}
+            >
+              + Add to Cart
+            </div>
+          </div>
+          <br />
+          <br />
+          <Link className="return-link" to="/">
+            ⮢ return to gallery
+          </Link>
         </div>
       </div>
     </div>

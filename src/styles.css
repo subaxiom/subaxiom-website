@@ -1,5 +1,8 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .App {
-  font-family: sans-serif;
   text-align: center;
   padding: 0px;
 }
@@ -17,7 +20,6 @@
 
 .NavBar a {
   color: white;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .homeLink {
@@ -34,7 +36,7 @@
   float: right;
   background-color: transparent;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -99,15 +101,6 @@
   opacity: 1;
 }
 
-.imageInfo {
-  background-color: white;
-  color: black;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  float: left;
-}
-
 .x-close-image {
   float: right;
   opacity: 0.8;
@@ -132,4 +125,46 @@
 
 .social {
   padding: 16px;
+}
+
+.caption-wrapper {
+  margin: 20px;
+  float: left;
+}
+
+.caption {
+  background-color: #808080;
+  border-radius: 10px;
+  color: black;
+  width: 400px;
+  height: 140px;
+  padding: 30px;
+}
+
+.return-link {
+  color: blue;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.return-link:active {
+  color: white;
+}
+
+.greenButton {
+  background-image: linear-gradient(to bottom, lime, green);
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border: solid black 1px;
+}
+
+.greenButton:hover {
+  background-image: linear-gradient(to bottom, rgb(20, 207, 20), rgb(1, 83, 1));
+  border-color: grey;
 }
