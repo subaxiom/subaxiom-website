@@ -64,10 +64,11 @@ body {
 }
 
 .gallery-wrapper {
+  box-sizing: border-box;
   display: inline-block;
-  width: 100%;
+  width: calc(100% - 40px);
   color: white;
-  padding: 20px 20px 1000px 20px;
+  margin: 20px 20px 1000px 20px;
 }
 
 .thumbnail {
@@ -89,10 +90,6 @@ body {
   }
 }
 
-.image-page-wrapper {
-  margin-top: 60px;
-}
-
 .image-preview {
   animation: 0.2s ease-out 0s 1 zoom-in;
   float: left;
@@ -101,13 +98,7 @@ body {
   opacity: 1;
 }
 
-.x-close-image {
-  float: right;
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-.viewCart {
+.page-wrapper {
   margin-top: 60px;
 }
 
@@ -128,27 +119,39 @@ body {
 }
 
 .caption-wrapper {
-  margin: 20px;
+  margin: 30px 20px 20px 20px;
   float: left;
 }
 
 .caption {
-  background-color: #808080;
-  border-radius: 10px;
-  color: black;
+  background-color: #202020;
+  border-radius: 6px;
+  color: white;
   width: 400px;
-  height: 140px;
-  padding: 30px;
+  height: 130px;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #404040;
 }
 
-.return-link {
+.inCartMessage {
+  background-color: transparent;
+}
+
+.blue-link {
   color: blue;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.return-link:active {
+.blue-link:active {
   color: white;
+}
+
+.padding20 {
+  padding: 20px;
 }
 
 .greenButton {

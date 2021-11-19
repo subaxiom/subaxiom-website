@@ -26,15 +26,29 @@ var addToCart = function (imageId) {
   return cartMap;
 };
 
+var removeFromCart = function (imageId) {
+  cartMap.delete(imageId);
+  return cartMap;
+};
+
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App cartMap={cartMap} />} />
       <Route
         path="image/:imageId"
-        element={<ImagePreview addToCart={addToCart} cartMap={cartMap} />}
+        element={
+          <ImagePreview
+            cartMap={cartMap}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+          />
+        }
       />
-      <Route path="cart" element={<Cart cartMap={cartMap} />} />
+      <Route
+        path="cart"
+        element={<Cart cartMap={cartMap} removeFromCart={removeFromCart} />}
+      />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

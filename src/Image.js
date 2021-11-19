@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import x_close from "./img/x_close4.png";
 import { galleryMap } from "./galleryData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
@@ -10,64 +9,91 @@ import { NavBar } from "./NavBar";
 
 const ImageComponent = (props) => {
   let params = useParams();
-  let navigate = useNavigate();
   let imageId = params.imageId;
   let image = galleryMap.get(imageId);
-  let addToCart = props.addToCart;
   let cartMap = props.cartMap;
 
   return (
-    <div>
+    <div className="page-wrapper">
       <NavBar cartMap={cartMap} />
-      <div className="image-page-wrapper">
-        <img
-          src={x_close}
-          alt="close"
-          className="x-close-image"
-          onClick={async (event) => {
-            navigate(`/`, { replace: true });
-          }}
-        />
-
-        <img
-          className="image-preview"
-          key={imageId}
-          src={image}
-          alt="alt text"
-        />
-        <div className="caption-wrapper">
-          <div className="caption">
-            $19.99 for hi-res 4000 x 3000 png image
-            <br />
-            (subAxiom.com watermark removed)
-            <br />
-            <br />
-            <br />
-            <div
-              className="greenButton"
-              onClick={async (event) => {
-                addToCart(imageId);
-                navigate(`/cart`, { replace: true });
-              }}
-            >
-              + Add to Cart
-            </div>
-          </div>
+      <img className="image-preview" key={imageId} src={image} alt="alt text" />
+      <div className="caption-wrapper">
+        <div className="caption">
+          $19.99 for hi-res 4000 x 3000 png image
+          <br />
+          (subAxiom.com watermark removed)
           <br />
           <br />
-          <Link className="return-link" to="/">
-            ⮢ return to gallery
-          </Link>
+          <br />
+          <AddToCartComponent
+            cartMap={cartMap}
+            addToCart={props.addToCart}
+            removeFromCart={props.removeFromCart}
+            imageId={imageId}
+          />
         </div>
+        <br />
+        <br />
+        <Link className="blue-link padding20" to="/">
+          ⮢ return to gallery
+        </Link>
       </div>
     </div>
   );
 };
 
+const AddToCartComponent = (props) => {
+  let navigate = useNavigate();
+  let imageId = props.imageId;
+  let addToCart = props.addToCart;
+  let removeFromCart = props.removeFromCart;
+  let cartMap = props.cartMap;
+
+  if (cartMap.has(imageId)) {
+    return (
+      <div className="inCartMessage">
+        Image added to cart.
+        <br />
+        <Link className="blue-link" to="/cart">
+          view cart
+        </Link>
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <span
+          className="blue-link"
+          onClick={async (event) => {
+            //alert(url);
+            //history.push(url)
+            removeFromCart(imageId);
+            navigate(`/image/${imageId}`, { replace: true });
+          }}
+        >
+          🗙 remove from cart
+        </span>
+      </div>
+    );
+  } else {
+    return (
+      <div
+        className="greenButton"
+        onClick={async (event) => {
+          addToCart(imageId);
+          navigate(`/image/${imageId}`, { replace: true });
+        }}
+      >
+        + Add to Cart
+      </div>
+    );
+  }
+};
+
 export const ImagePreview = (props) => {
   return (
     <div>
-      <ImageComponent addToCart={props.addToCart} cartMap={props.cartMap} />
+      <ImageComponent
+        cartMap={props.cartMap}
+        addToCart={props.addToCart}
+        removeFromCart={props.removeFromCart}
+      />
     </div>
   );
 };

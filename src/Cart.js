@@ -7,6 +7,7 @@ import { NavBar } from "./NavBar";
 
 const CartComponent = (props) => {
   let navigate = useNavigate();
+  let removeFromCart = props.removeFromCart;
   let cartMap = props.cartMap;
 
   let images = [];
@@ -26,16 +27,37 @@ const CartComponent = (props) => {
             navigate(`/image/${key}`, { replace: true });
           }}
         />
+        <div className="caption-wrapper">
+          <div className="caption">
+            $19.99 for hi-res 4000 x 3000 png image
+            <br />
+            (subAxiom.com watermark removed)
+            <br />
+            <br />
+            <br />
+            <span
+              className="blue-link"
+              onClick={async (event) => {
+                //alert(url);
+                //history.push(url)
+                removeFromCart(key);
+                navigate(`/cart`, { replace: true });
+              }}
+            >
+              🗙 remove from cart
+            </span>
+          </div>
+        </div>
       </div>
     );
   }
   return (
-    <div className="viewCart">
+    <div className="page-wrapper">
       <NavBar cartMap={cartMap} />
       {images}
       <br />
       <br />
-      <Link className="return-link" to="/">
+      <Link className="blue-link padding20" to="/">
         ⮢ return to gallery
       </Link>
     </div>
@@ -45,7 +67,10 @@ const CartComponent = (props) => {
 export const Cart = (props) => {
   return (
     <div>
-      <CartComponent cartMap={props.cartMap} />
+      <CartComponent
+        removeFromCart={props.removeFromCart}
+        cartMap={props.cartMap}
+      />
     </div>
   );
 };
