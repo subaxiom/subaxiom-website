@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 export default function App(props) {
   //let params = useParams();
   let navigate = useNavigate();
-  let history = props.history;
   //let imageId = params.imageId;
   //alert(imageId);
 
@@ -31,7 +30,7 @@ export default function App(props) {
         />
       </div>
       <div>
-        <Gallery history={history} />
+        <Gallery />
       </div>
       <Social />
     </div>

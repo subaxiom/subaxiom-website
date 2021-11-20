@@ -14,10 +14,16 @@ const ImageComponent = (props) => {
   let cartMap = props.cartMap;
 
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper top-buffer">
       <NavBar cartMap={cartMap} />
-      <img className="image-preview" key={imageId} src={image} alt="alt text" />
+      <img
+        className="image-preview"
+        key={imageId}
+        src={image.src}
+        alt={image.title}
+      />
       <div className="caption-wrapper">
+        <h2>{image.title}</h2>
         <div className="caption">
           $19.99 for hi-res 4000 x 3000 png image
           <br />
@@ -34,7 +40,7 @@ const ImageComponent = (props) => {
         </div>
         <br />
         <br />
-        <Link className="blue-link padding20" to="/">
+        <Link className="blue-link" to="/">
           ⮢ return to gallery
         </Link>
       </div>

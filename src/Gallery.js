@@ -1,7 +1,7 @@
 import React from "react";
 import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //import history from './history';
 
 const GalleryComponent = () => {
@@ -9,18 +9,18 @@ const GalleryComponent = () => {
   let navigate = useNavigate();
   let images = [];
   //let url = null;
-  for (const [key, value] of galleryMap) {
+  for (const [imageId, image] of galleryMap) {
     //url = href + 'image/' + key;
     images.push(
       <img
         className="thumbnail"
-        key={key}
-        src={value}
-        alt={value.alt}
+        key={imageId}
+        src={image.src}
+        alt={image.title}
         onClick={async (event) => {
           //alert(url);
           //history.push(url)
-          navigate(`/image/${key}`, { replace: true });
+          navigate(`/image/${imageId}`, { replace: true });
         }}
       />
     );
@@ -30,7 +30,7 @@ const GalleryComponent = () => {
 
 export const Gallery = () => {
   return (
-    <div className="gallery-wrapper">
+    <div className="page-wrapper">
       <GalleryComponent />
     </div>
   );

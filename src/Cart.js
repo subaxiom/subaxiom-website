@@ -12,22 +12,23 @@ const CartComponent = (props) => {
 
   let images = [];
   //let url = null;
-  for (const [key, value] of cartMap) {
+  for (const [imageId, image] of cartMap) {
     //url = href + 'image/' + key;
     images.push(
       <div className="cartItem">
         <img
           className="thumbnail"
-          key={key}
-          src={value}
-          alt={value.alt}
+          key={imageId}
+          src={image.src}
+          alt={image.title}
           onClick={async (event) => {
             //alert(url);
             //history.push(url)
-            navigate(`/image/${key}`, { replace: true });
+            navigate(`/image/${imageId}`, { replace: true });
           }}
         />
         <div className="caption-wrapper">
+          <h3>{image.title}</h3>
           <div className="caption">
             $19.99 for hi-res 4000 x 3000 png image
             <br />
@@ -40,7 +41,7 @@ const CartComponent = (props) => {
               onClick={async (event) => {
                 //alert(url);
                 //history.push(url)
-                removeFromCart(key);
+                removeFromCart(imageId);
                 navigate(`/cart`, { replace: true });
               }}
             >
@@ -51,13 +52,19 @@ const CartComponent = (props) => {
       </div>
     );
   }
+
+  if (images.length === 0) {
+    images.push(<div className="caption">No items in cart.</div>);
+  }
+
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper top-buffer">
+      <h2>shopping cart ({cartMap.size})</h2>
       <NavBar cartMap={cartMap} />
       {images}
       <br />
       <br />
-      <Link className="blue-link padding20" to="/">
+      <Link className="blue-link" to="/">
         ⮢ return to gallery
       </Link>
     </div>

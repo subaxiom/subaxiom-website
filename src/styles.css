@@ -2,8 +2,16 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  color: #808098;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
   padding: 0px;
 }
 
@@ -13,9 +21,9 @@ body {
   left: 0px;
   right: 0px;
   padding: 2px 14px 4px 10px;
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(10, 10, 20, 0.6);
   color: white;
-  border-bottom: 1px solid #202020;
+  border-bottom: 1px solid #202030;
 }
 
 .NavBar a {
@@ -63,12 +71,17 @@ body {
   max-width: 100%;
 }
 
-.gallery-wrapper {
+.top-buffer {
+  margin-top: 40px;
+}
+
+.page-wrapper {
   box-sizing: border-box;
   display: inline-block;
-  width: calc(100% - 40px);
+  width: calc(100% - 10px);
   color: white;
-  margin: 20px 20px 1000px 20px;
+  padding: 20px;
+  margin-bottom: 1000px;
 }
 
 .thumbnail {
@@ -93,25 +106,21 @@ body {
 .image-preview {
   animation: 0.2s ease-out 0s 1 zoom-in;
   float: left;
-  border: double #404040 4px;
+  border: double #404048 4px;
   margin: 20px;
   opacity: 1;
-}
-
-.page-wrapper {
-  margin-top: 60px;
 }
 
 .cartItem {
   width: 100%;
   display: inline-block;
-  border-bottom: 1px solid #303030;
+  border-bottom: 1px solid #303048;
 }
 
 .social-wrapper {
   width: 100%;
-  border-top: 1px solid #202020;
-  border-bottom: 1px solid #202020;
+  border-top: 1px solid #202028;
+  border-bottom: 1px solid #202028;
 }
 
 .social {
@@ -119,19 +128,20 @@ body {
 }
 
 .caption-wrapper {
-  margin: 30px 20px 20px 20px;
+  margin: 20px;
   float: left;
 }
 
 .caption {
-  background-color: #202020;
+  background-color: #101020;
   border-radius: 6px;
-  color: white;
+  color: #a0a0b8;
   width: 400px;
-  height: 130px;
-  padding: 20px;
+  height: 120px;
+  margin-top: 10px;
+  padding: 10px;
   font-size: 16px;
-  border: 1px solid #404040;
+  border: 1px solid #272740;
 }
 
 .inCartMessage {
@@ -139,15 +149,15 @@ body {
 }
 
 .blue-link {
-  color: blue;
+  color: fuchsia;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   background-color: transparent;
   cursor: pointer;
 }
 
 .blue-link:active {
-  color: white;
+  color: blue;
 }
 
 .padding20 {
