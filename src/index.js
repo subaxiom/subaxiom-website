@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { galleryMap } from "./galleryData";
-//import history from './history';
+import { filterMap } from "./filterData";
 
 import App from "./App";
 import ImagePreview from "./Image";
@@ -31,10 +31,30 @@ var removeFromCart = function (imageId) {
   return cartMap;
 };
 
+var filter = {
+  expanded: true,
+  filterMap: filterMap
+};
+
+var filterClicked = function (itemClicked) {
+  if (itemClicked === "filter") {
+    filter.expanded = !filter.expanded;
+  }
+};
+
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App cartMap={cartMap} />} />
+      <Route
+        path="/"
+        element={
+          <App
+            cartMap={cartMap}
+            filter={filter}
+            filterClicked={filterClicked}
+          />
+        }
+      />
       <Route
         path="image/:imageId"
         element={

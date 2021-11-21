@@ -3,8 +3,7 @@ import React from "react";
 import "./styles.css";
 import { NavBar } from "./NavBar";
 import { Gallery } from "./Gallery";
-//import { Example } from "./Example";
-//import { ImagePreview } from "./Image";
+import { Filter } from "./Filter";
 import { Social } from "./Social";
 import logoUrl from "./img/subAxiomBannerBigv15.jpg";
 import { useNavigate } from "react-router-dom";
@@ -13,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 export default function App(props) {
   //let params = useParams();
   let navigate = useNavigate();
-  //let imageId = params.imageId;
-  //alert(imageId);
+  let filter = props.filter;
+  let filterClicked = props.filterClicked;
 
   return (
     <div className="App">
@@ -30,6 +29,7 @@ export default function App(props) {
         />
       </div>
       <div>
+        <Filter filter={filter} filterClicked={filterClicked} />
         <Gallery />
       </div>
       <Social />

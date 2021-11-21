@@ -57,7 +57,7 @@ const AddToCartComponent = (props) => {
 
   if (cartMap.has(imageId)) {
     return (
-      <div className="inCartMessage">
+      <div>
         Image added to cart.
         <br />
         <Link className="blue-link" to="/cart">
