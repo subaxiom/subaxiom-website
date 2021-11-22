@@ -39,6 +39,21 @@ var filter = {
 var filterClicked = function (itemClicked) {
   if (itemClicked === "filter") {
     filter.expanded = !filter.expanded;
+  } else {
+    let filterSetName = itemClicked.filterSetName;
+    let filterSet = filter.filterMap.get(filterSetName);
+    let newSetArray = [];
+    filterSet.forEach(function (filterItem, index) {
+      if (filterItem.name === itemClicked.filterName) {
+        newSetArray.push({
+          name: filterItem.name,
+          selected: !filterItem.selected
+        });
+      } else {
+        newSetArray.push(filterItem);
+      }
+    });
+    filter.filterMap.set(filterSetName, newSetArray);
   }
 };
 

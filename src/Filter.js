@@ -41,7 +41,11 @@ const FilterExpanded = (props) => {
   for (const [filterSetName, filterSet] of filterMap) {
     filterSets.push(
       <div className="filter-set">
-        <FilterSet filterSet={filterSet} />
+        <FilterSet
+          filterSetName={filterSetName}
+          filterSet={filterSet}
+          filterClicked={filterClicked}
+        />
       </div>
     );
   }
@@ -63,17 +67,58 @@ const FilterExpanded = (props) => {
 };
 
 const FilterSet = (props) => {
+  let filterSetName = props.filterSetName;
   let filterSet = props.filterSet;
+  let filterClicked = props.filterClicked;
   let filterItems = [];
 
   filterSet.forEach(function (filterItem, index) {
     filterItems.push(
-      <span className="filter-item">
-        {filterItem.name}
-        <br />
-      </span>
+      <FilterItem
+        filterSetName={filterSetName}
+        filterName={filterItem.name}
+        selected={filterItem.selected}
+        filterClicked={filterClicked}
+      />
     );
   });
 
   return filterItems;
+};
+
+const FilterItem = (props) => {
+  let filterSetName = props.filterSetName;
+  let filterName = props.filterName;
+  let itemClicked = { filterSetName: filterSetName, filterName: filterName };
+  let selected = props.selected;
+  let filterClicked = props.filterClicked;
+  let navigate = useNavigate();
+
+  if (selected) {
+    return (
+      <span
+        className="filter-item-selected"
+        onClick={async (event) => {
+          filterClicked(itemClicked);
+          navigate(`/`, { replace: true });
+        }}
+      >
+        🗹 {filterName}
+        <br />
+      </span>
+    );
+  } else {
+    return (
+      <span
+        className="filter-item"
+        onClick={async (event) => {
+          filterClicked(itemClicked);
+          navigate(`/`, { replace: true });
+        }}
+      >
+        ☐ {filterName}
+        <br />
+      </span>
+    );
+  }
 };

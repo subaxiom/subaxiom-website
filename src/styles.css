@@ -83,6 +83,15 @@ h4 {
   padding: 1px 10px 1px 10px;
 }
 
+.filter-item {
+  cursor: pointer;
+}
+
+.filter-item-selected {
+  color: fuchsia;
+  cursor: pointer;
+}
+
 .logoImgWrapper {
   max-width: 100%;
   border-top: 1px solid lime;
