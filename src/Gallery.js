@@ -1,21 +1,29 @@
 import React from "react";
-import { galleryMap } from "./galleryData";
+//import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
 import { useNavigate } from "react-router-dom";
 //import history from './history';
 
-const GalleryComponent = () => {
+const GalleryComponent = (props) => {
   //var href = window.location.href;
+  let galleryData = props.galleryData;
+  let galleryMap = galleryData.galleryMap;
+  let sort = galleryData.sort;
+  //alert(JSON.stringify(sorted));
   let navigate = useNavigate();
   let images = [];
   //let url = null;
-  for (const [imageId, image] of galleryMap) {
-    //url = href + 'image/' + key;
+
+  sort.forEach(function (arrayItem) {
+    var imageId = arrayItem.imageId;
+    var image = galleryMap.get(imageId);
+
     images.push(
       <img
         className="thumbnail"
         key={imageId}
         src={image.src}
+        title={image.relevancy}
         alt={image.title}
         onClick={async (event) => {
           //alert(url);
@@ -24,7 +32,26 @@ const GalleryComponent = () => {
         }}
       />
     );
-  }
+  });
+
+  /*
+  for (const [imageId, image] of results) {
+    //url = href + 'image/' + key;
+    images.push(
+      <img
+        className="thumbnail"
+        key={imageId}
+        src={image.src}
+        title={image.relevancy}
+        alt={image.title}
+        onClick={async (event) => {
+          //alert(url);
+          //history.push(url)
+          navigate(`/image/${image.id}`, { replace: true });
+        }}
+      />
+    );
+  }*/
   return (
     <div>
       {images}
@@ -68,10 +95,11 @@ const GalleryComponent = () => {
   );
 };
 
-export const Gallery = () => {
+export const Gallery = (props) => {
+  let galleryData = props.galleryData;
   return (
     <div className="page-wrapper">
-      <GalleryComponent />
+      <GalleryComponent galleryData={galleryData} />
     </div>
   );
 };

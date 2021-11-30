@@ -3,22 +3,35 @@ const filterMap = new Map();
 filterMap.set("type", [
   { name: "illustration", selected: false },
   { name: "photoshop", selected: false },
-  { name: "diagram", selected: false }
+  { name: "diagram", selected: false },
+  { name: "abstract", selected: false }
 ]);
 
-filterMap.set("topics", [
+filterMap.set("good", [
   { name: "free speech", selected: false },
-  { name: "decentralization", selected: false },
+  { name: "privacy", selected: false },
+  { name: "decentralization", selected: false }
+]);
+
+filterMap.set("bad", [
   { name: "censorship", selected: false },
+  { name: "surveillance", selected: false },
+  { name: "inflation", selected: false },
+  { name: "vaxx mandates", selected: false }
+]);
+
+filterMap.set("tools", [
   { name: "guns", selected: false },
   { name: "crypto", selected: false },
-  { name: "vaxx", selected: false }
+  { name: "blockchain", selected: false },
+  { name: "precious metals", selected: false }
 ]);
 
 filterMap.set("organizations", [
-  { name: "federal reserve", selected: false },
+  { name: "central banks", selected: false },
   { name: "world economic forum", selected: false },
-  { name: "world health organization", selected: false }
+  { name: "world health organization", selected: false },
+  { name: "rockefeller foundation", selected: false }
 ]);
 
 filterMap.set("presidents", [
@@ -29,8 +42,10 @@ filterMap.set("presidents", [
 ]);
 
 filterMap.set("villains", [
+  { name: "george soros", selected: false },
   { name: "tony fauci", selected: false },
-  { name: "klaus shwab", selected: false }
+  { name: "klaus shwab", selected: false },
+  { name: "bill gates", selected: false }
 ]);
 
 filterMap.set("heros", [

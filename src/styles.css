@@ -30,6 +30,7 @@ h4 {
   background: rgba(10, 10, 20, 0.6);
   color: white;
   border-bottom: 1px solid #202030;
+  z-index: 100;
 }
 
 .NavBar a {
@@ -74,13 +75,15 @@ h4 {
   color: white;
   cursor: pointer;
   float: left;
-  padding: 1px 10px 1px 10px;
+  padding: 1px 8px 1px 8px;
+  font-size: 13px;
 }
 
 .filter-set {
   width: auto;
   float: left;
-  padding: 1px 10px 1px 10px;
+  padding: 1px 8px 1px 8px;
+  font-size: 12px;
 }
 
 .filter-item {

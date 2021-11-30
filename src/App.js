@@ -14,6 +14,7 @@ export default function App(props) {
   let navigate = useNavigate();
   let filter = props.filter;
   let filterClicked = props.filterClicked;
+  let galleryData = props.galleryData;
 
   return (
     <div className="App">
@@ -30,7 +31,7 @@ export default function App(props) {
       </div>
       <div>
         <Filter filter={filter} filterClicked={filterClicked} />
-        <Gallery />
+        <Gallery galleryData={galleryData} />
       </div>
       <Social />
     </div>

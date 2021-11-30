@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { galleryMap } from "./galleryData";
+import { galleryData } from "./galleryData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
 //import history from './history';
@@ -10,7 +10,7 @@ import { NavBar } from "./NavBar";
 const ImageComponent = (props) => {
   let params = useParams();
   let imageId = params.imageId;
-  let image = galleryMap.get(imageId);
+  let image = galleryData.galleryMap.get(imageId);
   let cartMap = props.cartMap;
 
   return (

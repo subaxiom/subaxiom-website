@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { galleryMap } from "./galleryData";
+import { galleryData } from "./galleryData";
 import { filterMap } from "./filterData";
 
 import App from "./App";
@@ -19,9 +19,10 @@ ReactDOM.render(
 */
 
 var cartMap = new Map();
+let sorted = [];
 
 var addToCart = function (imageId) {
-  var image = galleryMap.get(imageId);
+  var image = galleryData.galleryMap.get(imageId);
   cartMap.set(imageId, image);
   return cartMap;
 };
@@ -43,19 +44,46 @@ var filterClicked = function (itemClicked) {
     let filterSetName = itemClicked.filterSetName;
     let filterSet = filter.filterMap.get(filterSetName);
     let newSetArray = [];
+    let selected = false;
     filterSet.forEach(function (filterItem, index) {
       if (filterItem.name === itemClicked.filterName) {
+        selected = !filterItem.selected;
         newSetArray.push({
           name: filterItem.name,
-          selected: !filterItem.selected
+          selected: selected
         });
       } else {
         newSetArray.push(filterItem);
       }
     });
     filter.filterMap.set(filterSetName, newSetArray);
+    updateRelevancy(itemClicked.filterName, selected);
   }
 };
+
+var updateRelevancy = function (tag, selected) {
+  let galleryMap = galleryData.galleryMap;
+  let difference = -1;
+  if (selected) difference = 1;
+  sorted = [];
+  galleryMap.forEach(function (image, index) {
+    if (image.tags.has(tag)) {
+      image.relevancy = image.relevancy + difference;
+    }
+
+    sorted.push({ imageId: index, relevancy: image.relevancy });
+  });
+  sorted.sort(function (a, b) {
+    return b.relevancy - a.relevancy;
+  });
+  //alert(JSON.stringify(sorted));
+
+  galleryData.sort = sorted;
+
+  //var newMap = new Map([...galleryMap].sort((a, b) => a[1].relevancy > b[1].relevancy));
+};
+
+//updateRelevancy();
 
 render(
   <BrowserRouter>
@@ -67,6 +95,7 @@ render(
             cartMap={cartMap}
             filter={filter}
             filterClicked={filterClicked}
+            galleryData={galleryData}
           />
         }
       />
