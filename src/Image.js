@@ -16,10 +16,14 @@ const ImageComponent = (props) => {
   return (
     <div className="page-wrapper top-buffer">
       <NavBar cartMap={cartMap} />
-      <img
+      <div
+        style={{
+          backgroundImage: image.src,
+          backgroundSize: "600px 400px",
+          backgroundRepeat: "no-repeat"
+        }}
         className="image-preview"
         key={imageId}
-        src={image.src}
         alt={image.title}
       />
       <div className="caption-wrapper">

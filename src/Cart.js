@@ -16,10 +16,14 @@ const CartComponent = (props) => {
     //url = href + 'image/' + key;
     images.push(
       <div className="cartItem">
-        <img
+        <div
+          style={{
+            backgroundImage: image.src,
+            backgroundSize: "240px 180px",
+            backgroundRepeat: "no-repeat"
+          }}
           className="thumbnail"
           key={imageId}
-          src={image.src}
           alt={image.title}
           onClick={async (event) => {
             //alert(url);

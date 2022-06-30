@@ -19,6 +19,26 @@ const GalleryComponent = (props) => {
     var image = galleryMap.get(imageId);
 
     images.push(
+      <div
+        style={{
+          backgroundImage: image.src,
+          backgroundSize: "240px 180px",
+          backgroundRepeat: "no-repeat"
+        }}
+        className="thumbnail"
+        key={imageId}
+        title={image.relevancy}
+        alt={image.title}
+        onClick={async (event) => {
+          //alert(url);
+          //history.push(url)
+          navigate(`/image/${imageId}`, { replace: true });
+        }}
+      />
+    );
+
+    /*
+    images.push(
       <img
         className="thumbnail"
         key={imageId}
@@ -32,29 +52,87 @@ const GalleryComponent = (props) => {
         }}
       />
     );
+*/
   });
 
-  /*
-  for (const [imageId, image] of results) {
-    //url = href + 'image/' + key;
-    images.push(
-      <img
-        className="thumbnail"
-        key={imageId}
-        src={image.src}
-        title={image.relevancy}
-        alt={image.title}
-        onClick={async (event) => {
-          //alert(url);
-          //history.push(url)
-          navigate(`/image/${image.id}`, { replace: true });
-        }}
-      />
-    );
-  }*/
   return (
     <div>
       {images}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />

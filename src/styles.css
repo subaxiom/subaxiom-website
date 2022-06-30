@@ -107,10 +107,9 @@ h4 {
   cursor: pointer;
 }
 
-.logoImgWrapper {
+.filterSpace {
+  height: 50px;
   max-width: 100%;
-  border-top: 1px solid lime;
-  border-bottom: 1px solid orchid;
 }
 
 .logoImg {
@@ -130,7 +129,8 @@ h4 {
 }
 
 .thumbnail {
-  width: 250px;
+  width: 240px;
+  height: 180px;
   margin: 20px;
   float: left;
   border: double #404040 4px;
@@ -152,6 +152,8 @@ h4 {
   animation: 0.2s ease-out 0s 1 zoom-in;
   float: left;
   border: double #404048 4px;
+  width: 600px;
+  height: 400px;
   margin: 20px;
   opacity: 1;
 }

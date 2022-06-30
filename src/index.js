@@ -33,7 +33,7 @@ var removeFromCart = function (imageId) {
 };
 
 var filter = {
-  expanded: true,
+  expanded: false,
   filterMap: filterMap
 };
 
