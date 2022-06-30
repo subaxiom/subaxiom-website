@@ -41,6 +41,7 @@ const FilterExpanded = (props) => {
   for (const [filterSetName, filterSet] of filterMap) {
     filterSets.push(
       <div className="filter-set">
+        <span className="filter-set-name">{filterSetName}</span>
         <FilterSet
           filterSetName={filterSetName}
           filterSet={filterSet}
