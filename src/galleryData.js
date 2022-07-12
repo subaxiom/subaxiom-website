@@ -1,7 +1,3 @@
-import img1 from "./gallery/BidenOffersNeoChoices.jpg";
-import gab from "./gallery/BidenPigletXiPooh2.jpg";
-import img3 from "./gallery/FauciAsFreddy.jpg";
-//import img3 from "https://ipfs.pixura.io/ipfs/QmUyARmq5RUJk5zt7KUeaMLYB8SQbKHp3Gdqy5WSxRtPNa/SeaofRoses.jpg";
 
 const galleryMap = new Map();
 galleryMap.set("0010", {
