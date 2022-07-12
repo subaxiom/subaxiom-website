@@ -152,8 +152,8 @@ h4 {
   animation: 0.2s ease-out 0s 1 zoom-in;
   float: left;
   border: double #404048 4px;
-  width: 600px;
-  height: 400px;
+  width: 800px;
+  height: 600px;
   margin: 20px;
   opacity: 1;
 }

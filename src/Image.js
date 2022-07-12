@@ -19,7 +19,7 @@ const ImageComponent = (props) => {
       <div
         style={{
           backgroundImage: image.src,
-          backgroundSize: "600px 400px",
+          backgroundSize: "800px 600px",
           backgroundRepeat: "no-repeat"
         }}
         className="image-preview"
