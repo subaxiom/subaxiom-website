@@ -1,5 +1,5 @@
-
 const galleryMap = new Map();
+
 galleryMap.set("0010", {
   src:
     'url("https://it4kappv2zlfl2jjikevinxgkcirelgxd27eo4kthtwteai7.arweave.net/RPigPfXWVlXpKUKJVDbmUJESL_NcevkdxUzztMg_EfM")',
@@ -71,20 +71,17 @@ galleryMap.set("0001", {
   relevancy: 0
 });
 
+const sortArray = [];
+for (let i = 0; i < galleryMap.size; i++) {
+  sortArray.push({ imageId: String(galleryMap.size - i).padStart(4, "0") });
+}
+
+//alert(galleryMap.size);
+//alert(JSON.stringify(sortArray));
+
 const galleryData = {
   galleryMap: galleryMap,
-  sort: [
-    { imageId: "0010" },
-    { imageId: "0009" },
-    { imageId: "0008" },
-    { imageId: "0007" },
-    { imageId: "0006" },
-    { imageId: "0005" },
-    { imageId: "0004" },
-    { imageId: "0003" },
-    { imageId: "0002" },
-    { imageId: "0001" }
-  ]
+  sort: sortArray
 };
 
 export { galleryData };
