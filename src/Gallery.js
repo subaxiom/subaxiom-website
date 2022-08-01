@@ -22,7 +22,7 @@ const GalleryComponent = (props) => {
       <div
         style={{
           backgroundImage: image.src,
-          backgroundSize: "240px 180px",
+          backgroundSize: "300px 225px",
           backgroundRepeat: "no-repeat"
         }}
         className="thumbnail"
