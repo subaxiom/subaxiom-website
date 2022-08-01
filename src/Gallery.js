@@ -1,6 +1,7 @@
 import React from "react";
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
+import thumbnailSprite from "./img/thumbnailSprite.png";
 import { useNavigate } from "react-router-dom";
 //import history from './history';
 
@@ -17,14 +18,11 @@ const GalleryComponent = (props) => {
   sort.forEach(function (arrayItem) {
     var imageId = arrayItem.imageId;
     var image = galleryMap.get(imageId);
+    var backgroundPos =
+      "-" + image.thumbnailX + "px -" + image.thumbnailY + "px";
 
     images.push(
       <div
-        style={{
-          backgroundImage: image.src,
-          backgroundSize: "300px 225px",
-          backgroundRepeat: "no-repeat"
-        }}
         className="thumbnail"
         key={imageId}
         title={image.relevancy}
@@ -34,7 +32,15 @@ const GalleryComponent = (props) => {
           //history.push(url)
           navigate(`/image/${imageId}`, { replace: true });
         }}
-      />
+      >
+        <div
+          style={{
+            backgroundImage: `url(${thumbnailSprite})`,
+            backgroundPosition: `${backgroundPos}`,
+            backgroundRepeat: "no-repeat"
+          }}
+        />
+      </div>
     );
 
     /*
@@ -42,7 +48,7 @@ const GalleryComponent = (props) => {
       <img
         className="thumbnail"
         key={imageId}
-        src={image.src}
+        src={thumbnailSprite}
         title={image.relevancy}
         alt={image.title}
         onClick={async (event) => {

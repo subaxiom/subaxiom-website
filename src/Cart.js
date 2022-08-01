@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
+import thumbnailSprite from "./img/thumbnailSprite.png";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
@@ -13,24 +14,30 @@ const CartComponent = (props) => {
   let images = [];
   //let url = null;
   for (const [imageId, image] of cartMap) {
+    var backgroundPos =
+      "-" + image.thumbnailX + "px -" + image.thumbnailY + "px";
     //url = href + 'image/' + key;
     images.push(
       <div className="cartItem">
         <div
-          style={{
-            backgroundImage: image.src,
-            backgroundSize: "300px 225px",
-            backgroundRepeat: "no-repeat"
-          }}
           className="thumbnail"
           key={imageId}
+          title={image.relevancy}
           alt={image.title}
           onClick={async (event) => {
             //alert(url);
             //history.push(url)
             navigate(`/image/${imageId}`, { replace: true });
           }}
-        />
+        >
+          <div
+            style={{
+              backgroundImage: `url(${thumbnailSprite})`,
+              backgroundPosition: `${backgroundPos}`,
+              backgroundRepeat: "no-repeat"
+            }}
+          />
+        </div>
         <div className="caption-wrapper">
           <h3>{image.title}</h3>
           <div className="caption">
