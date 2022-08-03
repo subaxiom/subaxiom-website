@@ -41,7 +41,7 @@ const GalleryComponent = (props) => {
       >
         <div
           style={{
-            backgroundImage: `url(${thumbnailSprite})`,
+            backgroundImage: `url(${image.thumbnailSrc})`,
             backgroundPosition: `${backgroundPos}`,
             backgroundRepeat: "no-repeat"
           }}

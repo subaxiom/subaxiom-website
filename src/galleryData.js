@@ -1,8 +1,12 @@
+import thumbnailSprite0001to0040 from "./img/thumbnailSprite0001to0040.png";
+import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
+
 const galleryMap = new Map();
 
 galleryMap.set("0050", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 2700,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://noozavlnmhohizaq5fs363wzzodkmyiibonruu5u55pqapxcei.arweave.net/a52QV_W1h3HRkEOllv27Zy4amYQgLmxpTtO9fAD7iIo")',
   title: "Liberty Toppled",
@@ -10,8 +14,9 @@ galleryMap.set("0050", {
   relevancy: 0
 });
 galleryMap.set("0049", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 2400,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://4ocrnhyvvdl4x47ggnfl6vmdrod4beuegqinflpn2zsgf5xkcm.arweave.net/44UWnxWo1_8vz5jNKv1WDi4fAkoQ0ENKt7dZkYvbqEw")',
   title: "Psycho Whitmer",
@@ -19,8 +24,9 @@ galleryMap.set("0049", {
   relevancy: 0
 });
 galleryMap.set("0048", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 2100,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://jbz2webek3bz4qbqnaiqf66bfbtugvc5lwunpzcofrnw6by.arweave.net/SHOrECRWw55AMGgR-AvvBKGdDV-F1-dqNfk_Tixbbwc")',
   title: "Capitol Hill Fly Trap",
@@ -28,8 +34,9 @@ galleryMap.set("0048", {
   relevancy: 0
 });
 galleryMap.set("0047", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 1800,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://eylxg6eit6pcsyfhk4si3gbsvvbnbzwl6igjpytlyjs7ghvfdtcq.arweave.net/JhdzeIifnilgp1ckjZgyrULQ5svyDJfia8Jl8x6lHMU")',
   title: "The Jan 6 Shaman",
@@ -37,8 +44,9 @@ galleryMap.set("0047", {
   relevancy: 0
 });
 galleryMap.set("0046", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 1500,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://h2rb6sezqpvrxa6jio25fmazybjbxdmeyekyrx5wba3gfgym.arweave.net/PqIfSJmD6xuDyUO10rA_ZwFIbjYTB_FYjftgg2Y_psM")',
   title: "Obey Gavin Newsom",
@@ -46,8 +54,9 @@ galleryMap.set("0046", {
   relevancy: 0
 });
 galleryMap.set("0045", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 1200,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://rjm6blitnfjznga2qoqwytdcgo4zttvsturdzwvs3mtrtlxh5mya.arweave.net/ilngrRNpU5aYGoOhbExiM7mZzrKdIjzastsnGa7n6zA")',
   title: "Our Puppet President",
@@ -55,8 +64,9 @@ galleryMap.set("0045", {
   relevancy: 0
 });
 galleryMap.set("0044", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 900,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://bxqmfytpecpsiia6udv47fiqmwujlao3ggjywczv74oc52jum4.arweave.net/_DeDC4m8gnyQgHqDrz5UQZaiVgdsxk4sLNf8cLuk0Z4")',
   title: "Biden the Puppet",
@@ -64,8 +74,9 @@ galleryMap.set("0044", {
   relevancy: 0
 });
 galleryMap.set("0043", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 600,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://6ice2bmbui4pwjuwkrj6k2pq4actzpf3dzgyy4f2guhkdmma.arweave.net/8gRNBY--GiOPsmllRT-5Wnw4AU8vLseTYxwujUOobGA")',
   title: "The Monkey Pox Gang",
@@ -73,8 +84,9 @@ galleryMap.set("0043", {
   relevancy: 0
 });
 galleryMap.set("0042", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 300,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://zvs2nm6jglpnuhkjqapxtoopccyfoxk35j42gu5fer2qcvn2.arweave.net/zWWms8ky3todSYAfebn_PELBXXVv_qeaNTpSR1AVW6M")',
   title: "Frog in Boiling Water",
@@ -82,8 +94,9 @@ galleryMap.set("0042", {
   relevancy: 0
 });
 galleryMap.set("0041", {
+  thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 0,
-  thumbnailY: 900,
+  thumbnailY: 0,
   src:
     'url("https://whbshufv5olzmb6zvwyf6okcvlhaapq6yk65stznfprkwi66ea.arweave.net/scMj0LXrl5YH2a2wXzlCqs4APh7CvdlPLSviqyP_eIA")',
   title: "Yuval Noah Strangelove",
@@ -92,6 +105,7 @@ galleryMap.set("0041", {
 });
 
 galleryMap.set("0040", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2700,
   thumbnailY: 675,
   src:
@@ -101,6 +115,7 @@ galleryMap.set("0040", {
   relevancy: 0
 });
 galleryMap.set("0039", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2400,
   thumbnailY: 675,
   src:
@@ -110,6 +125,7 @@ galleryMap.set("0039", {
   relevancy: 0
 });
 galleryMap.set("0038", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2100,
   thumbnailY: 675,
   src:
@@ -119,6 +135,7 @@ galleryMap.set("0038", {
   relevancy: 0
 });
 galleryMap.set("0037", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1800,
   thumbnailY: 675,
   src:
@@ -128,6 +145,7 @@ galleryMap.set("0037", {
   relevancy: 0
 });
 galleryMap.set("0036", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1500,
   thumbnailY: 675,
   src:
@@ -137,6 +155,7 @@ galleryMap.set("0036", {
   relevancy: 0
 });
 galleryMap.set("0035", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1200,
   thumbnailY: 675,
   src:
@@ -146,6 +165,7 @@ galleryMap.set("0035", {
   relevancy: 0
 });
 galleryMap.set("0034", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 900,
   thumbnailY: 675,
   src:
@@ -155,6 +175,7 @@ galleryMap.set("0034", {
   relevancy: 0
 });
 galleryMap.set("0033", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 600,
   thumbnailY: 675,
   src:
@@ -165,6 +186,7 @@ galleryMap.set("0033", {
 });
 
 galleryMap.set("0032", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 300,
   thumbnailY: 675,
   src:
@@ -175,6 +197,7 @@ galleryMap.set("0032", {
 });
 
 galleryMap.set("0031", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 0,
   thumbnailY: 675,
   src:
@@ -185,6 +208,7 @@ galleryMap.set("0031", {
 });
 
 galleryMap.set("0030", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2700,
   thumbnailY: 450,
   src:
@@ -195,6 +219,7 @@ galleryMap.set("0030", {
 });
 
 galleryMap.set("0029", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2400,
   thumbnailY: 450,
   src:
@@ -204,6 +229,7 @@ galleryMap.set("0029", {
   relevancy: 0
 });
 galleryMap.set("0028", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2100,
   thumbnailY: 450,
   src:
@@ -213,6 +239,7 @@ galleryMap.set("0028", {
   relevancy: 0
 });
 galleryMap.set("0027", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1800,
   thumbnailY: 450,
   src:
@@ -222,6 +249,7 @@ galleryMap.set("0027", {
   relevancy: 0
 });
 galleryMap.set("0026", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1500,
   thumbnailY: 450,
   src:
@@ -231,6 +259,7 @@ galleryMap.set("0026", {
   relevancy: 0
 });
 galleryMap.set("0025", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1200,
   thumbnailY: 450,
   src:
@@ -240,6 +269,7 @@ galleryMap.set("0025", {
   relevancy: 0
 });
 galleryMap.set("0024", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 900,
   thumbnailY: 450,
   src:
@@ -249,6 +279,7 @@ galleryMap.set("0024", {
   relevancy: 0
 });
 galleryMap.set("0023", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 600,
   thumbnailY: 450,
   src:
@@ -258,6 +289,7 @@ galleryMap.set("0023", {
   relevancy: 0
 });
 galleryMap.set("0022", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 300,
   thumbnailY: 450,
   src:
@@ -267,6 +299,7 @@ galleryMap.set("0022", {
   relevancy: 0
 });
 galleryMap.set("0021", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 0,
   thumbnailY: 450,
   src:
@@ -277,6 +310,7 @@ galleryMap.set("0021", {
 });
 
 galleryMap.set("0020", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2700,
   thumbnailY: 225,
   src:
@@ -286,6 +320,7 @@ galleryMap.set("0020", {
   relevancy: 0
 });
 galleryMap.set("0019", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2400,
   thumbnailY: 225,
   src:
@@ -295,6 +330,7 @@ galleryMap.set("0019", {
   relevancy: 0
 });
 galleryMap.set("0018", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2100,
   thumbnailY: 225,
   src:
@@ -304,6 +340,7 @@ galleryMap.set("0018", {
   relevancy: 0
 });
 galleryMap.set("0017", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1800,
   thumbnailY: 225,
   src:
@@ -314,6 +351,7 @@ galleryMap.set("0017", {
 });
 
 galleryMap.set("0016", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1500,
   thumbnailY: 225,
   src:
@@ -324,6 +362,7 @@ galleryMap.set("0016", {
 });
 
 galleryMap.set("0015", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1200,
   thumbnailY: 225,
   src:
@@ -334,6 +373,7 @@ galleryMap.set("0015", {
 });
 
 galleryMap.set("0014", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 900,
   thumbnailY: 225,
   src:
@@ -343,6 +383,7 @@ galleryMap.set("0014", {
   relevancy: 0
 });
 galleryMap.set("0013", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 600,
   thumbnailY: 225,
   src:
@@ -352,6 +393,7 @@ galleryMap.set("0013", {
   relevancy: 0
 });
 galleryMap.set("0012", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 300,
   thumbnailY: 225,
   src:
@@ -362,6 +404,7 @@ galleryMap.set("0012", {
 });
 
 galleryMap.set("0011", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 0,
   thumbnailY: 225,
   src:
@@ -372,6 +415,7 @@ galleryMap.set("0011", {
 });
 
 galleryMap.set("0010", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2700,
   thumbnailY: 0,
   src:
@@ -381,6 +425,7 @@ galleryMap.set("0010", {
   relevancy: 0
 });
 galleryMap.set("0009", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2400,
   thumbnailY: 0,
   src:
@@ -390,6 +435,7 @@ galleryMap.set("0009", {
   relevancy: 0
 });
 galleryMap.set("0008", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 2100,
   thumbnailY: 0,
   src:
@@ -399,6 +445,7 @@ galleryMap.set("0008", {
   relevancy: 0
 });
 galleryMap.set("0007", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1800,
   thumbnailY: 0,
   src:
@@ -408,6 +455,7 @@ galleryMap.set("0007", {
   relevancy: 0
 });
 galleryMap.set("0006", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1500,
   thumbnailY: 0,
   src:
@@ -418,6 +466,7 @@ galleryMap.set("0006", {
 });
 
 galleryMap.set("0005", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 1200,
   thumbnailY: 0,
   src:
@@ -428,6 +477,7 @@ galleryMap.set("0005", {
 });
 
 galleryMap.set("0004", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 900,
   thumbnailY: 0,
   src:
@@ -438,6 +488,7 @@ galleryMap.set("0004", {
 });
 
 galleryMap.set("0003", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 600,
   thumbnailY: 0,
   src:
@@ -448,6 +499,7 @@ galleryMap.set("0003", {
 });
 
 galleryMap.set("0002", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 300,
   thumbnailY: 0,
   src:
@@ -458,6 +510,7 @@ galleryMap.set("0002", {
 });
 
 galleryMap.set("0001", {
+  thumbnailSrc: thumbnailSprite0001to0040,
   thumbnailX: 0,
   thumbnailY: 0,
   src:
