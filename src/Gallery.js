@@ -1,6 +1,7 @@
 import React from "react";
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
+import loadingGif from "./img/loading.gif";
 import thumbnailSprite from "./img/thumbnailSprite.png";
 import { useNavigate } from "react-router-dom";
 //import history from './history';
@@ -23,6 +24,11 @@ const GalleryComponent = (props) => {
 
     images.push(
       <div
+        style={{
+          backgroundImage: `url(${loadingGif})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
         className="thumbnail"
         key={imageId}
         title={image.relevancy}

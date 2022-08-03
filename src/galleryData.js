@@ -199,7 +199,7 @@ galleryMap.set("0029", {
   thumbnailY: 450,
   src:
     'url("https://jc3smajzsdpsnv2ld2o6aar2fesqoj3mwzbpgqqhu2m2buej.arweave.net/SLcmAT_mQ3ybXSx6d4AI6KSUHJ2y2Qv-NCB6aZoNCJ0")',
-  title: "Illuminati",
+  title: "Abstract Pyramids",
   tags: new Set().add("joe biden").add("tony fauci"),
   relevancy: 0
 });
