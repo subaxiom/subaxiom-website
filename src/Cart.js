@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
-import thumbnailSprite from "./img/thumbnailSprite.png";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
@@ -32,7 +31,7 @@ const CartComponent = (props) => {
         >
           <div
             style={{
-              backgroundImage: `url(${thumbnailSprite})`,
+              backgroundImage: `url(${image.thumbnailSrc})`,
               backgroundPosition: `${backgroundPos}`,
               backgroundRepeat: "no-repeat"
             }}

@@ -2,7 +2,6 @@ import React from "react";
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
 import loadingGif from "./img/loading.gif";
-import thumbnailSprite from "./img/thumbnailSprite.png";
 import { useNavigate } from "react-router-dom";
 //import history from './history';
 
