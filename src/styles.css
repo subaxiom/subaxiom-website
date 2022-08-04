@@ -71,8 +71,16 @@ h4 {
   border-bottom: 1px solid #202030;
 }
 
-.filter-link {
+.filter-link-collapsed {
   color: white;
+  cursor: pointer;
+  float: left;
+  padding: 1px 8px 1px 8px;
+  font-size: 13px;
+}
+
+.filter-link-expanded {
+  color: fuchsia;
   cursor: pointer;
   float: left;
   padding: 1px 8px 1px 8px;
@@ -188,11 +196,11 @@ h4 {
   background-color: #101020;
   border-radius: 6px;
   color: #a0a0b8;
-  width: 400px;
-  height: 120px;
+  width: 300px;
+  height: 150px;
   margin-top: 10px;
-  padding: 10px;
-  font-size: 16px;
+  padding: 16px;
+  font-size: 14px;
   border: 1px solid #272740;
 }
 

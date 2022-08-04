@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faSquare } from "@fortawesome/free-solid-svg-icons";
+import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -19,13 +23,13 @@ const FilterCollapsed = (props) => {
   return (
     <div className="filter">
       <span
-        className="filter-link"
+        className="filter-link-collapsed"
         onClick={async (event) => {
           filterClicked("filter");
           navigate(`/`, { replace: true });
         }}
       >
-        ⯈ FILTER
+        <FontAwesomeIcon icon={faMagnifyingGlass} /> FILTER
       </span>
     </div>
   );
@@ -54,13 +58,13 @@ const FilterExpanded = (props) => {
   return (
     <div className="filter">
       <span
-        className="filter-link"
+        className="filter-link-expanded"
         onClick={async (event) => {
           filterClicked("filter");
           navigate(`/`, { replace: true });
         }}
       >
-        ⯆ FILTER
+        <FontAwesomeIcon icon={faMagnifyingGlass} /> FILTER
       </span>
       {filterSets}
     </div>
@@ -104,7 +108,7 @@ const FilterItem = (props) => {
           navigate(`/`, { replace: true });
         }}
       >
-        🗹 {filterName}
+        <FontAwesomeIcon icon={faSquareCheck} /> {filterName}
         <br />
       </span>
     );
@@ -117,7 +121,7 @@ const FilterItem = (props) => {
           navigate(`/`, { replace: true });
         }}
       >
-        ☐ {filterName}
+        <FontAwesomeIcon icon={faSquare} /> {filterName}
         <br />
       </span>
     );

@@ -3,6 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import { galleryData } from "./galleryData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCaretLeft,
+  faXmark,
+  faCartShopping
+} from "@fortawesome/free-solid-svg-icons";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
@@ -29,10 +35,13 @@ const ImageComponent = (props) => {
       <div className="caption-wrapper">
         <h2>{image.title}</h2>
         <div className="caption">
-          $19.99 for hi-res 4000 x 3000 png image
+          $19.99
           <br />
-          (subAxiom.com watermark removed)
+          hi-res 4000 x 3000 png
           <br />
+          subAxiom.com watermark removed
+          <br />
+          royalty free license
           <br />
           <br />
           <AddToCartComponent
@@ -45,7 +54,7 @@ const ImageComponent = (props) => {
         <br />
         <br />
         <Link className="blue-link" to="/">
-          ⮢ return to gallery
+          <FontAwesomeIcon icon={faCaretLeft} /> return to gallery
         </Link>
       </div>
     </div>
@@ -64,8 +73,9 @@ const AddToCartComponent = (props) => {
       <div>
         Image added to cart.
         <br />
+        <br />
         <Link className="blue-link" to="/cart">
-          view cart
+          <FontAwesomeIcon icon={faCartShopping} /> view cart
         </Link>
         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <span
@@ -77,7 +87,7 @@ const AddToCartComponent = (props) => {
             navigate(`/image/${imageId}`, { replace: true });
           }}
         >
-          🗙 remove from cart
+          <FontAwesomeIcon icon={faXmark} /> remove from cart
         </span>
       </div>
     );
