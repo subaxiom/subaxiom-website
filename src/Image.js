@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCaretLeft,
+  faCircleArrowLeft,
   faXmark,
   faCartShopping
 } from "@fortawesome/free-solid-svg-icons";
@@ -54,8 +54,12 @@ const ImageComponent = (props) => {
         <br />
         <br />
         <Link className="blue-link" to="/">
-          <FontAwesomeIcon icon={faCaretLeft} /> return to gallery
+          <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
         </Link>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
@@ -81,8 +81,12 @@ const CartComponent = (props) => {
       <br />
       <br />
       <Link className="blue-link" to="/">
-        <FontAwesomeIcon icon={faCaretLeft} /> return to gallery
+        <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
       </Link>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
