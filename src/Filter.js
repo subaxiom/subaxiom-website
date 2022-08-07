@@ -19,13 +19,13 @@ export const Filter = (props) => {
 const FilterCollapsed = (props) => {
   //let filter = props.filter;
   let navigate = useNavigate();
-  let filterClicked = props.filterClicked;
+  let filterOrTagClicked = props.filterOrTagClicked;
   return (
     <div className="filter">
       <span
         className="filter-link-collapsed"
         onClick={async (event) => {
-          filterClicked("filter");
+          filterOrTagClicked("filter");
           navigate(`/`, { replace: true });
         }}
       >
@@ -39,17 +39,17 @@ const FilterExpanded = (props) => {
   let filter = props.filter;
   let filterMap = filter.filterMap;
   let navigate = useNavigate();
-  let filterClicked = props.filterClicked;
+  let filterOrTagClicked = props.filterOrTagClicked;
   let filterSets = [];
 
-  for (const [filterSetName, filterSet] of filterMap) {
+  for (const [tagSetName, tagSetArray] of filterMap) {
     filterSets.push(
       <div className="filter-set">
-        <span className="filter-set-name">{filterSetName}</span>
-        <FilterSet
-          filterSetName={filterSetName}
-          filterSet={filterSet}
-          filterClicked={filterClicked}
+        <span className="filter-set-name">{tagSetName}</span>
+        <TagSet
+          tagSetName={tagSetName}
+          tagSetArray={tagSetArray}
+          filterOrTagClicked={filterOrTagClicked}
         />
       </div>
     );
@@ -60,7 +60,7 @@ const FilterExpanded = (props) => {
       <span
         className="filter-link-expanded"
         onClick={async (event) => {
-          filterClicked("filter");
+          filterOrTagClicked("filter");
           navigate(`/`, { replace: true });
         }}
       >
@@ -71,32 +71,38 @@ const FilterExpanded = (props) => {
   );
 };
 
-const FilterSet = (props) => {
-  let filterSetName = props.filterSetName;
-  let filterSet = props.filterSet;
-  let filterClicked = props.filterClicked;
-  let filterItems = [];
+const TagSet = (props) => {
+  let tagSetName = props.tagSetName;
+  let tagSetArray = props.tagSetArray;
+  let filterOrTagClicked = props.filterOrTagClicked;
+  let tagItems = [];
 
-  filterSet.forEach(function (filterItem, index) {
-    filterItems.push(
-      <FilterItem
-        filterSetName={filterSetName}
-        filterName={filterItem.name}
-        selected={filterItem.selected}
-        filterClicked={filterClicked}
+  tagSetArray.forEach(function (tagItem, index) {
+    tagItems.push(
+      <Tag
+        tagSetName={tagSetName}
+        tagName={tagItem.name}
+        tagCode={tagItem.code}
+        selected={tagItem.selected}
+        filterOrTagClicked={filterOrTagClicked}
       />
     );
   });
 
-  return filterItems;
+  return tagItems;
 };
 
-const FilterItem = (props) => {
-  let filterSetName = props.filterSetName;
-  let filterName = props.filterName;
-  let itemClicked = { filterSetName: filterSetName, filterName: filterName };
+const Tag = (props) => {
+  let tagSetName = props.tagSetName;
+  let tagName = props.tagName;
+  let tagCode = props.tagCode;
+  let itemClicked = {
+    tagSetName: tagSetName,
+    tagName: tagName,
+    tagCode: tagCode
+  };
   let selected = props.selected;
-  let filterClicked = props.filterClicked;
+  let filterOrTagClicked = props.filterOrTagClicked;
   let navigate = useNavigate();
 
   if (selected) {
@@ -104,11 +110,11 @@ const FilterItem = (props) => {
       <span
         className="filter-item-selected"
         onClick={async (event) => {
-          filterClicked(itemClicked);
+          filterOrTagClicked(itemClicked);
           navigate(`/`, { replace: true });
         }}
       >
-        <FontAwesomeIcon icon={faSquareCheck} /> {filterName}
+        <FontAwesomeIcon icon={faSquareCheck} /> {tagName}
         <br />
       </span>
     );
@@ -117,11 +123,11 @@ const FilterItem = (props) => {
       <span
         className="filter-item"
         onClick={async (event) => {
-          filterClicked(itemClicked);
+          filterOrTagClicked(itemClicked);
           navigate(`/`, { replace: true });
         }}
       >
-        <FontAwesomeIcon icon={faSquare} /> {filterName}
+        <FontAwesomeIcon icon={faSquare} /> {tagName}
         <br />
       </span>
     );

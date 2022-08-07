@@ -37,37 +37,38 @@ var filter = {
   filterMap: filterMap
 };
 
-var filterClicked = function (itemClicked) {
+var filterOrTagClicked = function (itemClicked) {
   if (itemClicked === "filter") {
     filter.expanded = !filter.expanded;
   } else {
-    let filterSetName = itemClicked.filterSetName;
-    let filterSet = filter.filterMap.get(filterSetName);
+    let tagSetName = itemClicked.tagSetName;
+    let tagSet = filter.filterMap.get(tagSetName);
     let newSetArray = [];
     let selected = false;
-    filterSet.forEach(function (filterItem, index) {
-      if (filterItem.name === itemClicked.filterName) {
-        selected = !filterItem.selected;
+    tagSet.forEach(function (tagItem, index) {
+      if (tagItem.name === itemClicked.tagName) {
+        selected = !tagItem.selected;
         newSetArray.push({
-          name: filterItem.name,
+          name: tagItem.name,
+          code: tagItem.code,
           selected: selected
         });
       } else {
-        newSetArray.push(filterItem);
+        newSetArray.push(tagItem);
       }
     });
-    filter.filterMap.set(filterSetName, newSetArray);
-    updateRelevancy(itemClicked.filterName, selected);
+    filter.filterMap.set(tagSetName, newSetArray);
+    updateRelevancy(itemClicked.tagCode, selected);
   }
 };
 
-var updateRelevancy = function (tag, selected) {
+var updateRelevancy = function (tagCode, selected) {
   let galleryMap = galleryData.galleryMap;
   let difference = -1;
   if (selected) difference = 1;
   sorted = [];
   galleryMap.forEach(function (image, index) {
-    if (image.tags.has(tag)) {
+    if (image.tags.has(tagCode)) {
       image.relevancy = image.relevancy + difference;
     }
 
@@ -94,7 +95,7 @@ render(
           <App
             cartMap={cartMap}
             filter={filter}
-            filterClicked={filterClicked}
+            filterOrTagClicked={filterOrTagClicked}
             galleryData={galleryData}
           />
         }

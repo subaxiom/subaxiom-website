@@ -11,7 +11,7 @@ import { Social } from "./Social";
 export default function App(props) {
   //let params = useParams();
   let filter = props.filter;
-  let filterClicked = props.filterClicked;
+  let filterOrTagClicked = props.filterOrTagClicked;
   let galleryData = props.galleryData;
 
   return (
@@ -20,7 +20,7 @@ export default function App(props) {
 
       <div className="filterSpace"></div>
       <div>
-        <Filter filter={filter} filterClicked={filterClicked} />
+        <Filter filter={filter} filterOrTagClicked={filterOrTagClicked} />
         <Gallery galleryData={galleryData} />
       </div>
       <Social />

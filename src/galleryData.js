@@ -10,7 +10,7 @@ galleryMap.set("0050", {
   src:
     'url("https://noozavlnmhohizaq5fs363wzzodkmyiibonruu5u55pqapxcei.arweave.net/a52QV_W1h3HRkEOllv27Zy4amYQgLmxpTtO9fAD7iIo")',
   title: "Liberty Toppled",
-  tags: new Set().add("joe biden").add("tony fauci"),
+  tags: new Set().add("blm").add("tony fauci"),
   relevancy: 0
 });
 galleryMap.set("0049", {
@@ -80,7 +80,7 @@ galleryMap.set("0043", {
   src:
     'url("https://6ice2bmbui4pwjuwkrj6k2pq4actzpf3dzgyy4f2guhkdmma.arweave.net/8gRNBY--GiOPsmllRT-5Wnw4AU8vLseTYxwujUOobGA")',
   title: "The Monkey Pox Gang",
-  tags: new Set().add("joe biden").add("tony fauci"),
+  tags: new Set().add("who").add("tony fauci"),
   relevancy: 0
 });
 galleryMap.set("0042", {
@@ -131,7 +131,7 @@ galleryMap.set("0038", {
   src:
     'url("https://4tfdeahcdvflmjz6bz2h27wlqkrfknf7kngidbi4nju36rt4.arweave.net/5MoyAOIdSrYnPg50fX7LgqJVNL9TTIGFHGpp-v0-Z8A")',
   title: "Demon Lori Lightfoot",
-  tags: new Set().add("joe biden").add("tony fauci"),
+  tags: new Set().add("blm").add("tony fauci"),
   relevancy: 0
 });
 galleryMap.set("0037", {
@@ -275,7 +275,7 @@ galleryMap.set("0024", {
   src:
     'url("https://npcryftiaba2kpg3qqrbc7b3ajocpoxfndpstdbstbqwtmacd4.arweave.net/a8UcFmgAQaU824-QiEXw7AlwnuuVo3ymMMphhabACH0")',
   title: "You Are A Racist",
-  tags: new Set().add("joe biden").add("tony fauci"),
+  tags: new Set().add("jbiden").add("blm"),
   relevancy: 0
 });
 galleryMap.set("0023", {
@@ -285,7 +285,7 @@ galleryMap.set("0023", {
   src:
     'url("https://c4voizer7mlwwydlh5oujth5l3sunf4mitx2qvksz3lnvz3y.arweave.net/_FyrkZJH7F2tgaz9dRMz9XuVGl4xE-76hVUs7W2u-d4")',
   title: "Mask Nazis",
-  tags: new Set().add("joe biden").add("tony fauci"),
+  tags: new Set().add("ahitler").add("tony fauci"),
   relevancy: 0
 });
 galleryMap.set("0022", {
