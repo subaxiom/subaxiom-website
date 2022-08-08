@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { galleryData } from "./galleryData";
-import { filterMap } from "./filterData";
+import { topicsMap, peopleMap } from "./filterData";
 
 import App from "./App";
 import ImagePreview from "./Image";
@@ -34,7 +34,8 @@ var removeFromCart = function (imageId) {
 
 var filter = {
   expanded: false,
-  filterMap: filterMap
+  topicsMap: topicsMap,
+  peopleMap: peopleMap
 };
 
 var filterOrTagClicked = function (itemClicked) {
@@ -42,22 +43,17 @@ var filterOrTagClicked = function (itemClicked) {
     filter.expanded = !filter.expanded;
   } else {
     let tagSetName = itemClicked.tagSetName;
-    let tagSet = filter.filterMap.get(tagSetName);
-    let newSetArray = [];
-    let selected = false;
-    tagSet.forEach(function (tagItem, index) {
-      if (tagItem.name === itemClicked.tagName) {
-        selected = !tagItem.selected;
-        newSetArray.push({
-          name: tagItem.name,
-          code: tagItem.code,
-          selected: selected
-        });
-      } else {
-        newSetArray.push(tagItem);
-      }
-    });
-    filter.filterMap.set(tagSetName, newSetArray);
+    let tagSetMap = null;
+    if (tagSetName === "topics") {
+      tagSetMap = filter.topicsMap;
+    }
+    if (tagSetName === "people") {
+      tagSetMap = filter.peopleMap;
+    }
+
+    let selected = !tagSetMap.get(itemClicked.tagCode).selected;
+    tagSetMap.get(itemClicked.tagCode).selected = selected;
+
     updateRelevancy(itemClicked.tagCode, selected);
   }
 };

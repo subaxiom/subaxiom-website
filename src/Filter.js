@@ -37,11 +37,35 @@ const FilterCollapsed = (props) => {
 
 const FilterExpanded = (props) => {
   let filter = props.filter;
-  let filterMap = filter.filterMap;
+  let topicsMap = filter.topicsMap;
+  let peopleMap = filter.peopleMap;
   let navigate = useNavigate();
   let filterOrTagClicked = props.filterOrTagClicked;
   let filterSets = [];
 
+  filterSets.push(
+    <div className="filter-set">
+      <span className="filter-set-name">Topics</span>
+      <TagSet
+        tagSetName="topics"
+        tagSetMap={topicsMap}
+        filterOrTagClicked={filterOrTagClicked}
+      />
+    </div>
+  );
+
+  filterSets.push(
+    <div className="filter-set">
+      <span className="filter-set-name">People</span>
+      <TagSet
+        tagSetName="people"
+        tagSetMap={peopleMap}
+        filterOrTagClicked={filterOrTagClicked}
+      />
+    </div>
+  );
+
+  /*
   for (const [tagSetName, tagSetArray] of filterMap) {
     filterSets.push(
       <div className="filter-set">
@@ -54,6 +78,7 @@ const FilterExpanded = (props) => {
       </div>
     );
   }
+*/
 
   return (
     <div className="filter">
@@ -73,17 +98,17 @@ const FilterExpanded = (props) => {
 
 const TagSet = (props) => {
   let tagSetName = props.tagSetName;
-  let tagSetArray = props.tagSetArray;
+  let tagSetMap = props.tagSetMap;
   let filterOrTagClicked = props.filterOrTagClicked;
   let tagItems = [];
 
-  tagSetArray.forEach(function (tagItem, index) {
+  tagSetMap.forEach((value, key) => {
     tagItems.push(
       <Tag
         tagSetName={tagSetName}
-        tagName={tagItem.name}
-        tagCode={tagItem.code}
-        selected={tagItem.selected}
+        tagCode={key}
+        tagName={value.name}
+        selected={value.selected}
         filterOrTagClicked={filterOrTagClicked}
       />
     );
