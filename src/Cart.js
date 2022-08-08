@@ -47,13 +47,13 @@ const CartComponent = (props) => {
             <br />
             hi-res 4000 x 3000 png
             <br />
-            subAxiom.com watermark removed
+            watermark removed
             <br />
             royalty free license
             <br />
             <br />
             <span
-              className="blue-link"
+              className="smallLink"
               onClick={async (event) => {
                 //alert(url);
                 //history.push(url)
@@ -80,7 +80,7 @@ const CartComponent = (props) => {
       {images}
       <br />
       <br />
-      <Link className="blue-link" to="/">
+      <Link className="bigLink" to="/">
         <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
       </Link>
       <br />

@@ -204,14 +204,25 @@ h4 {
   border: 1px solid #272740;
 }
 
-.blue-link {
+.bigLink {
   color: fuchsia;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.blue-link:active {
+.bigLink:active {
+  color: blue;
+}
+
+.smallLink {
+  color: fuchsia;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.smallLink:active {
   color: blue;
 }
 
