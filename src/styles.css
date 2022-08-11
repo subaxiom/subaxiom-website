@@ -84,7 +84,7 @@ h4 {
   cursor: pointer;
   float: left;
   padding: 1px 8px 1px 8px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .filter-set {
@@ -169,6 +169,24 @@ h4 {
   height: 600px;
   margin: 20px;
   opacity: 1;
+}
+
+.tagsHeader {
+  font-size: 16px;
+  color: #a0a0b8;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.tag {
+  font-size: 14px;
+  color: #a0a0b8;
+  padding: 2px 12px 2px 12px;
+  margin-right: 8px;
+  background-color: #101020;
+  border-radius: 10px;
+  border: 1px solid #272740;
+  vertical-align: middle;
 }
 
 .cartItem {

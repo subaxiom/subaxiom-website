@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { galleryData } from "./galleryData";
+import { topicsMap, peopleMap } from "./filterData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +18,7 @@ const ImageComponent = (props) => {
   let params = useParams();
   let imageId = params.imageId;
   let image = galleryData.galleryMap.get(imageId);
+  let tagSet = image.tags;
   let cartMap = props.cartMap;
 
   return (
@@ -51,6 +53,11 @@ const ImageComponent = (props) => {
             imageId={imageId}
           />
         </div>
+        <br />
+        <br />
+        <span className="tagsHeader">tags: </span>
+        <Tags tagSet={tagSet} />
+        <br />
         <br />
         <br />
         <Link className="bigLink" to="/">
@@ -108,6 +115,23 @@ const AddToCartComponent = (props) => {
       </div>
     );
   }
+};
+
+const Tags = (props) => {
+  let tagSet = props.tagSet;
+
+  let tags = [];
+  let tagName = "";
+
+  function sampleFunction(value) {
+    tagName = topicsMap.get(value);
+    if (!tagName) tagName = peopleMap.get(value);
+    if (tagName) tags.push(<span className="tag">{tagName.name}</span>);
+  }
+
+  tagSet.forEach(sampleFunction);
+
+  return tags;
 };
 
 export const ImagePreview = (props) => {

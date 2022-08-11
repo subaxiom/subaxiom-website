@@ -10,7 +10,7 @@ galleryMap.set("0050", {
   src:
     'url("https://noozavlnmhohizaq5fs363wzzodkmyiibonruu5u55pqapxcei.arweave.net/a52QV_W1h3HRkEOllv27Zy4amYQgLmxpTtO9fAD7iIo")',
   title: "Liberty Toppled",
-  tags: new Set().add("blm").add("tony fauci"),
+  tags: new Set().add("blm").add("tfauci"),
   relevancy: 0
 });
 galleryMap.set("0049", {
