@@ -18,7 +18,8 @@ galleryMap.set("0050", {
     .add("gthink")
     .add("race")
     .add("woke")
-    .add("rewrite"),
+    .add("rewrite")
+    .add("protest"),
   relevancy: 0
 });
 galleryMap.set("0049", {
@@ -38,7 +39,7 @@ galleryMap.set("0048", {
   src:
     'url("https://jbz2webek3bz4qbqnaiqf66bfbtugvc5lwunpzcofrnw6by.arweave.net/SHOrECRWw55AMGgR-AvvBKGdDV-F1-dqNfk_Tixbbwc")',
   title: "Capitol Hill Fly Trap",
-  tags: new Set().add("provoc").add("antifa").add("fflags").add("444"),
+  tags: new Set().add("provoc").add("antifa").add("fflags").add("protest"),
   relevancy: 0
 });
 galleryMap.set("0047", {
@@ -48,7 +49,7 @@ galleryMap.set("0047", {
   src:
     'url("https://eylxg6eit6pcsyfhk4si3gbsvvbnbzwl6igjpytlyjs7ghvfdtcq.arweave.net/JhdzeIifnilgp1ckjZgyrULQ5svyDJfia8Jl8x6lHMU")',
   title: "The Q Shaman",
-  tags: new Set().add("provoc").add("fflags").add("333").add("444"),
+  tags: new Set().add("provoc").add("fflags").add("protest").add("444"),
   relevancy: 0
 });
 galleryMap.set("0046", {
@@ -248,7 +249,6 @@ galleryMap.set("0035", {
     .add("gthink")
     .add("pland")
     .add("popctrl")
-    .add("smedia")
     .add("tctrl")
     .add("vax"),
   relevancy: 0
@@ -572,7 +572,12 @@ galleryMap.set("0014", {
   src:
     'url("https://nogxq72rchgki22xrigfuklbs6zabxut3svpv4zjyxiackca.arweave.net/a414f1ERzKRrV4oMWilhl7IA3pPcqvrzK_cX-QAShAQ")',
   title: "Alex Jones Burning Monk",
-  tags: new Set().add("ajones").add("censor").add("speech").add("hero"),
+  tags: new Set()
+    .add("ajones")
+    .add("censor")
+    .add("speech")
+    .add("hero")
+    .add("protest"),
   relevancy: 0
 });
 galleryMap.set("0013", {
@@ -620,6 +625,7 @@ galleryMap.set("0011", {
     .add("geno")
     .add("pland")
     .add("popctrl")
+    .add("protest")
     .add("hero")
     .add("vax")
     .add("who"),
@@ -670,7 +676,12 @@ galleryMap.set("0008", {
   src:
     'url("https://zdniuqaeoyiofws3xuirltnuxywoklkrmwyhsloy4tginthflcaq.arweave.net/yNqKQAR2EOLaW70RFc20vizlLVFlsHkt2OTMhszlWIE")',
   title: "School Board Meeting",
-  tags: new Set().add("author").add("censor").add("nwo").add("333").add("444"),
+  tags: new Set()
+    .add("author")
+    .add("censor")
+    .add("nwo")
+    .add("protest")
+    .add("444"),
   relevancy: 0
 });
 galleryMap.set("0007", {

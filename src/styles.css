@@ -171,22 +171,29 @@ h4 {
   opacity: 1;
 }
 
+.tagsSection {
+  max-width: 300px;
+  display: inline-block;
+}
+
 .tagsHeader {
   font-size: 16px;
-  color: #a0a0b8;
-  margin-right: 4px;
+  color: #d0d0f0;
+  margin: 4px;
   vertical-align: middle;
+  float: left;
 }
 
 .tag {
-  font-size: 14px;
+  font-size: 12px;
   color: #a0a0b8;
   padding: 2px 12px 2px 12px;
-  margin-right: 8px;
+  margin: 4px;
   background-color: #101020;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid #272740;
   vertical-align: middle;
+  float: left;
 }
 
 .cartItem {

@@ -55,8 +55,10 @@ const ImageComponent = (props) => {
         </div>
         <br />
         <br />
-        <span className="tagsHeader">tags: </span>
-        <Tags tagSet={tagSet} />
+        <div className="tagsSection">
+          <div className="tagsHeader">tags: </div>
+          <Tags tagSet={tagSet} />
+        </div>
         <br />
         <br />
         <br />
