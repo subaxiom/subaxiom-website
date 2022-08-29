@@ -4,6 +4,7 @@ import { galleryData } from "./galleryData";
 import { topicsMap, peopleMap } from "./filterData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
+import { Gallery } from "./Gallery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -24,52 +25,65 @@ const ImageComponent = (props) => {
   return (
     <div className="page-wrapper top-buffer">
       <NavBar cartMap={cartMap} />
-      <div
-        style={{
-          backgroundImage: image.src,
-          backgroundSize: "800px 600px",
-          backgroundRepeat: "no-repeat"
-        }}
-        className="image-preview"
-        key={imageId}
-        alt={image.title}
-      />
-      <div className="caption-wrapper">
-        <h2>{image.title}</h2>
-        <div className="caption">
-          $19.99
+
+      <div className="pageSection">
+        <div
+          style={{
+            backgroundImage: image.src,
+            backgroundSize: "800px 600px",
+            backgroundRepeat: "no-repeat"
+          }}
+          className="image-preview"
+          key={imageId}
+          alt={image.title}
+        />
+
+        <div className="caption-wrapper">
+          <h2>{image.title}</h2>
+
+          <div className="caption">
+            $19.99
+            <br />
+            hi-res 4000 x 3000 png
+            <br />
+            watermark removed
+            <br />
+            royalty free license
+            <br />
+            <br />
+            <AddToCartComponent
+              cartMap={cartMap}
+              addToCart={props.addToCart}
+              removeFromCart={props.removeFromCart}
+              imageId={imageId}
+            />
+          </div>
+
           <br />
-          hi-res 4000 x 3000 png
           <br />
-          watermark removed
+          <Link className="bigLink" to="/">
+            <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
+          </Link>
           <br />
-          royalty free license
+          <br />
+
+          <br />
+          <div className="tagsSection">
+            <div className="tagsHeader">tags: </div>
+            <Tags tagSet={tagSet} />
+          </div>
           <br />
           <br />
-          <AddToCartComponent
-            cartMap={cartMap}
-            addToCart={props.addToCart}
-            removeFromCart={props.removeFromCart}
-            imageId={imageId}
-          />
         </div>
-        <br />
-        <br />
-        <div className="tagsSection">
-          <div className="tagsHeader">tags: </div>
-          <Tags tagSet={tagSet} />
-        </div>
-        <br />
-        <br />
-        <br />
-        <Link className="bigLink" to="/">
-          <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
-        </Link>
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
+
+      <br />
+      <br />
+      <div className="tagsHeader">similar images: </div>
+      <Gallery galleryData={galleryData} />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

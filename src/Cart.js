@@ -20,7 +20,7 @@ const CartComponent = (props) => {
       "-" + image.thumbnailX + "px -" + image.thumbnailY + "px";
     //url = href + 'image/' + key;
     images.push(
-      <div className="cartItem">
+      <div className="pageSection">
         <div
           className="thumbnail"
           key={imageId}

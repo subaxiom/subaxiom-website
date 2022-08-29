@@ -140,7 +140,7 @@ h4 {
   width: 300px;
   height: 225px;
   margin: 20px;
-  float: left;
+  display: inline-block;
   border: double #404040 4px;
   cursor: pointer;
 }
@@ -161,14 +161,21 @@ h4 {
   }
 }
 
+.pageSection {
+  display: block;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #272740;
+}
+
 .image-preview {
   animation: 0.2s ease-out 0s 1 zoom-in;
-  float: left;
+  display: inline-block;
   border: double #404048 4px;
   width: 800px;
   height: 600px;
-  margin: 20px;
+  margin-right: 20px;
   opacity: 1;
+  vertical-align: top;
 }
 
 .tagsSection {
@@ -181,7 +188,7 @@ h4 {
   color: #d0d0f0;
   margin: 4px;
   vertical-align: middle;
-  float: left;
+  display: inline-block;
 }
 
 .tag {
@@ -193,13 +200,7 @@ h4 {
   border-radius: 6px;
   border: 1px solid #272740;
   vertical-align: middle;
-  float: left;
-}
-
-.cartItem {
-  width: 100%;
   display: inline-block;
-  border-bottom: 1px solid #303048;
 }
 
 .social-wrapper {
@@ -213,8 +214,9 @@ h4 {
 }
 
 .caption-wrapper {
-  margin: 20px;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
 }
 
 .caption {
@@ -231,6 +233,7 @@ h4 {
 
 .bigLink {
   color: fuchsia;
+  display: inline-block;
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
