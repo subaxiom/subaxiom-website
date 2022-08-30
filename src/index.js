@@ -100,7 +100,7 @@ var findSimilar = function (imageId, tagSet) {
   tagSet.forEach(incrementSimilarityScoreIfMatch);
 
   galleryMap.forEach(function (image, index) {
-    if (imageId !== index) {
+    if (imageId !== index && image.similarity > 0) {
       similar.push({ imageId: index, similarity: image.similarity });
     }
   });

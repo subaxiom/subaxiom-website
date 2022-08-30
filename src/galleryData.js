@@ -49,7 +49,7 @@ galleryMap.set("0047", {
   src:
     'url("https://eylxg6eit6pcsyfhk4si3gbsvvbnbzwl6igjpytlyjs7ghvfdtcq.arweave.net/JhdzeIifnilgp1ckjZgyrULQ5svyDJfia8Jl8x6lHMU")',
   title: "The Q Shaman",
-  tags: new Set().add("provoc").add("fflags").add("protest").add("444"),
+  tags: new Set().add("provoc").add("fflags").add("protest"),
   relevancy: 0
 });
 galleryMap.set("0046", {
@@ -161,7 +161,7 @@ galleryMap.set("0040", {
   src:
     'url("https://v5t7tgcbv4fdxaazumyqb7qrcec2xeuy65kjc6hty6tiqra3cq.arweave.net/r2f5mEGvCjuAGaMxAP4REQWrkpj3VJF488emiEQb-FA")',
   title: "Bezos Seeks the Ring",
-  tags: new Set().add("jbezos").add("elitist").add("333").add("444"),
+  tags: new Set().add("jbezos").add("elitist"),
   relevancy: 0
 });
 galleryMap.set("0039", {
@@ -260,7 +260,7 @@ galleryMap.set("0034", {
   src:
     'url("https://6mksq3unfyzsgjezpndluqruza7ovrqwqekeryukmyfdszjooe.arweave.net/8xUobo0uMy-MkmXtGukI0yD7qxhaBFEjiimYKOWUucU")',
   title: "Wheelbarrow of Cash",
-  tags: new Set().add("banks").add("infla").add("333").add("444"),
+  tags: new Set().add("banks").add("infla"),
   relevancy: 0
 });
 galleryMap.set("0033", {
@@ -676,12 +676,7 @@ galleryMap.set("0008", {
   src:
     'url("https://zdniuqaeoyiofws3xuirltnuxywoklkrmwyhsloy4tginthflcaq.arweave.net/yNqKQAR2EOLaW70RFc20vizlLVFlsHkt2OTMhszlWIE")',
   title: "School Board Meeting",
-  tags: new Set()
-    .add("author")
-    .add("censor")
-    .add("nwo")
-    .add("protest")
-    .add("444"),
+  tags: new Set().add("author").add("censor").add("nwo").add("protest"),
   relevancy: 0
 });
 galleryMap.set("0007", {
