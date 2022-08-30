@@ -13,6 +13,7 @@ export default function App(props) {
   let filter = props.filter;
   let filterOrTagClicked = props.filterOrTagClicked;
   let galleryData = props.galleryData;
+  let scrollToTop = props.scrollToTop;
 
   return (
     <div className="App">
@@ -21,7 +22,7 @@ export default function App(props) {
       <div className="filterSpace"></div>
       <div>
         <Filter filter={filter} filterOrTagClicked={filterOrTagClicked} />
-        <Gallery galleryData={galleryData} />
+        <Gallery galleryData={galleryData} scrollToTop={scrollToTop} />
       </div>
       <Social />
     </div>

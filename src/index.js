@@ -130,6 +130,7 @@ render(
             filter={filter}
             filterOrTagClicked={filterOrTagClicked}
             galleryData={galleryData}
+            scrollToTop={scrollToTop}
           />
         }
       />
@@ -147,7 +148,13 @@ render(
       />
       <Route
         path="cart"
-        element={<Cart cartMap={cartMap} removeFromCart={removeFromCart} />}
+        element={
+          <Cart
+            cartMap={cartMap}
+            removeFromCart={removeFromCart}
+            scrollToTop={scrollToTop}
+          />
+        }
       />
     </Routes>
   </BrowserRouter>,

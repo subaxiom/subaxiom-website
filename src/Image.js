@@ -23,7 +23,7 @@ const ImageComponent = (props) => {
   let cartMap = props.cartMap;
   let findSimilar = props.findSimilar;
   let scrollToTop = props.scrollToTop;
-  scrollToTop();
+  //scrollToTop();
 
   findSimilar(imageId, tagSet);
 
@@ -85,7 +85,11 @@ const ImageComponent = (props) => {
       <br />
 
       <div className="tagsHeader">similar images: </div>
-      <Gallery galleryData={galleryData} justSimilar />
+      <Gallery
+        galleryData={galleryData}
+        scrollToTop={scrollToTop}
+        justSimilar
+      />
       <br />
       <br />
       <br />

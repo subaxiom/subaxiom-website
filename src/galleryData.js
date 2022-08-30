@@ -618,7 +618,7 @@ galleryMap.set("0011", {
   thumbnailY: 225,
   src:
     'url("https://2x4zyfnbmr6zbbpwsbksbeqjtsimffjunsck2wwpqvgydrnu.arweave.net/1fmcFaFkfZCF9pBVIJIJnJ_DClTRshK1az4VN_gcW00")',
-  title: "V Places Flower in Syringe",
+  title: "V's Peaceful Protest",
   tags: new Set()
     .add("covid")
     .add("eugen")

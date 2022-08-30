@@ -12,6 +12,7 @@ const CartComponent = (props) => {
   let navigate = useNavigate();
   let removeFromCart = props.removeFromCart;
   let cartMap = props.cartMap;
+  let scrollToTop = props.scrollToTop;
 
   let images = [];
   //let url = null;
@@ -30,6 +31,7 @@ const CartComponent = (props) => {
             //alert(url);
             //history.push(url)
             navigate(`/image/${imageId}`, { replace: true });
+            scrollToTop();
           }}
         >
           <div
