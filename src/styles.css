@@ -179,8 +179,9 @@ h4 {
 }
 
 .tagsSection {
-  max-width: 300px;
-  display: inline-block;
+  display: block;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #272740;
 }
 
 .tagsHeader {

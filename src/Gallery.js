@@ -6,16 +6,17 @@ import { useNavigate } from "react-router-dom";
 //import history from './history';
 
 const GalleryComponent = (props) => {
-  //var href = window.location.href;
   let galleryData = props.galleryData;
   let galleryMap = galleryData.galleryMap;
-  let sort = galleryData.sort;
-  //alert(JSON.stringify(sorted));
+  let imageArray = galleryData.sort;
+  let justSimilar = props.justSimilar;
+
+  if (justSimilar) imageArray = galleryData.similar;
+
   let navigate = useNavigate();
   let images = [];
-  //let url = null;
 
-  sort.forEach(function (arrayItem) {
+  imageArray.forEach(function (arrayItem) {
     var imageId = arrayItem.imageId;
     var image = galleryMap.get(imageId);
     var backgroundPos =
@@ -71,9 +72,10 @@ const GalleryComponent = (props) => {
 
 export const Gallery = (props) => {
   let galleryData = props.galleryData;
+  let justSimilar = props.justSimilar;
   return (
     <div className="page-wrapper">
-      <GalleryComponent galleryData={galleryData} />
+      <GalleryComponent galleryData={galleryData} justSimilar={justSimilar} />
     </div>
   );
 };

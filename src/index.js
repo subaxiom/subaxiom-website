@@ -20,6 +20,7 @@ ReactDOM.render(
 
 var cartMap = new Map();
 let sorted = [];
+let similar = [];
 
 var addToCart = function (imageId) {
   var image = galleryData.galleryMap.get(imageId);
@@ -80,6 +81,42 @@ var updateRelevancy = function (tagCode, selected) {
   //var newMap = new Map([...galleryMap].sort((a, b) => a[1].relevancy > b[1].relevancy));
 };
 
+var findSimilar = function (imageId, tagSet) {
+  let galleryMap = galleryData.galleryMap;
+  similar = [];
+
+  galleryMap.forEach(function (image, index) {
+    image.similarity = 0;
+  });
+
+  function incrementSimilarityScoreIfMatch(value) {
+    galleryMap.forEach(function (image, index) {
+      if (image.tags.has(value)) {
+        image.similarity = image.similarity + 1;
+      }
+    });
+  }
+
+  tagSet.forEach(incrementSimilarityScoreIfMatch);
+
+  galleryMap.forEach(function (image, index) {
+    if (imageId !== index) {
+      similar.push({ imageId: index, similarity: image.similarity });
+    }
+  });
+
+  similar.sort(function (a, b) {
+    return b.similarity - a.similarity;
+  });
+  similar = similar.slice(0, 10);
+
+  galleryData.similar = similar;
+};
+
+var scrollToTop = function () {
+  window.scrollTo(0, 0);
+};
+
 //updateRelevancy();
 
 render(
@@ -103,6 +140,8 @@ render(
             cartMap={cartMap}
             addToCart={addToCart}
             removeFromCart={removeFromCart}
+            findSimilar={findSimilar}
+            scrollToTop={scrollToTop}
           />
         }
       />

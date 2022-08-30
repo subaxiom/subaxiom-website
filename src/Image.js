@@ -21,6 +21,11 @@ const ImageComponent = (props) => {
   let image = galleryData.galleryMap.get(imageId);
   let tagSet = image.tags;
   let cartMap = props.cartMap;
+  let findSimilar = props.findSimilar;
+  let scrollToTop = props.scrollToTop;
+  scrollToTop();
+
+  findSimilar(imageId, tagSet);
 
   return (
     <div className="page-wrapper top-buffer">
@@ -68,19 +73,19 @@ const ImageComponent = (props) => {
           <br />
 
           <br />
-          <div className="tagsSection">
-            <div className="tagsHeader">tags: </div>
-            <Tags tagSet={tagSet} />
-          </div>
-          <br />
-          <br />
         </div>
+      </div>
+      <br />
+
+      <div className="tagsSection">
+        <div className="tagsHeader">tags: </div>
+        <Tags tagSet={tagSet} />
       </div>
 
       <br />
-      <br />
+
       <div className="tagsHeader">similar images: </div>
-      <Gallery galleryData={galleryData} />
+      <Gallery galleryData={galleryData} justSimilar />
       <br />
       <br />
       <br />
@@ -139,13 +144,13 @@ const Tags = (props) => {
   let tags = [];
   let tagName = "";
 
-  function sampleFunction(value) {
+  function addTagHtml(value) {
     tagName = topicsMap.get(value);
     if (!tagName) tagName = peopleMap.get(value);
     if (tagName) tags.push(<span className="tag">{tagName.name}</span>);
   }
 
-  tagSet.forEach(sampleFunction);
+  tagSet.forEach(addTagHtml);
 
   return tags;
 };
