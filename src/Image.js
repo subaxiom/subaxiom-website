@@ -11,8 +11,7 @@ import {
   faCircleArrowLeft,
   faXmark,
   faCartShopping,
-  faDownload,
-  faLink
+  faArrowUpRightFromSquare
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 //import history from './history';
@@ -58,16 +57,7 @@ const ImageComponent = (props) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faDownload} />
-          </a>
-
-          <a
-            className="shareLink"
-            href={image.src}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLink} />
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
 
           <div className="caption">
