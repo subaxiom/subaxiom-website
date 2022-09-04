@@ -10,8 +10,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
   faXmark,
-  faCartShopping
+  faCartShopping,
+  faDownload,
+  faLink
 } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
@@ -36,7 +39,7 @@ const ImageComponent = (props) => {
       <div className="pageSection">
         <div
           style={{
-            backgroundImage: image.src,
+            backgroundImage: 'url("' + image.src + '")',
             backgroundSize: "800px 600px",
             backgroundRepeat: "no-repeat"
           }}
@@ -47,6 +50,24 @@ const ImageComponent = (props) => {
 
         <div className="caption-wrapper">
           <h2>{image.title}</h2>
+
+          <a
+            className="shareLink"
+            href={image.src}
+            download
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faDownload} />
+          </a>
+
+          <Link className="shareLink" to={image.src} download>
+            <FontAwesomeIcon icon={faLink} />
+          </Link>
+
+          <Link className="shareLink" to={image.src}>
+            <FontAwesomeIcon icon={faTwitter} />
+          </Link>
 
           <div className="caption">
             $19.99
