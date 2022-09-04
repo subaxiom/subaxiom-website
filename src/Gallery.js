@@ -10,7 +10,7 @@ const GalleryComponent = (props) => {
   let galleryMap = galleryData.galleryMap;
   let imageArray = galleryData.sort;
   let justSimilar = props.justSimilar;
-  let scrollToTop = props.scrollToTop;
+  let scrollToVertical = props.scrollToVertical;
 
   if (justSimilar) imageArray = galleryData.similar;
 
@@ -25,6 +25,7 @@ const GalleryComponent = (props) => {
 
     images.push(
       <div
+        id={imageId}
         style={{
           backgroundImage: `url(${loadingGif})`,
           backgroundPosition: "center",
@@ -38,7 +39,7 @@ const GalleryComponent = (props) => {
           //alert(url);
           //history.push(url)
           navigate(`/image/${imageId}`, { replace: true });
-          scrollToTop();
+          scrollToVertical(0);
         }}
       >
         <div
@@ -75,14 +76,14 @@ const GalleryComponent = (props) => {
 export const Gallery = (props) => {
   let galleryData = props.galleryData;
   let justSimilar = props.justSimilar;
-  let scrollToTop = props.scrollToTop;
+  let scrollToVertical = props.scrollToVertical;
 
   return (
     <div className="page-wrapper">
       <GalleryComponent
         galleryData={galleryData}
         justSimilar={justSimilar}
-        scrollToTop={scrollToTop}
+        scrollToVertical={scrollToVertical}
       />
     </div>
   );

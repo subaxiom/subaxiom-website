@@ -113,8 +113,8 @@ var findSimilar = function (imageId, tagSet) {
   galleryData.similar = similar;
 };
 
-var scrollToTop = function () {
-  window.scrollTo(0, 0);
+var scrollToVertical = function (y) {
+  window.scrollTo(0, y);
 };
 
 //updateRelevancy();
@@ -130,7 +130,7 @@ render(
             filter={filter}
             filterOrTagClicked={filterOrTagClicked}
             galleryData={galleryData}
-            scrollToTop={scrollToTop}
+            scrollToVertical={scrollToVertical}
           />
         }
       />
@@ -142,7 +142,7 @@ render(
             addToCart={addToCart}
             removeFromCart={removeFromCart}
             findSimilar={findSimilar}
-            scrollToTop={scrollToTop}
+            scrollToVertical={scrollToVertical}
           />
         }
       />
@@ -152,7 +152,7 @@ render(
           <Cart
             cartMap={cartMap}
             removeFromCart={removeFromCart}
-            scrollToTop={scrollToTop}
+            scrollToVertical={scrollToVertical}
           />
         }
       />

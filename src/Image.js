@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { galleryData } from "./galleryData";
 import { topicsMap, peopleMap } from "./filterData";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +23,8 @@ const ImageComponent = (props) => {
   let tagSet = image.tags;
   let cartMap = props.cartMap;
   let findSimilar = props.findSimilar;
-  let scrollToTop = props.scrollToTop;
+  let scrollToVertical = props.scrollToVertical;
+  let returnLink = "/#" + imageId;
   //scrollToTop();
 
   findSimilar(imageId, tagSet);
@@ -66,7 +68,7 @@ const ImageComponent = (props) => {
 
           <br />
           <br />
-          <Link className="bigLink" to="/">
+          <Link className="bigLink" to={returnLink}>
             <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
           </Link>
           <br />
@@ -87,7 +89,7 @@ const ImageComponent = (props) => {
       <div className="tagsHeader">similar images: </div>
       <Gallery
         galleryData={galleryData}
-        scrollToTop={scrollToTop}
+        scrollToVertical={scrollToVertical}
         justSimilar
       />
       <br />

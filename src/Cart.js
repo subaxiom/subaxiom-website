@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -12,14 +13,13 @@ const CartComponent = (props) => {
   let navigate = useNavigate();
   let removeFromCart = props.removeFromCart;
   let cartMap = props.cartMap;
-  let scrollToTop = props.scrollToTop;
+  let scrollToVertical = props.scrollToVertical;
 
   let images = [];
   //let url = null;
   for (const [imageId, image] of cartMap) {
     var backgroundPos =
       "-" + image.thumbnailX + "px -" + image.thumbnailY + "px";
-    //url = href + 'image/' + key;
     images.push(
       <div className="pageSection">
         <div
@@ -31,7 +31,7 @@ const CartComponent = (props) => {
             //alert(url);
             //history.push(url)
             navigate(`/image/${imageId}`, { replace: true });
-            scrollToTop();
+            scrollToVertical(0);
           }}
         >
           <div
