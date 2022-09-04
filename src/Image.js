@@ -28,6 +28,7 @@ const ImageComponent = (props) => {
   let findSimilar = props.findSimilar;
   let scrollToVertical = props.scrollToVertical;
   let returnLink = "/#" + imageId;
+  //let twitterLink = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(image.src);
   //scrollToTop();
 
   findSimilar(imageId, tagSet);
@@ -54,20 +55,20 @@ const ImageComponent = (props) => {
           <a
             className="shareLink"
             href={image.src}
-            download
             rel="noopener noreferrer"
             target="_blank"
           >
             <FontAwesomeIcon icon={faDownload} />
           </a>
 
-          <Link className="shareLink" to={image.src} download>
+          <a
+            className="shareLink"
+            href={image.src}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faLink} />
-          </Link>
-
-          <Link className="shareLink" to={image.src}>
-            <FontAwesomeIcon icon={faTwitter} />
-          </Link>
+          </a>
 
           <div className="caption">
             $19.99
