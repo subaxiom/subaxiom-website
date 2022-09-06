@@ -7,6 +7,7 @@ import { topicsMap, peopleMap } from "./filterData";
 import App from "./App";
 import ImagePreview from "./Image";
 import Cart from "./Cart";
+import StripeCheckout from "./StripeCheckout";
 //import Gallery from "./Gallery";
 /*
 const rootElement = document.getElementById("root");
@@ -150,6 +151,16 @@ render(
         path="cart"
         element={
           <Cart
+            cartMap={cartMap}
+            removeFromCart={removeFromCart}
+            scrollToVertical={scrollToVertical}
+          />
+        }
+      />
+      <Route
+        path="stripecheckout"
+        element={
+          <StripeCheckout
             cartMap={cartMap}
             removeFromCart={removeFromCart}
             scrollToVertical={scrollToVertical}

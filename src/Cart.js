@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight
+} from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
@@ -72,16 +75,24 @@ const CartComponent = (props) => {
   }
 
   if (images.length === 0) {
-    images.push(<div className="caption">No items in cart.</div>);
+    images.push(
+      <div className="pageSection">
+        <div className="caption">No items in cart.</div>
+      </div>
+    );
   }
 
   return (
     <div className="page-wrapper top-buffer">
-      <h2>shopping cart ({cartMap.size})</h2>
+      <h2>shopping cart ({cartMap.size} images)</h2>
       <NavBar cartMap={cartMap} />
       {images}
+
+      <ProceedToCheckout cartMap={cartMap} />
+
       <br />
       <br />
+
       <Link className="bigLink" to="/">
         <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
       </Link>
@@ -91,6 +102,32 @@ const CartComponent = (props) => {
       <br />
     </div>
   );
+};
+
+const ProceedToCheckout = (props) => {
+  let navigate = useNavigate();
+  let cartMap = props.cartMap;
+
+  let html = [];
+
+  if (cartMap.size > 0) {
+    html.push(<br />);
+    html.push(<br />);
+    html.push(
+      <div
+        className="greenButton"
+        onClick={async (event) => {
+          navigate(`/stripecheckout`, { replace: true });
+        }}
+      >
+        Proceed to Checkout &nbsp;
+        <FontAwesomeIcon icon={faCircleArrowRight} />
+      </div>
+    );
+    html.push(<br />);
+    html.push(<br />);
+  }
+  return html;
 };
 
 export const Cart = (props) => {

@@ -13,7 +13,7 @@ import {
   faCartShopping,
   faArrowUpRightFromSquare
 } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+//import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
@@ -68,6 +68,7 @@ const ImageComponent = (props) => {
             watermark removed
             <br />
             royalty free license
+            <br />
             <br />
             <br />
             <AddToCartComponent
