@@ -24,6 +24,7 @@ ReactDOM.render(
 var cartMap = new Map();
 let sorted = [];
 let similar = [];
+let chris = process.env.CHRIS;
 
 var addToCart = function (imageId) {
   var image = galleryData.galleryMap.get(imageId);
@@ -186,6 +187,7 @@ render(
             cartMap={cartMap}
             removeFromCart={removeFromCart}
             scrollToVertical={scrollToVertical}
+            chris={chris}
           />
         }
       />

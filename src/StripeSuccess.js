@@ -10,7 +10,7 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const StripeSuccessComponent = (props) => {
   let cartMap = props.cartMap;
   let invoiceTable = [];
-  let chris = process.env.CHRIS;
+  let chris = props.chris;
   let total = 0;
 
   for (const [imageId, image] of cartMap) {
