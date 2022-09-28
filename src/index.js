@@ -24,7 +24,7 @@ ReactDOM.render(
 var cartMap = new Map();
 let sorted = [];
 let similar = [];
-let chris = process.env.REACT_CHRIS;
+let chris = process.env.REACT_APP_CHRIS;
 
 var addToCart = function (imageId) {
   var image = galleryData.galleryMap.get(imageId);
