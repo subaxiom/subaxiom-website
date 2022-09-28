@@ -24,7 +24,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build --env VERCEL_ENV=$VERCEL_ENV",
+    "build": "react-scripts build --env CHRIS=$CHRIS",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
