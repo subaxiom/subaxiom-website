@@ -50,6 +50,7 @@ const StripeSuccessComponent = (props) => {
         <br />
         STRIPE SUCCESS
         <br />
+        {process.env.CHRIS}
         <br />
         <br />
         <br />
