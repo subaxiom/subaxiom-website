@@ -7,7 +7,7 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
 
-const StripeCheckoutComponent = (props) => {
+const StripeErrorComponent = (props) => {
   let cartMap = props.cartMap;
   let invoiceTable = [];
 
@@ -48,7 +48,7 @@ const StripeCheckoutComponent = (props) => {
         <br />
         <br />
         <br />
-        STRIPE CREDIT CARD FORM GOES HERE
+        STRIPE ERROR :(
         <br />
         <br />
         <br />
@@ -69,10 +69,10 @@ const StripeCheckoutComponent = (props) => {
   );
 };
 
-export const StripeCheckout = (props) => {
+export const StripeError = (props) => {
   return (
     <div>
-      <StripeCheckoutComponent
+      <StripeErrorComponent
         removeFromCart={props.removeFromCart}
         cartMap={props.cartMap}
       />
@@ -80,4 +80,4 @@ export const StripeCheckout = (props) => {
   );
 };
 
-export default StripeCheckoutComponent;
+export default StripeErrorComponent;

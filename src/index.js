@@ -8,6 +8,8 @@ import App from "./App";
 import ImagePreview from "./Image";
 import Cart from "./Cart";
 import StripeCheckout from "./StripeCheckout";
+import StripeError from "./StripeError";
+import StripeSuccess from "./StripeSuccess";
 //import Gallery from "./Gallery";
 /*
 const rootElement = document.getElementById("root");
@@ -161,6 +163,26 @@ render(
         path="stripecheckout"
         element={
           <StripeCheckout
+            cartMap={cartMap}
+            removeFromCart={removeFromCart}
+            scrollToVertical={scrollToVertical}
+          />
+        }
+      />
+      <Route
+        path="stripeerror"
+        element={
+          <StripeError
+            cartMap={cartMap}
+            removeFromCart={removeFromCart}
+            scrollToVertical={scrollToVertical}
+          />
+        }
+      />
+      <Route
+        path="stripesuccess"
+        element={
+          <StripeSuccess
             cartMap={cartMap}
             removeFromCart={removeFromCart}
             scrollToVertical={scrollToVertical}
