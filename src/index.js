@@ -10,6 +10,7 @@ import Cart from "./Cart";
 import StripeCheckout from "./StripeCheckout";
 import StripeError from "./StripeError";
 import StripeSuccess from "./StripeSuccess";
+import Keys from "./Keys";
 //import Gallery from "./Gallery";
 /*
 const rootElement = document.getElementById("root");
@@ -188,6 +189,16 @@ render(
             scrollToVertical={scrollToVertical}
           />
         }
+      />
+
+      <Route path="keys" element={<Keys cartMap={cartMap} />} />
+      <Route
+        path="keys/:encryptedMessage"
+        element={<Keys cartMap={cartMap} />}
+      />
+      <Route
+        path="keys/:encryptedMessage/:decryptedCipher"
+        element={<Keys cartMap={cartMap} />}
       />
     </Routes>
   </BrowserRouter>,
