@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,9 +9,14 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 //import { withRouter } from "react-router";
 
 const StripeSuccessComponent = (props) => {
+  let params = useParams();
   let cartMap = props.cartMap;
+  let decrypt = props.decrypt;
+  let cipherHex = params.cipherHex;
+  let nonceHex = params.nonceHex;
+  let decryptedMessage = decrypt(cipherHex, nonceHex);
   let invoiceTable = [];
-  let chris = process.env.REACT_APP_CHRIS; //test
+  //let chris = process.env.REACT_APP_CHRIS; //test
   let total = 0;
 
   for (const [imageId, image] of cartMap) {
@@ -50,7 +56,7 @@ const StripeSuccessComponent = (props) => {
         <br />
         STRIPE SUCCESS
         <br />
-        {chris}
+        {decryptedMessage}
         <br />
         <br />
         <br />
@@ -76,6 +82,7 @@ export const StripeSuccess = (props) => {
       <StripeSuccessComponent
         removeFromCart={props.removeFromCart}
         cartMap={props.cartMap}
+        decrypt={props.decrypt}
       />
     </div>
   );

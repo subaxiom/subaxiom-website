@@ -9,6 +9,13 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const StripeCheckoutComponent = (props) => {
   let cartMap = props.cartMap;
+  let encrypt = props.encrypt;
+
+  let cipherNonce = encrypt("this is the secret message");
+  let cipherHex = cipherNonce.cipherHex;
+  let nonceHex = cipherNonce.nonceHex;
+  let successLink = "/stripesuccess/" + cipherHex + "/" + nonceHex;
+
   let invoiceTable = [];
 
   let total = 0;
@@ -60,7 +67,7 @@ const StripeCheckoutComponent = (props) => {
       </Link>
       <br />
       <br />
-      <Link to="/stripesuccess">stripe success page</Link>
+      <Link to={successLink}>stripe success page</Link>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/stripeerror">stripe error page</Link>
       <br />
@@ -75,6 +82,7 @@ export const StripeCheckout = (props) => {
       <StripeCheckoutComponent
         removeFromCart={props.removeFromCart}
         cartMap={props.cartMap}
+        encrypt={props.encrypt}
       />
     </div>
   );

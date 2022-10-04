@@ -11,6 +11,9 @@ import StripeCheckout from "./StripeCheckout";
 import StripeError from "./StripeError";
 import StripeSuccess from "./StripeSuccess";
 import Keys from "./Keys";
+import nacl from "tweetnacl";
+import naclUtil from "tweetnacl-util";
+nacl.util = naclUtil;
 //import Gallery from "./Gallery";
 /*
 const rootElement = document.getElementById("root");
@@ -121,6 +124,55 @@ var scrollToVertical = function (y) {
   window.scrollTo(0, y);
 };
 
+var bytesToHex = function (bytes) {
+  return Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join(
+    ""
+  );
+};
+
+var hexToBytes = function (hex) {
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i !== bytes.length; i++) {
+    bytes[i] = parseInt(hex.substr(i * 2, 2), 16);
+  }
+  return bytes;
+};
+
+var encrypt = function (message) {
+  let senderSecretKeyHex = process.env.REACT_APP_SENDER_SECRET_KEY_V1;
+  let receiverPublicKeyHex = process.env.REACT_APP_RECEIVER_PUBLIC_KEY_V1;
+  let senderSecretKeyBytes = hexToBytes(senderSecretKeyHex);
+  let receiverPublicKeyBytes = hexToBytes(receiverPublicKeyHex);
+  let nonceBytes = nacl.randomBytes(24);
+  let nonceHex = bytesToHex(nonceBytes);
+  let cipherBytes = nacl.box(
+    nacl.util.decodeUTF8(message),
+    nonceBytes,
+    receiverPublicKeyBytes,
+    senderSecretKeyBytes
+  );
+  let cipherHex = bytesToHex(cipherBytes);
+  return { cipherHex: cipherHex, nonceHex: nonceHex };
+};
+
+var decrypt = function (cipherHex, nonceHex) {
+  let senderPublicKeyHex = process.env.REACT_APP_SENDER_PUBLIC_KEY_V1;
+  let receiverSecretKeyHex = process.env.REACT_APP_RECEIVER_SECRET_KEY_V1;
+  let senderPublicKeyBytes = hexToBytes(senderPublicKeyHex);
+  let receiverSecretKeyBytes = hexToBytes(receiverSecretKeyHex);
+  let nonceBytes = hexToBytes(nonceHex);
+  let cipherBytes = hexToBytes(cipherHex);
+
+  let decryptedCipher = nacl.box.open(
+    cipherBytes,
+    nonceBytes,
+    senderPublicKeyBytes,
+    receiverSecretKeyBytes
+  );
+  let decryptedPlainText = nacl.util.encodeUTF8(decryptedCipher);
+  return decryptedPlainText;
+};
+
 //updateRelevancy();
 
 render(
@@ -167,6 +219,7 @@ render(
             cartMap={cartMap}
             removeFromCart={removeFromCart}
             scrollToVertical={scrollToVertical}
+            encrypt={encrypt}
           />
         }
       />
@@ -181,12 +234,13 @@ render(
         }
       />
       <Route
-        path="stripesuccess"
+        path="stripesuccess/:cipherHex/:nonceHex"
         element={
           <StripeSuccess
             cartMap={cartMap}
             removeFromCart={removeFromCart}
             scrollToVertical={scrollToVertical}
+            decrypt={decrypt}
           />
         }
       />
