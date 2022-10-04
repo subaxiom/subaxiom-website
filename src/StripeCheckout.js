@@ -10,15 +10,10 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const StripeCheckoutComponent = (props) => {
   let cartMap = props.cartMap;
   let encrypt = props.encrypt;
-
-  let cipherNonce = encrypt("this is the secret message");
-  let cipherHex = cipherNonce.cipherHex;
-  let nonceHex = cipherNonce.nonceHex;
-  let successLink = "/stripesuccess/" + cipherHex + "/" + nonceHex;
-
   let invoiceTable = [];
 
   let total = 0;
+  let imageIds = "";
 
   for (const [imageId, image] of cartMap) {
     invoiceTable.push(
@@ -28,6 +23,7 @@ const StripeCheckoutComponent = (props) => {
       </tr>
     );
     total = total + 19.99;
+    imageIds = imageIds + imageId;
   }
   total = total.toFixed(2);
   invoiceTable.push(
@@ -40,6 +36,11 @@ const StripeCheckoutComponent = (props) => {
       </td>
     </tr>
   );
+
+  let cipherNonce = encrypt(imageIds);
+  let cipherHex = cipherNonce.cipherHex;
+  let nonceHex = cipherNonce.nonceHex;
+  let successLink = "/stripesuccess/" + cipherHex + "/" + nonceHex;
 
   return (
     <div className="page-wrapper top-buffer">
