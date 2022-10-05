@@ -41,7 +41,7 @@ const StripeCheckoutComponent = (props) => {
   let cipherNonce = encrypt(imageIds);
   let cipherHex = cipherNonce.cipherHex;
   let nonceHex = cipherNonce.nonceHex;
-  let successLink = "/stripesuccess/" + cipherHex + "/" + nonceHex;
+  let successLink = "/download/" + cipherHex + "/" + nonceHex;
 
   return (
     <div className="page-wrapper top-buffer">

@@ -3,17 +3,17 @@ import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { galleryData } from "./galleryData";
 import { topicsMap, peopleMap } from "./filterData";
-
 import App from "./App";
 import ImagePreview from "./Image";
 import Cart from "./Cart";
 import StripeCheckout from "./StripeCheckout";
 import StripeError from "./StripeError";
-import StripeSuccess from "./StripeSuccess";
+import Download from "./Download";
 import Keys from "./Keys";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
 nacl.util = naclUtil;
+
 //import Gallery from "./Gallery";
 /*
 const rootElement = document.getElementById("root");
@@ -234,13 +234,12 @@ render(
         }
       />
       <Route
-        path="stripesuccess/:cipherHex/:nonceHex"
+        path="download/:cipherHex/:nonceHex"
         element={
-          <StripeSuccess
+          <Download
             cartMap={cartMap}
             removeFromCart={removeFromCart}
             galleryData={galleryData}
-            scrollToVertical={scrollToVertical}
             decrypt={decrypt}
           />
         }

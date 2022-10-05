@@ -1,11 +1,9 @@
 import React from "react";
 import "./styles.css";
 import loadingGif from "./img/loading.gif";
-import { useNavigate } from "react-router-dom";
 
 const ImageThumbnailComponent = (props) => {
-  let navigate = useNavigate();
-  let scrollToVertical = props.scrollToVertical;
+  let thumbnailOnclick = props.thumbnailOnclick;
   let image = props.image;
   var backgroundPos = "-" + image.thumbnailX + "px -" + image.thumbnailY + "px";
 
@@ -22,10 +20,7 @@ const ImageThumbnailComponent = (props) => {
       title={image.relevancy}
       alt={image.title}
       onClick={async (event) => {
-        //alert(url);
-        //history.push(url)
-        navigate(`/image/${image.imageId}`, { replace: true });
-        scrollToVertical(0);
+        thumbnailOnclick(image.imageId);
       }}
     >
       <div
@@ -43,7 +38,7 @@ export const ImageThumbnail = (props) => {
   return (
     <ImageThumbnailComponent
       image={props.image}
-      scrollToVertical={props.scrollToVertical}
+      thumbnailOnclick={props.thumbnailOnclick}
     />
   );
 };
