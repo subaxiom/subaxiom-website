@@ -239,6 +239,7 @@ render(
           <StripeSuccess
             cartMap={cartMap}
             removeFromCart={removeFromCart}
+            galleryData={galleryData}
             scrollToVertical={scrollToVertical}
             decrypt={decrypt}
           />

@@ -1,9 +1,13 @@
 import React from "react";
+import { ImageThumbnail } from "./ImageThumbnail";
 import { useParams } from "react-router-dom";
 import { NavBar } from "./NavBar";
 
 const StripeSuccessComponent = (props) => {
   let params = useParams();
+  let galleryData = props.galleryData;
+  let galleryMap = galleryData.galleryMap;
+  let scrollToVertical = props.scrollToVertical;
   let cartMap = props.cartMap;
   let decrypt = props.decrypt;
   let cipherHex = params.cipherHex;
@@ -12,8 +16,15 @@ const StripeSuccessComponent = (props) => {
 
   const imageIds = decryptedMessage.split("-");
 
-  for (var i = 0; i < imageIds; i++) {
-    alert(imageIds[i]);
+  let images = [];
+  for (var i = 0; i < imageIds.length; i++) {
+    var imageId = imageIds[i];
+    var image = galleryMap.get(imageId);
+    image.imageId = imageId;
+
+    images.push(
+      <ImageThumbnail image={image} scrollToVertical={scrollToVertical} />
+    );
   }
 
   return (
@@ -24,10 +35,10 @@ const StripeSuccessComponent = (props) => {
       <br />
       <br />
       <div className="pageSection">
+        {images}
         <br />
         <br />
         <br />
-        STRIPE SUCCESS
         <br />
         <br />
         {decryptedMessage}
@@ -49,6 +60,8 @@ export const StripeSuccess = (props) => {
     <div>
       <StripeSuccessComponent
         removeFromCart={props.removeFromCart}
+        galleryMap={props.galleryMap}
+        scrollToVertical={props.scrollToVertical}
         cartMap={props.cartMap}
         decrypt={props.decrypt}
       />
