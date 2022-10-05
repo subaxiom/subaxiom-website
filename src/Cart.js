@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { NavBar } from "./NavBar";
+import { ImageThumbnail } from "./ImageThumbnail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -18,33 +19,17 @@ const CartComponent = (props) => {
   let cartMap = props.cartMap;
   let scrollToVertical = props.scrollToVertical;
 
+  let thumbnailOnclick = function (imageId) {
+    navigate(`/image/${imageId}`, { replace: true });
+    scrollToVertical(0);
+  };
+
   let images = [];
   //let url = null;
   for (const [imageId, image] of cartMap) {
-    var backgroundPos =
-      "-" + image.thumbnailX + "px -" + image.thumbnailY + "px";
     images.push(
       <div className="pageSection">
-        <div
-          className="thumbnail"
-          key={imageId}
-          title={image.relevancy}
-          alt={image.title}
-          onClick={async (event) => {
-            //alert(url);
-            //history.push(url)
-            navigate(`/image/${imageId}`, { replace: true });
-            scrollToVertical(0);
-          }}
-        >
-          <div
-            style={{
-              backgroundImage: `url(${image.thumbnailSrc})`,
-              backgroundPosition: `${backgroundPos}`,
-              backgroundRepeat: "no-repeat"
-            }}
-          />
-        </div>
+        <ImageThumbnail image={image} thumbnailOnclick={thumbnailOnclick} />
         <div className="caption-wrapper">
           <h3>{image.title}</h3>
           <div className="caption">
@@ -136,6 +121,7 @@ export const Cart = (props) => {
       <CartComponent
         removeFromCart={props.removeFromCart}
         cartMap={props.cartMap}
+        scrollToVertical={props.scrollToVertical}
       />
     </div>
   );

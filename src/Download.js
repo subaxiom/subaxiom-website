@@ -24,7 +24,9 @@ const DownloadComponent = (props) => {
     image.imageId = imageId;
 
     images.push(
-      <ImageThumbnail image={image} thumbnailOnclick={thumbnailOnclick} />
+      <div className="pageSection">
+        <ImageThumbnail image={image} thumbnailOnclick={thumbnailOnclick} />
+      </div>
     );
   }
 
