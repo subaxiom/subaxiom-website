@@ -1,12 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
 import { NavBar } from "./NavBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
-//import history from './history';
-//import { galleryMap } from "./galleryData";
-//import { withRouter } from "react-router";
 
 const StripeSuccessComponent = (props) => {
   let params = useParams();
@@ -15,40 +9,19 @@ const StripeSuccessComponent = (props) => {
   let cipherHex = params.cipherHex;
   let nonceHex = params.nonceHex;
   let decryptedMessage = decrypt(cipherHex, nonceHex);
-  let invoiceTable = [];
-  //let chris = process.env.REACT_APP_CHRIS; //test
-  let total = 0;
 
-  for (const [imageId, image] of cartMap) {
-    invoiceTable.push(
-      <tr id={imageId}>
-        <td>{image.title}</td>
-        <td>$19.99</td>
-      </tr>
-    );
-    total = total + 19.99;
+  const imageIds = decryptedMessage.split("-");
+
+  for (var i = 0; i < imageIds; i++) {
+    alert(imageIds[i]);
   }
-  total = total.toFixed(2);
-  invoiceTable.push(
-    <tr>
-      <td>
-        <b>TOTAL</b>
-      </td>
-      <td>
-        <b>${total}</b>
-      </td>
-    </tr>
-  );
 
   return (
     <div className="page-wrapper top-buffer">
       <NavBar cartMap={cartMap} />
-      <h2>checkout ({cartMap.size} images)</h2>
+      <h2>thank you for your business!</h2>
       <br />
       <br />
-      <div className="pageSection">
-        <table className="invoiceTable">{invoiceTable}</table>
-      </div>
       <br />
       <div className="pageSection">
         <br />
@@ -56,20 +29,13 @@ const StripeSuccessComponent = (props) => {
         <br />
         STRIPE SUCCESS
         <br />
-        {decryptedMessage}
         <br />
         <br />
         <br />
       </div>
       <br />
-      <Link className="bigLink" to="/cart">
-        <FontAwesomeIcon icon={faCircleArrowLeft} /> return to shopping cart
-      </Link>
       <br />
       <br />
-      <Link to="/stripesuccess">stripe success page</Link>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/stripeerror">stripe error page</Link>
       <br />
       <br />
     </div>

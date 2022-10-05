@@ -23,7 +23,7 @@ const StripeCheckoutComponent = (props) => {
       </tr>
     );
     total = total + 19.99;
-    imageIds = imageIds + imageId;
+    imageIds = imageIds + "-" + imageId;
   }
   total = total.toFixed(2);
   invoiceTable.push(
@@ -37,6 +37,7 @@ const StripeCheckoutComponent = (props) => {
     </tr>
   );
 
+  imageIds = imageIds.substring(1);
   let cipherNonce = encrypt(imageIds);
   let cipherHex = cipherNonce.cipherHex;
   let nonceHex = cipherNonce.nonceHex;
