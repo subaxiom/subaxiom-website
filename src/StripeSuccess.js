@@ -30,7 +30,9 @@ const StripeSuccessComponent = (props) => {
         STRIPE SUCCESS
         <br />
         <br />
+        {decryptedMessage}
         <br />
+        {imageIds.length}
         <br />
       </div>
       <br />
