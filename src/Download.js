@@ -25,9 +25,6 @@ const DownloadComponent = (props) => {
     var imageId = imageIds[i];
     var image = galleryMap.get(imageId);
     image.imageId = imageId;
-    let saveFile = () => {
-      saveAs(image.src, image.title.replaceAll(" ", "") + ".jpg");
-    };
 
     images.push(
       <div className="pageSection">
@@ -44,7 +41,12 @@ const DownloadComponent = (props) => {
             royalty free license
             <br />
             <br />
-            <div className="greenButton" onClick={saveFile}>
+            <div
+              className="greenButton"
+              onClick={async (event) => {
+                saveAs(image.src, image.title.replaceAll(" ", "") + ".jpg");
+              }}
+            >
               <FontAwesomeIcon icon={faDownload} /> Download
             </div>
           </div>
