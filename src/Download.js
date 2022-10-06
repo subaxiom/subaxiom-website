@@ -14,10 +14,6 @@ const DownloadComponent = (props) => {
   let nonceHex = params.nonceHex;
   let decryptedMessage = decrypt(cipherHex, nonceHex);
 
-  let thumbnailOnclick = function () {
-    alert("do nothing please");
-  };
-
   const imageIds = decryptedMessage.split("-");
 
   let images = [];
@@ -31,7 +27,7 @@ const DownloadComponent = (props) => {
 
     images.push(
       <div className="pageSection">
-        <ImageThumbnail image={image} thumbnailOnclick={thumbnailOnclick} />
+        <ImageThumbnail image={image} thumbnailOnclick={saveFile} />
         <div className="caption-wrapper">
           <h3>{image.title}</h3>
           <div className="caption">
@@ -55,7 +51,8 @@ const DownloadComponent = (props) => {
 
   return (
     <div className="page-wrapper">
-      <h2>thank you for your business!</h2>
+      <h2>Thank you for your business!</h2>
+      <br />
       <br />
       {images}
       <br />
