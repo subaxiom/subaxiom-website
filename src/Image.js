@@ -32,7 +32,7 @@ const ImageComponent = (props) => {
   //let twitterLink = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(image.src);
   //scrollToTop();
   const saveFile = () => {
-    saveAs(image.src, image.title.replace(" ", "") + ".jpg");
+    saveAs(image.src, image.title.replaceAll(" ", "") + ".jpg");
   };
 
   findSimilar(imageId, tagSet);
