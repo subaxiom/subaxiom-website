@@ -1,6 +1,9 @@
 import React from "react";
 import { ImageThumbnail } from "./ImageThumbnail";
 import { useParams } from "react-router-dom";
+import { saveAs } from "file-saver";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const DownloadComponent = (props) => {
   let params = useParams();
@@ -22,10 +25,30 @@ const DownloadComponent = (props) => {
     var imageId = imageIds[i];
     var image = galleryMap.get(imageId);
     image.imageId = imageId;
+    const saveFile = () => {
+      saveAs(image.src, image.title.replace(" ", "") + ".jpg");
+    };
 
     images.push(
       <div className="pageSection">
         <ImageThumbnail image={image} thumbnailOnclick={thumbnailOnclick} />
+        <div className="caption-wrapper">
+          <h3>{image.title}</h3>
+          <div className="caption">
+            $19.99
+            <br />
+            hi-res 4000 x 3000 png
+            <br />
+            watermark removed
+            <br />
+            royalty free license
+            <br />
+            <br />
+            <div className="greenButton" onClick={saveFile}>
+              <FontAwesomeIcon icon={faDownload} /> Download
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -34,19 +57,7 @@ const DownloadComponent = (props) => {
     <div className="page-wrapper">
       <h2>thank you for your business!</h2>
       <br />
-      <br />
-      <div className="pageSection">
-        {images}
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        {decryptedMessage}
-        <br />
-        {imageIds.length}
-        <br />
-      </div>
+      {images}
       <br />
       <br />
       <br />

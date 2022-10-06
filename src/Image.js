@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { saveAs } from "file-saver";
 import { HashLink as Link } from "react-router-hash-link";
 import { galleryData } from "./galleryData";
 import { topicsMap, peopleMap } from "./filterData";
@@ -11,7 +12,8 @@ import {
   faCircleArrowLeft,
   faXmark,
   faCartShopping,
-  faArrowUpRightFromSquare
+  faArrowUpRightFromSquare,
+  faDownload
 } from "@fortawesome/free-solid-svg-icons";
 //import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 //import history from './history';
@@ -29,6 +31,9 @@ const ImageComponent = (props) => {
   let returnLink = "/#" + imageId;
   //let twitterLink = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(image.src);
   //scrollToTop();
+  const saveFile = () => {
+    saveAs(image.src, image.title.replace(" ", "") + ".jpg");
+  };
 
   findSimilar(imageId, tagSet);
 
@@ -50,6 +55,10 @@ const ImageComponent = (props) => {
 
         <div className="caption-wrapper">
           <h2>{image.title}</h2>
+
+          <button className="shareLink" onClick={saveFile}>
+            <FontAwesomeIcon icon={faDownload} />
+          </button>
 
           <a
             className="shareLink"

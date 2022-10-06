@@ -248,8 +248,9 @@ h4 {
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  padding-left: 20px;
+  padding-left: 14px;
   vertical-align: middle;
+  background-color: black;
 }
 
 .bigLink:active {
@@ -298,8 +299,8 @@ h4 {
 }
 
 .largeInput {
-  width:90%;
-  font-size:16px;
-  padding:6px;
-  border-radius:6px;
+  width: 90%;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
 }
