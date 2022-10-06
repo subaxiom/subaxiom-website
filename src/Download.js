@@ -22,10 +22,10 @@ const DownloadComponent = (props) => {
 
   let images = [];
   for (var i = 0; i < imageIds.length; i++) {
-    var imageId = imageIds[i];
-    var image = galleryMap.get(imageId);
+    let imageId = imageIds[i];
+    let image = galleryMap.get(imageId);
     image.imageId = imageId;
-    image.saveFile = () => {
+    let saveFile = () => {
       saveAs(image.src, image.title.replaceAll(" ", "") + ".jpg");
     };
 
@@ -44,7 +44,7 @@ const DownloadComponent = (props) => {
             royalty free license
             <br />
             <br />
-            <div className="greenButton" onClick={image.saveFile}>
+            <div className="greenButton" onClick={saveFile}>
               <FontAwesomeIcon icon={faDownload} /> Download
             </div>
           </div>
