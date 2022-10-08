@@ -21,8 +21,9 @@ const DownloadComponent = (props) => {
     let imageId = imageIds[i];
     let image = galleryMap.get(imageId);
     image.imageId = imageId;
+    let original = decrypt(image.original, image.nonce);
     let saveFile = () => {
-      saveAs(image.preview, image.title.replaceAll(" ", "") + ".jpg");
+      saveAs(original, image.title.replaceAll(" ", "") + ".png");
     };
 
     images.push(

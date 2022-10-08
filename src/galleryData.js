@@ -571,6 +571,9 @@ galleryMap.set("0014", {
   thumbnailY: 225,
   preview:
     "https://nogxq72rchgki22xrigfuklbs6zabxut3svpv4zjyxiackca.arweave.net/a414f1ERzKRrV4oMWilhl7IA3pPcqvrzK_cX-QAShAQ",
+  original:
+    "7adb2925314b6ce2f8059238f64a9761bf69dae9447e5b3ee4bcbde12618320451cef7638808568a75dc222c452e302ae7cbf68119db18e15e286beac1f766244cf8500f27ee45bbfb1f5d510ff98743059cff37c63fc98d8935ca79f47a98971f11e21f5952b75e1aca79f3f30005f6e05a56e2ea342b962f5b219adf18ac7b9c223807",
+  nonce: "0312c976dccfdab26c0d8f894f0b3913aea1f3aa98fc4cb9",
   title: "Alex Jones Burning Monk",
   tags: new Set()
     .add("ajones")

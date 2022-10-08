@@ -10,7 +10,7 @@ const UploadComponent = (props) => {
   let nonce = params.nonce;
 
   let textAreaValue =
-    "original: " + encryptedUrl + ",\nnonce: " + nonce + ",\n";
+    'original: "' + encryptedUrl + '",\nnonce: "' + nonce + '",\n';
 
   let arweaveUrl = "";
   let setArweaveUrl = function (value) {
