@@ -10,6 +10,7 @@ import StripeCheckout from "./StripeCheckout";
 import StripeError from "./StripeError";
 import Download from "./Download";
 import Keys from "./Keys";
+import Upload from "./Upload";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
 nacl.util = naclUtil;
@@ -245,14 +246,17 @@ render(
         }
       />
 
-      <Route path="keys" element={<Keys cartMap={cartMap} />} />
-      <Route
-        path="keys/:encryptedMessage"
-        element={<Keys cartMap={cartMap} />}
-      />
+      <Route path="keys" element={<Keys />} />
+      <Route path="keys/:encryptedMessage" element={<Keys />} />
       <Route
         path="keys/:encryptedMessage/:decryptedCipher"
-        element={<Keys cartMap={cartMap} />}
+        element={<Keys />}
+      />
+
+      <Route path="upload" element={<Upload encrypt={encrypt} />} />
+      <Route
+        path="upload/:encryptedUrl/:nonce"
+        element={<Upload encrypt={encrypt} />}
       />
     </Routes>
   </BrowserRouter>,

@@ -38,9 +38,9 @@ const StripeCheckoutComponent = (props) => {
   );
 
   imageIds = imageIds.substring(1);
-  let cipherNonce = encrypt(imageIds);
-  let cipherHex = cipherNonce.cipherHex;
-  let nonceHex = cipherNonce.nonceHex;
+  let cipher = encrypt(imageIds);
+  let cipherHex = cipher.cipherHex;
+  let nonceHex = cipher.nonceHex;
   let successLink = "/download/" + cipherHex + "/" + nonceHex;
 
   return (

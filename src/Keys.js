@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { NavBar } from "./NavBar";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
 nacl.util = naclUtil;
@@ -29,7 +28,6 @@ const KeysComponent = (props) => {
   let navigate = useNavigate();
   let encryptedMessage = params.encryptedMessage;
   let decryptedCipher = params.decryptedCipher;
-  let cartMap = props.cartMap;
   let keyPair = nacl.box.keyPair();
   let nonce = nacl.randomBytes(24);
 
@@ -104,8 +102,7 @@ const KeysComponent = (props) => {
   };
 
   return (
-    <div className="page-wrapper top-buffer">
-      <NavBar cartMap={cartMap} />
+    <div className="page-wrapper">
       <br />
 
       <div className="pageSection">
