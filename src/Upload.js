@@ -41,7 +41,12 @@ const UploadComponent = (props) => {
         <br />
         <br />
         <br />
-        <div className="greenButton" onClick={encryptArweaveUrl()}>
+        <div
+          className="greenButton"
+          onClick={async (event) => {
+            encryptArweaveUrl();
+          }}
+        >
           Get Encrypted URL & nonce
         </div>
         <br />
