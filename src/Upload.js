@@ -54,12 +54,16 @@ const UploadComponent = (props) => {
         </div>
         <br />
         <br />
-        {encryptedUrl}
         <br />
         <br />
-        {nonce}
         <br />
-        <textarea value={textAreaValue} rows={10} cols={100} />
+        <br />
+        <textarea
+          className="myTextarea"
+          value={textAreaValue}
+          rows={10}
+          cols={200}
+        />
         <br />
       </div>
     </div>
