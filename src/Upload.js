@@ -9,6 +9,8 @@ const UploadComponent = (props) => {
   let encryptedUrl = params.encryptedUrl;
   let nonce = params.nonce;
 
+  let textAreaValue = "This is the text area value \nthis is the new line";
+
   let arweaveUrl = "";
   let setArweaveUrl = function (value) {
     arweaveUrl = value;
@@ -56,6 +58,7 @@ const UploadComponent = (props) => {
         <br />
         {nonce}
         <br />
+        <textarea value={textAreaValue} rows={10} cols={100} />
         <br />
       </div>
     </div>

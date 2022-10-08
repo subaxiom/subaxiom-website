@@ -29,10 +29,10 @@ const ImageComponent = (props) => {
   let findSimilar = props.findSimilar;
   let scrollToVertical = props.scrollToVertical;
   let returnLink = "/#" + imageId;
-  //let twitterLink = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(image.src);
+  //let twitterLink = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(image.preview);
   //scrollToTop();
   const saveFile = () => {
-    saveAs(image.src, image.title.replaceAll(" ", "") + ".jpg");
+    saveAs(image.preview, image.title.replaceAll(" ", "") + ".jpg");
   };
 
   findSimilar(imageId, tagSet);
@@ -44,7 +44,7 @@ const ImageComponent = (props) => {
       <div className="pageSection">
         <div
           style={{
-            backgroundImage: 'url("' + image.src + '")',
+            backgroundImage: 'url("' + image.preview + '")',
             backgroundSize: "800px 600px",
             backgroundRepeat: "no-repeat"
           }}
@@ -62,7 +62,7 @@ const ImageComponent = (props) => {
 
           <a
             className="shareLink"
-            href={image.src}
+            href={image.preview}
             rel="noopener noreferrer"
             target="_blank"
           >

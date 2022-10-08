@@ -22,7 +22,7 @@ const DownloadComponent = (props) => {
     let image = galleryMap.get(imageId);
     image.imageId = imageId;
     let saveFile = () => {
-      saveAs(image.src, image.title.replaceAll(" ", "") + ".jpg");
+      saveAs(image.preview, image.title.replaceAll(" ", "") + ".jpg");
     };
 
     images.push(
