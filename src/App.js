@@ -6,8 +6,6 @@ import { Gallery } from "./Gallery";
 import { Filter } from "./Filter";
 import { Social } from "./Social";
 
-//import { useParams } from "react-router-dom";
-
 export default function App(props) {
   //let params = useParams();
   let filter = props.filter;
