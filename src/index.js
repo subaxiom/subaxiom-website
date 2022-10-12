@@ -11,6 +11,8 @@ import StripeError from "./StripeError";
 import Download from "./Download";
 import Keys from "./Keys";
 import Upload from "./Upload";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
 nacl.util = naclUtil;
@@ -174,6 +176,15 @@ var decrypt = function (cipherHex, nonceHex) {
   return decryptedPlainText;
 };
 
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+
+const options = {
+  // passing the client secret obtained from the server
+  clientSecret: process.env.REACT_APP_STRIPE_SECRET_KEY
+};
+//process.env.REACT_APP_STRIPE_SECRET_KEY
+//process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
+
 //updateRelevancy();
 
 render(
@@ -216,12 +227,14 @@ render(
       <Route
         path="stripecheckout"
         element={
-          <StripeCheckout
-            cartMap={cartMap}
-            removeFromCart={removeFromCart}
-            scrollToVertical={scrollToVertical}
-            encrypt={encrypt}
-          />
+          <Elements stripe={stripePromise} options={options}>
+            <StripeCheckout
+              cartMap={cartMap}
+              removeFromCart={removeFromCart}
+              scrollToVertical={scrollToVertical}
+              encrypt={encrypt}
+            />
+          </Elements>
         }
       />
       <Route
