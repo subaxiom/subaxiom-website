@@ -3,6 +3,8 @@ import { HashLink as Link } from "react-router-hash-link";
 import { NavBar } from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm";
 //import history from './history';
 //import { galleryMap } from "./galleryData";
 //import { withRouter } from "react-router";
@@ -10,6 +12,8 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const StripeCheckoutComponent = (props) => {
   let cartMap = props.cartMap;
   let encrypt = props.encrypt;
+  let stripe = props.stripe;
+  let options = props.options;
   let invoiceTable = [];
 
   let total = 0;
@@ -57,7 +61,11 @@ const StripeCheckoutComponent = (props) => {
         <br />
         <br />
         <br />
-        STRIPE CREDIT CARD FORM GOES HERE
+
+        <Elements stripe={stripe} options={options}>
+          <CheckoutForm />
+        </Elements>
+
         <br />
         <br />
         <br />
@@ -82,6 +90,8 @@ export const StripeCheckout = (props) => {
   return (
     <div>
       <StripeCheckoutComponent
+        stripe={props.stripe}
+        options={props.options}
         removeFromCart={props.removeFromCart}
         cartMap={props.cartMap}
         encrypt={props.encrypt}

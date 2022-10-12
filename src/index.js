@@ -6,13 +6,11 @@ import { topicsMap, peopleMap } from "./filterData";
 import App from "./App";
 import ImagePreview from "./Image";
 import Cart from "./Cart";
-//import StripeCheckout from "./StripeCheckout";
-import CheckoutForm from "./CheckoutForm";
+import StripeCheckout from "./StripeCheckout";
 import StripeError from "./StripeError";
 import Download from "./Download";
 import Keys from "./Keys";
 import Upload from "./Upload";
-import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
@@ -228,9 +226,14 @@ render(
       <Route
         path="stripecheckout"
         element={
-          <Elements stripe={stripePromise} options={options}>
-            <CheckoutForm />
-          </Elements>
+          <StripeCheckout
+            stripe={stripePromise}
+            options={options}
+            cartMap={cartMap}
+            encrypt={encrypt}
+            removeFromCart={removeFromCart}
+            scrollToVertical={scrollToVertical}
+          />
         }
       />
       <Route
