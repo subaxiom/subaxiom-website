@@ -5,7 +5,7 @@ import {
   PaymentElement
 } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm(props) {
+const CheckoutFormComponent = (props) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -44,4 +44,14 @@ export default function CheckoutForm(props) {
       <button disabled={!stripe}>Submit</button>
     </form>
   );
-}
+};
+
+export const CheckoutForm = (props) => {
+  return (
+    <div>
+      <CheckoutFormComponent />
+    </div>
+  );
+};
+
+export default CheckoutFormComponent;
