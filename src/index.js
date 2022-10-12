@@ -6,7 +6,8 @@ import { topicsMap, peopleMap } from "./filterData";
 import App from "./App";
 import ImagePreview from "./Image";
 import Cart from "./Cart";
-import StripeCheckout from "./StripeCheckout";
+//import StripeCheckout from "./StripeCheckout";
+import CheckoutForm from "./CheckoutForm";
 import StripeError from "./StripeError";
 import Download from "./Download";
 import Keys from "./Keys";
@@ -228,12 +229,7 @@ render(
         path="stripecheckout"
         element={
           <Elements stripe={stripePromise} options={options}>
-            <StripeCheckout
-              cartMap={cartMap}
-              removeFromCart={removeFromCart}
-              scrollToVertical={scrollToVertical}
-              encrypt={encrypt}
-            />
+            <CheckoutForm />
           </Elements>
         }
       />
