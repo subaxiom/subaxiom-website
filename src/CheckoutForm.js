@@ -1,10 +1,11 @@
+import React from "react";
 import {
   useStripe,
   useElements,
   PaymentElement
 } from "@stripe/react-stripe-js";
 
-export const CheckoutForm = () => {
+export default function CheckoutForm(props) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -43,4 +44,4 @@ export const CheckoutForm = () => {
       <button disabled={!stripe}>Submit</button>
     </form>
   );
-};
+}
