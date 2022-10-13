@@ -6,6 +6,9 @@ import { topicsMap, peopleMap } from "./filterData";
 import App from "./App";
 import ImagePreview from "./Image";
 import Cart from "./Cart";
+import { Elements } from "@stripe/react-stripe-js";
+//import SplitForm from "./SplitForm";
+//import Stripe from "stripe";
 import StripeCheckout from "./StripeCheckout";
 import StripeError from "./StripeError";
 import Download from "./Download";
@@ -14,18 +17,8 @@ import Upload from "./Upload";
 import { loadStripe } from "@stripe/stripe-js";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
-nacl.util = naclUtil;
 
-//import Gallery from "./Gallery";
-/*
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  rootElement
-);
-*/
+nacl.util = naclUtil;
 
 var cartMap = new Map();
 let sorted = [];
@@ -175,12 +168,8 @@ var decrypt = function (cipherHex, nonceHex) {
   return decryptedPlainText;
 };
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe("pk_test_BHICQOZBIeU7XNLbLDTeZMA4000yyW4WW3");
 
-const options = {
-  // passing the client secret obtained from the server
-  clientSecret: process.env.REACT_APP_STRIPE_SECRET_KEY
-};
 //process.env.REACT_APP_STRIPE_SECRET_KEY
 //process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
 
@@ -204,13 +193,15 @@ render(
       <Route
         path="image/:imageId"
         element={
-          <ImagePreview
-            cartMap={cartMap}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-            findSimilar={findSimilar}
-            scrollToVertical={scrollToVertical}
-          />
+          <Elements stripe={stripePromise}>
+            <ImagePreview
+              cartMap={cartMap}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+              findSimilar={findSimilar}
+              scrollToVertical={scrollToVertical}
+            />
+          </Elements>
         }
       />
       <Route
@@ -223,12 +214,12 @@ render(
           />
         }
       />
+
       <Route
         path="stripecheckout"
         element={
           <StripeCheckout
             stripe={stripePromise}
-            options={options}
             cartMap={cartMap}
             encrypt={encrypt}
             removeFromCart={removeFromCart}
@@ -236,6 +227,7 @@ render(
           />
         }
       />
+
       <Route
         path="stripeerror"
         element={
