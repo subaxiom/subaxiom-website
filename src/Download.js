@@ -62,7 +62,7 @@ const DownloadComponent = (props) => {
                   buttonElement.parentElement.children[0].style.display =
                     "inline";
                   saveFile();
-                  await new Promise((resolve) => setTimeout(resolve, 3000));
+                  await new Promise((resolve) => setTimeout(resolve, 8000));
                   buttonElement.style.display = "inline";
                   buttonElement.parentElement.children[0].style.display =
                     "none";

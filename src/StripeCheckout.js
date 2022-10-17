@@ -138,6 +138,7 @@ const StripeCreditCardForm = (props) => {
     field: null,
     message: null
   });
+  const [email, setEmail] = useState(null);
 
   let stripeSecretKey = "sk_test_tN0JNQsxVA6hJekv699aRqbY00MqX4ONBw";
   if (!testMode) {
@@ -194,7 +195,9 @@ const StripeCreditCardForm = (props) => {
           "amount=" +
           amountInteger +
           "&currency=usd&confirm=true&payment_method=" +
-          paymentMethodId
+          paymentMethodId +
+          "&receipt_email=" +
+          email
       };
       const response = await fetch(
         "https://api.stripe.com/v1/payment_intents",
@@ -229,6 +232,9 @@ const StripeCreditCardForm = (props) => {
             type="email"
             placeholder="jane.doe@example.com"
             required
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
           />
         </label>
         <label>
