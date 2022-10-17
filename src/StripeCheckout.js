@@ -111,7 +111,6 @@ const useOptions = () => {
       base: {
         fontSize: "20px",
         color: "#424770",
-        letterSpacing: "0.025em",
         fontFamily: "Roboto, Source Code Pro, monospace, SFUIDisplay",
         "::placeholder": { color: "#aaaacc" }
       },
@@ -222,6 +221,16 @@ const StripeCreditCardForm = (props) => {
     <form onSubmit={handleSubmit}>
       <ErrorMessage errorMessage={errorMessage} />
       <div className="caption">
+        <label>
+          Email
+          <input
+            className="StripeElement stripeEmail"
+            name="email"
+            type="email"
+            placeholder="jane.doe@example.com"
+            required
+          />
+        </label>
         <label>
           Card number
           <CardNumberElement

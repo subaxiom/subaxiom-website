@@ -46,7 +46,7 @@ const ImageComponent = (props) => {
         <div
           style={{
             backgroundImage: 'url("' + image.preview + '")',
-            backgroundSize: "800px 600px",
+            backgroundSize: "100%",
             backgroundRepeat: "no-repeat"
           }}
           className="image-preview"

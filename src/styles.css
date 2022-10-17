@@ -174,7 +174,8 @@ h4 {
   display: inline-block;
   border: double #404048 4px;
   width: 800px;
-  height: 600px;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
   margin-right: 20px;
   opacity: 1;
   vertical-align: top;
@@ -251,6 +252,7 @@ h4 {
   padding-left: 14px;
   vertical-align: middle;
   background-color: black;
+  border: none;
 }
 
 .bigLink:active {
@@ -315,7 +317,7 @@ h4 {
   display: block;
   margin: 4px 0 14px 0;
   padding: 4px 10px;
-  font-family: "Source Code Pro", monospace;
+  font-family: Roboto, Source Code Pro, monospace, SFUIDisplay;
   box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
     rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   border: 0;
@@ -324,14 +326,34 @@ h4 {
   background: white;
 }
 
+input::placeholder {
+  color: #aaaacc;
+}
+
+input:focus,
+.StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+    rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.stripeEmail {
+  font-size: 20px;
+  width: 280px;
+}
+
 .stripeCardNumber {
-  width: 220px;
+  font-size: 20px;
+  width: 250px;
 }
 
 .stripeExpiration {
-  width: 84px;
+  font-size: 20px;
+  width: 120px;
 }
 
 .stripeCvc {
-  width: 36px;
+  font-size: 20px;
+  width: 80px;
 }
