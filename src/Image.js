@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { saveAs } from "file-saver";
 import { HashLink as Link } from "react-router-hash-link";
@@ -7,13 +7,6 @@ import { topicsMap, peopleMap } from "./filterData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { Gallery } from "./Gallery";
-import {
-  useStripe,
-  useElements,
-  CardNumberElement,
-  CardCvcElement,
-  CardExpiryElement
-} from "@stripe/react-stripe-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -128,7 +121,7 @@ const ImageComponent = (props) => {
       <br />
       <br />
       <br />
-      <SplitForm />
+
       <br />
       <br />
       <br />
@@ -208,134 +201,9 @@ export const ImagePreview = (props) => {
         cartMap={props.cartMap}
         addToCart={props.addToCart}
         removeFromCart={props.removeFromCart}
+        testMode={props.testMode}
       />
     </div>
-  );
-};
-
-const useOptions = () => {
-  //const fontSize = useResponsiveFontSize();
-  const options = useMemo(
-    () => ({
-      style: {
-        base: {
-          //fontSize,
-          color: "#424770",
-          letterSpacing: "0.025em",
-          fontFamily: "Source Code Pro, monospace",
-          "::placeholder": {
-            color: "#aab7c4"
-          }
-        },
-        invalid: {
-          color: "#9e2146"
-        }
-      }
-    })
-    //[fontSize]
-  );
-
-  return options;
-};
-
-const SplitForm = () => {
-  const stripePromise = useStripe();
-  const elements = useElements();
-  const options = useOptions();
-  //const stripe = new Stripe("sk_test_tN0JNQsxVA6hJekv699aRqbY00MqX4ONBw");
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    if (!stripePromise || !elements) {
-      alert("error with stripe elements");
-      // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
-      return;
-    }
-
-    const payload = await stripePromise.createPaymentMethod({
-      type: "card",
-      card: elements.getElement(CardNumberElement)
-    });
-    alert("PaymentMethod = " + JSON.stringify(payload));
-
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: "Bearer sk_test_tN0JNQsxVA6hJekv699aRqbY00MqX4ONBw"
-      },
-      body: "amount=200&currency=usd"
-    };
-    const response = await fetch(
-      "https://api.stripe.com/v1/payment_intents",
-      requestOptions
-    );
-    const data = await response.json();
-    alert("PaymentIntent = " + JSON.stringify(data));
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Card number
-        <CardNumberElement
-          options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={(event) => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
-        />
-      </label>
-      <label>
-        Expiration date
-        <CardExpiryElement
-          options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={(event) => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
-        />
-      </label>
-      <label>
-        CVC
-        <CardCvcElement
-          options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={(event) => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
-        />
-      </label>
-      <button type="submit" disabled={!stripePromise}>
-        Pay
-      </button>
-    </form>
   );
 };
 

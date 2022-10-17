@@ -20,6 +20,9 @@ import naclUtil from "tweetnacl-util";
 
 nacl.util = naclUtil;
 
+let domain = window.location.hostname.replace("www", "").toLowerCase();
+const testMode = !(domain === "subaxiom.com");
+
 var cartMap = new Map();
 let sorted = [];
 let similar = [];
@@ -134,8 +137,14 @@ var hexToBytes = function (hex) {
 };
 
 var encrypt = function (message) {
-  let senderSecretKeyHex = process.env.REACT_APP_SENDER_SECRET_KEY_V1;
-  let receiverPublicKeyHex = process.env.REACT_APP_RECEIVER_PUBLIC_KEY_V1;
+  let senderSecretKeyHex =
+    "f8827b84a0ff45644f13ce8304534257cbfbc1d2fc10810a70e72642b8db218a";
+  let receiverPublicKeyHex =
+    "4fcf493282d1958d9b86a5d4f6f885d00aff727502db0b4774c1a7efe3d0c021";
+  if (!testMode) {
+    senderSecretKeyHex = process.env.REACT_APP_SENDER_SECRET_KEY_V1;
+    receiverPublicKeyHex = process.env.REACT_APP_RECEIVER_PUBLIC_KEY_V1;
+  }
   let senderSecretKeyBytes = hexToBytes(senderSecretKeyHex);
   let receiverPublicKeyBytes = hexToBytes(receiverPublicKeyHex);
   let nonceBytes = nacl.randomBytes(24);
@@ -151,8 +160,14 @@ var encrypt = function (message) {
 };
 
 var decrypt = function (cipherHex, nonceHex) {
-  let senderPublicKeyHex = process.env.REACT_APP_SENDER_PUBLIC_KEY_V1;
-  let receiverSecretKeyHex = process.env.REACT_APP_RECEIVER_SECRET_KEY_V1;
+  let senderPublicKeyHex =
+    "17c8341822c88dba072aeb8078165f824834bd69fea566b3bb3843399e1b357c";
+  let receiverSecretKeyHex =
+    "ffd563fc727985dc525f5e79e60135eb42d37de2dd701f89396c7fad74ecfcbd";
+  if (!testMode) {
+    senderPublicKeyHex = process.env.REACT_APP_SENDER_PUBLIC_KEY_V1;
+    receiverSecretKeyHex = process.env.REACT_APP_RECEIVER_SECRET_KEY_V1;
+  }
   let senderPublicKeyBytes = hexToBytes(senderPublicKeyHex);
   let receiverSecretKeyBytes = hexToBytes(receiverSecretKeyHex);
   let nonceBytes = hexToBytes(nonceHex);
@@ -168,7 +183,12 @@ var decrypt = function (cipherHex, nonceHex) {
   return decryptedPlainText;
 };
 
-const stripePromise = loadStripe("pk_test_BHICQOZBIeU7XNLbLDTeZMA4000yyW4WW3");
+let stripePublishableKey = "pk_test_BHICQOZBIeU7XNLbLDTeZMA4000yyW4WW3";
+if (!testMode) {
+  stripePublishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
+}
+
+const stripePromise = loadStripe(stripePublishableKey);
 
 //process.env.REACT_APP_STRIPE_SECRET_KEY
 //process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
@@ -193,15 +213,13 @@ render(
       <Route
         path="image/:imageId"
         element={
-          <Elements stripe={stripePromise}>
-            <ImagePreview
-              cartMap={cartMap}
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-              findSimilar={findSimilar}
-              scrollToVertical={scrollToVertical}
-            />
-          </Elements>
+          <ImagePreview
+            cartMap={cartMap}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+            findSimilar={findSimilar}
+            scrollToVertical={scrollToVertical}
+          />
         }
       />
       <Route
@@ -218,13 +236,16 @@ render(
       <Route
         path="stripecheckout"
         element={
-          <StripeCheckout
-            stripe={stripePromise}
-            cartMap={cartMap}
-            encrypt={encrypt}
-            removeFromCart={removeFromCart}
-            scrollToVertical={scrollToVertical}
-          />
+          <Elements stripe={stripePromise}>
+            <StripeCheckout
+              stripe={stripePromise}
+              cartMap={cartMap}
+              encrypt={encrypt}
+              removeFromCart={removeFromCart}
+              scrollToVertical={scrollToVertical}
+              testMode={testMode}
+            />
+          </Elements>
         }
       />
 
@@ -246,6 +267,7 @@ render(
             removeFromCart={removeFromCart}
             galleryData={galleryData}
             decrypt={decrypt}
+            testMode={testMode}
           />
         }
       />
