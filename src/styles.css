@@ -357,3 +357,11 @@ input:focus,
   font-size: 20px;
   width: 60px;
 }
+
+.errorMessage {
+  background-color: black;
+  color: #de3163;
+  border: 1px solid #6f1932;
+  border-radius: 8px;
+  padding: 3px 24px 3px 8px;
+}

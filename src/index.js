@@ -10,7 +10,6 @@ import { Elements } from "@stripe/react-stripe-js";
 //import SplitForm from "./SplitForm";
 //import Stripe from "stripe";
 import StripeCheckout from "./StripeCheckout";
-import StripeError from "./StripeError";
 import Download from "./Download";
 import Keys from "./Keys";
 import Upload from "./Upload";
@@ -249,16 +248,6 @@ render(
         }
       />
 
-      <Route
-        path="stripeerror"
-        element={
-          <StripeError
-            cartMap={cartMap}
-            removeFromCart={removeFromCart}
-            scrollToVertical={scrollToVertical}
-          />
-        }
-      />
       <Route
         path="download/:cipherHex/:nonceHex"
         element={

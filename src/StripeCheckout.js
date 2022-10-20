@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
   faCreditCard,
-  faSpinner
+  faSpinner,
+  faTriangleExclamation
 } from "@fortawesome/free-solid-svg-icons";
 import {
   useStripe,
@@ -65,8 +66,7 @@ const StripeCheckoutComponent = (props) => {
       <br />
       <div className="pageSection">
         <br />
-        <h2>enter payment info:</h2>
-        <br />
+        <h2>credit card authorization:</h2>
         <br />
         <StripeCreditCardForm
           amountDecimal={2.5}
@@ -83,8 +83,6 @@ const StripeCheckoutComponent = (props) => {
       <br />
       <br />
       <Link to={successLink}>stripe success page</Link>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/stripeerror">stripe error page</Link>
       <br />
       <br />
     </div>
@@ -300,9 +298,19 @@ const ErrorMessage = (props) => {
 
   if (errorMessage.on) {
     message = errorMessage.message;
+    return (
+      <div style={{ margin: "20px 0px" }}>
+        <span className="errorMessage">
+          <FontAwesomeIcon icon={faTriangleExclamation} />
+          &nbsp;&nbsp;
+          {message}
+        </span>
+        <br />
+      </div>
+    );
+  } else {
+    return null;
   }
-
-  return <span>{message}</span>;
 };
 
 export default StripeCheckoutComponent;
