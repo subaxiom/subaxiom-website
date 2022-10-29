@@ -38,7 +38,7 @@ export const Gallery = (props) => {
   let scrollToVertical = props.scrollToVertical;
 
   return (
-    <div className="page-wrapper">
+    <div>
       <GalleryComponent
         galleryData={galleryData}
         justSimilar={justSimilar}
