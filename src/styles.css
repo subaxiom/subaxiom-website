@@ -141,7 +141,7 @@ h4 {
 .thumbnail {
   width: 300px;
   height: 225px;
-  margin: 16px;
+  margin: 22px;
   display: inline-block;
   border: double #404040 4px;
   cursor: pointer;

@@ -20,10 +20,12 @@ export default function App(props) {
       <div className="filterSpace"></div>
       <div>
         <Filter filter={filter} filterOrTagClicked={filterOrTagClicked} />
-        <Gallery
-          galleryData={galleryData}
-          scrollToVertical={scrollToVertical}
-        />
+        <div className="page-wrapper">
+          <Gallery
+            galleryData={galleryData}
+            scrollToVertical={scrollToVertical}
+          />
+        </div>
       </div>
       <Social />
     </div>
