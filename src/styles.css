@@ -208,11 +208,11 @@ h4 {
 }
 
 .footer {
-  width: calc(100% - 100px);
+  width: calc(100% - 80px);
   border-top: 1px solid #101029;
   border-bottom: 1px solid #101029;
   color: white;
-  padding: 30px 50px;
+  padding: 30px 40px;
   background-color: #08080a;
 }
 
