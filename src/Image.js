@@ -117,14 +117,9 @@ const ImageComponent = (props) => {
       />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <br />
-      <br />
-      <br />
+      <Link className="bigLink" to={returnLink}>
+        <FontAwesomeIcon icon={faCircleArrowLeft} /> return to gallery
+      </Link>
       <br />
       <br />
       <br />

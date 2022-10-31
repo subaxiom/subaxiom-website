@@ -16,6 +16,7 @@ import Upload from "./Upload";
 import { loadStripe } from "@stripe/stripe-js";
 import nacl from "tweetnacl";
 import naclUtil from "tweetnacl-util";
+import { Footer } from "./Footer";
 
 nacl.util = naclUtil;
 
@@ -274,6 +275,8 @@ render(
         element={<Upload encrypt={encrypt} />}
       />
     </Routes>
+    <Footer />
   </BrowserRouter>,
+
   document.getElementById("root")
 );

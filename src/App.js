@@ -4,7 +4,6 @@ import "./styles.css";
 import { NavBar } from "./NavBar";
 import { Gallery } from "./Gallery";
 import { Filter } from "./Filter";
-import { Social } from "./Social";
 
 export default function App(props) {
   //let params = useParams();
@@ -27,7 +26,6 @@ export default function App(props) {
           />
         </div>
       </div>
-      <Social />
     </div>
   );
 }

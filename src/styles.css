@@ -25,7 +25,7 @@ h4 {
 
 .NavBar {
   position: fixed;
-  top: 1px;
+  top: 0px;
   left: 0px;
   right: 0px;
   padding: 2px 14px 4px 10px;
@@ -207,10 +207,28 @@ h4 {
   display: inline-block;
 }
 
-.social-wrapper {
-  width: 100%;
-  border-top: 1px solid #202028;
-  border-bottom: 1px solid #202028;
+.footer {
+  width: calc(100% - 100px);
+  border-top: 1px solid #101029;
+  border-bottom: 1px solid #101029;
+  color: white;
+  padding: 30px 50px;
+  background-color: #08080a;
+}
+
+.footer td {
+  padding: 3px;
+}
+
+.footer a {
+  color: #707080;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .social {
