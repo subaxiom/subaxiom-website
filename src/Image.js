@@ -43,16 +43,19 @@ const ImageComponent = (props) => {
       <NavBar cartMap={cartMap} />
 
       <div className="pageSection">
-        <div
-          style={{
-            backgroundImage: 'url("' + image.preview + '")',
-            backgroundSize: "100%",
-            backgroundRepeat: "no-repeat"
-          }}
-          className="image-preview"
-          key={imageId}
-          alt={image.title}
-        />
+        <div className="image-preview-wrapper">
+          <div className="image-preview-dummy"></div>
+          <div
+            style={{
+              backgroundImage: 'url("' + image.preview + '")',
+              backgroundSize: "100%",
+              backgroundRepeat: "no-repeat"
+            }}
+            className="image-preview"
+            key={imageId}
+            alt={image.title}
+          />
+        </div>
 
         <div className="caption-wrapper">
           <h2>{image.title}</h2>

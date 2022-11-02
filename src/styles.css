@@ -169,16 +169,28 @@ h4 {
   border-bottom: 1px solid #272740;
 }
 
-.image-preview {
-  animation: 0.2s ease-out 0s 1 zoom-in;
+.image-preview-wrapper {
   display: inline-block;
-  border: double #404048 4px;
+  position: relative;
   width: 800px;
   max-width: 100%;
-  aspect-ratio: 4 / 3;
+  /*aspect-ratio: 4 / 3;*/
   margin-right: 20px;
-  opacity: 1;
-  vertical-align: top;
+  animation: 0.2s ease-out 0s 1 zoom-in;
+  border: double #404048 4px;
+}
+
+.image-preview-dummy {
+  margin-top: 75%;
+  /* 4:3 aspect ratio */
+}
+
+.image-preview {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .tagsSection {
