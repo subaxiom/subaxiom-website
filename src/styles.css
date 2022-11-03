@@ -220,12 +220,23 @@ h4 {
 }
 
 .footer {
-  width: calc(100% - 80px);
+  width: 100%;
   border-top: 1px solid #101029;
   border-bottom: 1px solid #101029;
   color: white;
-  padding: 30px 40px;
   background-color: #08080a;
+}
+
+.footer h2 {
+  color: #404059;
+  padding-bottom: 10px;
+}
+
+.footer-section {
+  display: inline-block;
+  width: 300px;
+  padding: 20px 40px;
+  vertical-align: top;
 }
 
 .footer td {
@@ -241,6 +252,14 @@ h4 {
 .footer a:hover {
   color: #ffffff;
   text-decoration: none;
+}
+
+.footer-email-link {
+  padding: 0px 18px;
+}
+
+.footer-email-link a {
+  font-size: 14px;
 }
 
 .social {
