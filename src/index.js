@@ -22,6 +22,7 @@ nacl.util = naclUtil;
 
 let domain = window.location.hostname.replace("www", "").toLowerCase();
 const testMode = !(domain === "subaxiom.com");
+alert(domain);
 
 var cartMap = new Map();
 let sorted = [];
