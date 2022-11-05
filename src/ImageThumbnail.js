@@ -17,7 +17,7 @@ const ImageThumbnailComponent = (props) => {
       }}
       className="thumbnail"
       key={image.imageId}
-      title={image.relevancy}
+      title={image.title}
       alt={image.title}
       onClick={async (event) => {
         thumbnailOnclick(image.imageId);

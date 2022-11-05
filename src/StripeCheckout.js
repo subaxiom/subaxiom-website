@@ -23,7 +23,7 @@ const StripeCheckoutComponent = (props) => {
   let testMode = props.testMode;
   let invoiceTable = [];
 
-  let total = 0;
+  let totalInteger = 0;
   let imageIds = "";
 
   for (const [imageId, image] of cartMap) {
@@ -33,17 +33,17 @@ const StripeCheckoutComponent = (props) => {
         <td>$19.99</td>
       </tr>
     );
-    total = total + 19.99;
+    totalInteger = totalInteger + 1999;
     imageIds = imageIds + "-" + imageId;
   }
-  total = total.toFixed(2);
+  let totalDisplay = (totalInteger / 100).toFixed(2);
   invoiceTable.push(
     <tr>
       <td>
         <b>TOTAL</b>
       </td>
       <td>
-        <b>${total}</b>
+        <b>${totalDisplay}</b>
       </td>
     </tr>
   );
@@ -69,7 +69,8 @@ const StripeCheckoutComponent = (props) => {
         <h2>credit card authorization:</h2>
         <br />
         <StripeCreditCardForm
-          amountDecimal={total}
+          amountInteger={totalInteger}
+          amountDisplay={totalDisplay}
           successLink={successLink}
           testMode={testMode}
         />
@@ -127,7 +128,8 @@ const StripeCreditCardForm = (props) => {
   const navigate = useNavigate();
   const successLink = props.successLink;
   const testMode = props.testMode;
-  const amountDecimal = props.amountDecimal;
+  const amountInteger = props.amountInteger;
+  const amountDisplay = props.amountDisplay;
   const stripePromise = useStripe();
   const elements = useElements();
   const options = useOptions();
@@ -143,7 +145,6 @@ const StripeCreditCardForm = (props) => {
   if (!testMode) {
     stripeSecretKey = process.env.REACT_APP_STRIPE_SECRET_KEY;
   }
-  const amountInteger = amountDecimal * 100;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -286,8 +287,18 @@ const StripeCreditCardForm = (props) => {
         </label>
         <button className="greenButton" type="submit" disabled={!stripePromise}>
           <FontAwesomeIcon icon={payIcon.icon} spin={payIcon.spin} />
-          &nbsp;&nbsp;Pay&nbsp;${amountDecimal}
+          &nbsp;&nbsp;Pay&nbsp;${amountDisplay}
         </button>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        {amountInteger}
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </form>
   );
