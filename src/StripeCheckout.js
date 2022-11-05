@@ -69,7 +69,7 @@ const StripeCheckoutComponent = (props) => {
         <h2>credit card authorization:</h2>
         <br />
         <StripeCreditCardForm
-          amountDecimal={2.5}
+          amountDecimal={total}
           successLink={successLink}
           testMode={testMode}
         />
@@ -82,12 +82,13 @@ const StripeCheckoutComponent = (props) => {
       </Link>
       <br />
       <br />
-      <Link to={successLink}>stripe success page</Link>
       <br />
       <br />
     </div>
   );
 };
+
+/*  <Link to={successLink}>stripe success page</Link>  */
 
 export const StripeCheckout = (props) => {
   return (
@@ -285,7 +286,7 @@ const StripeCreditCardForm = (props) => {
         </label>
         <button className="greenButton" type="submit" disabled={!stripePromise}>
           <FontAwesomeIcon icon={payIcon.icon} spin={payIcon.spin} />
-          &nbsp;&nbsp;Pay&nbsp;${amountDecimal.toFixed(2)}
+          &nbsp;&nbsp;Pay&nbsp;${amountDecimal}
         </button>
       </div>
     </form>
