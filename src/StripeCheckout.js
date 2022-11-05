@@ -289,16 +289,6 @@ const StripeCreditCardForm = (props) => {
           <FontAwesomeIcon icon={payIcon.icon} spin={payIcon.spin} />
           &nbsp;&nbsp;Pay&nbsp;${amountDisplay}
         </button>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        {amountInteger}
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     </form>
   );
