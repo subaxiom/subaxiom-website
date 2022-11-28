@@ -5,15 +5,15 @@ const galleryMap = new Map();
 
 galleryMap.set("0052", {
   thumbnailSrc: thumbnailSprite0041to0080,
-  thumbnailX: 0,
+  thumbnailX: 300,
   thumbnailY: 225,
   preview:
-    "https://nedswtmrz2x2bwnealr4dejfwvdgdy63xoqzddexfkvhcotklsqa.arweave.net/aQcrTZHOr6DZpALjwZEltUZh49u7oZGMlyqqcTpqXKA",
-  original: "4f42b6dc0c8e55e733effd99216b86b92c8880601ec9cb48f55f5c5880f7e1ebf42363adad97704de802cfaa904bf5f25e371aa6ea56130dcc8513b31a6e1e1699f2f848405432a3933d7b4ac4d00f0ce93b54d59961f59a62bc4925d789a9e0690341b7193a08bfe8274685c1391f3e80248c577d3b916383308a9719507a49173f232b",
-  nonce: "ff39c76f6683b3dacf93412ecb1bb045203ce4df72e22cd6",
+    "https://adhuc475mh6gjs5qisy7qlastvgp5ytbwol4vgqrgjy3tue6qpza.arweave.net/AM9Bc_1h_GTLsESx-CwSnUz-4mGzl8qaETJxudCeg_I",
+  original:
+    "443056928e5fefe1009c9567fcb21bcbac3bfa327572849ab3d5afac8b3a292ff1dda3c6dc98109e2cca386846a9e3de947df13d0d27dee45d8b827cad23e3780444e34a83aa7943d1f8d1e684c5c9079af8856091d5c7407cfbce2d08cef7b33c2314e6e14cb5ff0593f875c7926a6a278e2dd0c49913e96ff24ee98b2c34f5fbce3b32",
+  nonce: "42b8c1582f569ffe269b1e962856f41bc2e36dd94ef942a9",
   title: "Lake Hobbs Arizona 2022",
-  tags: new Set()
-    .add("demon"),
+  tags: new Set().add("demon").add("elect"),
   relevancy: 0
 });
 
@@ -23,7 +23,8 @@ galleryMap.set("0051", {
   thumbnailY: 225,
   preview:
     "https://nedswtmrz2x2bwnealr4dejfwvdgdy63xoqzddexfkvhcotklsqa.arweave.net/aQcrTZHOr6DZpALjwZEltUZh49u7oZGMlyqqcTpqXKA",
-  original: "4f42b6dc0c8e55e733effd99216b86b92c8880601ec9cb48f55f5c5880f7e1ebf42363adad97704de802cfaa904bf5f25e371aa6ea56130dcc8513b31a6e1e1699f2f848405432a3933d7b4ac4d00f0ce93b54d59961f59a62bc4925d789a9e0690341b7193a08bfe8274685c1391f3e80248c577d3b916383308a9719507a49173f232b",
+  original:
+    "4f42b6dc0c8e55e733effd99216b86b92c8880601ec9cb48f55f5c5880f7e1ebf42363adad97704de802cfaa904bf5f25e371aa6ea56130dcc8513b31a6e1e1699f2f848405432a3933d7b4ac4d00f0ce93b54d59961f59a62bc4925d789a9e0690341b7193a08bfe8274685c1391f3e80248c577d3b916383308a9719507a49173f232b",
   nonce: "ff39c76f6683b3dacf93412ecb1bb045203ce4df72e22cd6",
   title: "FTX Black Swan",
   tags: new Set()
@@ -35,7 +36,6 @@ galleryMap.set("0051", {
     .add("nwo"),
   relevancy: 0
 });
-
 
 galleryMap.set("0050", {
   thumbnailSrc: thumbnailSprite0041to0080,

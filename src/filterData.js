@@ -11,6 +11,7 @@ topicsMap.set("climate", { name: "climate change", selected: false });
 topicsMap.set("covid", { name: "covid-19", selected: false });
 topicsMap.set("crypto", { name: "crypto", selected: false });
 topicsMap.set("demon", { name: "demonrats", selected: false });
+topicsMap.set("elect", { name: "election fraud", selected: false });
 topicsMap.set("elitist", { name: "elitist", selected: false });
 topicsMap.set("energy", { name: "energy", selected: false });
 topicsMap.set("eugen", { name: "eugenics", selected: false });
