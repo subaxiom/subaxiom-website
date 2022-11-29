@@ -7,6 +7,7 @@ topicsMap.set("author", { name: "authoritarianism", selected: false });
 topicsMap.set("blm", { name: "black lives matter", selected: false });
 topicsMap.set("censor", { name: "censorship", selected: false });
 topicsMap.set("banks", { name: "central banks", selected: false });
+topicsMap.set("china", { name: "china", selected: false });
 topicsMap.set("climate", { name: "climate change", selected: false });
 topicsMap.set("covid", { name: "covid-19", selected: false });
 topicsMap.set("crypto", { name: "crypto", selected: false });

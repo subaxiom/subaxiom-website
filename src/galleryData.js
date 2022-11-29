@@ -3,6 +3,19 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 
 const galleryMap = new Map();
 
+galleryMap.set("0053", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 600,
+  thumbnailY: 225,
+  preview:
+    "https://smc56qastnksp4ygobru6b4dh2yjcjyiax4ladywsuqkbp2rzzaq.arweave.net/kwXfQBKbVSfzBnBjTweDPrCRJwgF-LAPFpUgoL9RzkE",
+  original: "6d614755bfcd49054bc3e4448b5c68360b1b61199a2e97db3112accbce350375fefd27db0fb6fe6635e8cf8e9f82f20757830be25ac892ff75a24620e10b848ffa1d5fd4bb5df70cddaeee3f65aec2bc351e77d9fbd52eafae3a616b9c32d3b42ea6f93f44bcb90eee79587a9243bc368166bf130ce52aefab27d54d9da26e9c544dcf92",
+  nonce: "d9b24f405999e75554d4fd1aef78958eb38f0e69e792f4b5",    
+  title: "Zero Covid Xi Jinping",
+  tags: new Set().add("covid").add("china").add("xjinping"),
+  relevancy: 0
+});
+
 galleryMap.set("0052", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 300,
@@ -989,11 +1002,9 @@ galleryMap.set("0002", {
   nonce: "f8ac53534aa339d8c2f7ed8fbd5113ea94d3d3dec9a0774f",
   title: "Biden Piglet and Xi Pooh",
   tags: new Set()
+    .add("china")
     .add("jbiden")
-    .add("xjinping")
-    .add("glob")
-    .add("nwo")
-    .add("elitist"),
+    .add("xjinping"),
   relevancy: 0
 });
 
