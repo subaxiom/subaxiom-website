@@ -3,14 +3,34 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 
 const galleryMap = new Map();
 
+galleryMap.set("0054", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 900,
+  thumbnailY: 225,
+  preview:
+    "https://6l3x6oa3s2g7sitdjsxp72z2mewyr32ypmqbcv5dsmahcl4nqz7q.arweave.net/8vd_OBuWjfkiY0yu_-s6YS2I71h7IBFXo5MAcS-Nhn8",
+  original:
+    "3af707eb8cd2cbb2382dee2f6bab8aa8f94b654daf1c036ffc96aae82fdebde5a9d90fed5b10372036d9580d021dd449de561be0d71ff3a2dd0d1d65c0c4c3b9cbd2f2fd335b50652c90335a39c3bebf90c256bda8a43c9ff281e4a6f1e88453f5afab82a0690dcb765348b533d46d661ff2e21af17d8bebb53d3824050205c22ec09e49",
+  nonce: "03a2aaf958915afd8425486879f8706aeabc95d3a6cffcf9",
+  title: "Alex Jones Twitter Jail",
+  tags: new Set()
+    .add("censor")
+    .add("speech")
+    .add("hero")
+    .add("smedia")
+    .add("ajones"),
+  relevancy: 0
+});
+
 galleryMap.set("0053", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 600,
   thumbnailY: 225,
   preview:
     "https://smc56qastnksp4ygobru6b4dh2yjcjyiax4ladywsuqkbp2rzzaq.arweave.net/kwXfQBKbVSfzBnBjTweDPrCRJwgF-LAPFpUgoL9RzkE",
-  original: "6d614755bfcd49054bc3e4448b5c68360b1b61199a2e97db3112accbce350375fefd27db0fb6fe6635e8cf8e9f82f20757830be25ac892ff75a24620e10b848ffa1d5fd4bb5df70cddaeee3f65aec2bc351e77d9fbd52eafae3a616b9c32d3b42ea6f93f44bcb90eee79587a9243bc368166bf130ce52aefab27d54d9da26e9c544dcf92",
-  nonce: "d9b24f405999e75554d4fd1aef78958eb38f0e69e792f4b5",    
+  original:
+    "6d614755bfcd49054bc3e4448b5c68360b1b61199a2e97db3112accbce350375fefd27db0fb6fe6635e8cf8e9f82f20757830be25ac892ff75a24620e10b848ffa1d5fd4bb5df70cddaeee3f65aec2bc351e77d9fbd52eafae3a616b9c32d3b42ea6f93f44bcb90eee79587a9243bc368166bf130ce52aefab27d54d9da26e9c544dcf92",
+  nonce: "d9b24f405999e75554d4fd1aef78958eb38f0e69e792f4b5",
   title: "Zero Covid Xi Jinping",
   tags: new Set().add("covid").add("china").add("xjinping"),
   relevancy: 0
@@ -1001,10 +1021,7 @@ galleryMap.set("0002", {
     "5ddec0a6fd95714419997ef6786a4d5484c2944f7c9a85394556d1a841f4447995a204d335451962a91723c18667cfe62929318ffc6bbe3a61214fa2388622f5222575a66f04b376a5da8d83df34d717534c45a1e603bb628bfd3ebb419c26f77070619ae91e9cc1481d1accea479dc933b6c533982a9115357ec4e8b2a00979d5a311e3",
   nonce: "f8ac53534aa339d8c2f7ed8fbd5113ea94d3d3dec9a0774f",
   title: "Biden Piglet and Xi Pooh",
-  tags: new Set()
-    .add("china")
-    .add("jbiden")
-    .add("xjinping"),
+  tags: new Set().add("china").add("jbiden").add("xjinping"),
   relevancy: 0
 });
 
