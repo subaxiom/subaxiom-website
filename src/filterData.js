@@ -79,6 +79,7 @@ peopleMap.set("llightfoot", { name: "lori lightfoot", selected: false });
 peopleMap.set("mzuckerberg", { name: "mark zuckerberg", selected: false });
 peopleMap.set("npelosi", { name: "nancy pelosi", selected: false });
 peopleMap.set("rmalone", { name: "robert malone", selected: false });
+peopleMap.set("sbf", { name: "sam bankman-fried", selected: false });
 peopleMap.set("tfauci", { name: "tony fauci", selected: false });
 peopleMap.set("tcarlson", { name: "tucker carlson", selected: false });
 peopleMap.set("vputin", { name: "vladimir putin", selected: false });

@@ -3,6 +3,20 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 
 const galleryMap = new Map();
 
+galleryMap.set("0055", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 1200,
+  thumbnailY: 225,
+  preview:
+    "https://zyzuoe3wrf4jarwyzihr3hnt4lkrbiadrsd7zfweafa6ic255t6q.arweave.net/zjNHE3aJeJBG2MoPHZ2z4tUQoAOMh_yWxAFB5Atd7P0",
+  original:
+    "1729b3dc4d05384141c79546bc811d0845cfbc6ea8e64e5e5f5a68cc6a1d22cc15512ad266ccb7e5288d1f242eae63782df48aa902f065847dd42f3c22736ccac16ccbecfdabea72c9780c7d144c449650e9aaa914b809ffd098d0747f0fa943f59f327372e7962d4bc1c4b570bbc3d85b657ee86ebc036fb79be7101616759f347de684",
+  nonce: "a9c79c36fee9eb0aa820607bf0a249c33740f8b1610c210b",
+  title: "SBF Suicide Cell",
+  tags: new Set().add("banks").add("crypto").add("popctrl").add("sbf"),
+  relevancy: 0
+});
+
 galleryMap.set("0054", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 900,
@@ -60,13 +74,7 @@ galleryMap.set("0051", {
     "4f42b6dc0c8e55e733effd99216b86b92c8880601ec9cb48f55f5c5880f7e1ebf42363adad97704de802cfaa904bf5f25e371aa6ea56130dcc8513b31a6e1e1699f2f848405432a3933d7b4ac4d00f0ce93b54d59961f59a62bc4925d789a9e0690341b7193a08bfe8274685c1391f3e80248c577d3b916383308a9719507a49173f232b",
   nonce: "ff39c76f6683b3dacf93412ecb1bb045203ce4df72e22cd6",
   title: "FTX Black Swan",
-  tags: new Set()
-    .add("banks")
-    .add("crypto")
-    .add("demon")
-    .add("elitist")
-    .add("glob")
-    .add("nwo"),
+  tags: new Set().add("banks").add("crypto").add("sbf"),
   relevancy: 0
 });
 
