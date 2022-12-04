@@ -3,6 +3,25 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 
 const galleryMap = new Map();
 
+galleryMap.set("0056", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 1500,
+  thumbnailY: 225,
+  preview:
+    "https://55jcnb3iuwttb5haxqwsd3553pcoyvfxn3hqwn6kxw5y2a6m7kca.arweave.net/71Imh2ilpzD04LwtIe-928TsVLduzws3yr27jQPM-oQ",
+  original:
+    "a4b1a908eb2a093ff72eb9fe797758bb4839759c3a3773b3cc5a457974a7f3058051aa6a0f8ddb7e0ee099520cfcb9c9293eee47e9b29b153fcfb5fe0c614c445fdcb68884a586a2ee427f6ac9a4dc790cdca0068da21b65852a1a75ea5e74f24f9842b7562ba768ce7a1eadfd48f60e80f00a1add088065d5743e561a6df8ae3dbfd34d",
+  nonce: "581c13eba9cb57400196d80d4b5486cab56c7bda0d99cc73",
+  title: "Biden Forces Twitter",
+  tags: new Set()
+    .add("censor")
+    .add("elect")
+    .add("speech")
+    .add("smedia")
+    .add("jbiden"),
+  relevancy: 0
+});
+
 galleryMap.set("0055", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 1200,
