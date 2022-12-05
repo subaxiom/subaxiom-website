@@ -18,28 +18,33 @@ export const Footer = () => {
       <div className="footer-section">
         <h2>connect on social:</h2>
         <table>
-          <SocialRow spritePos="0px" socialUrl="https://twitter.com/subAxiom" />
-          <SocialRow
-            spritePos="-20px"
-            socialUrl="https://gettr.com/user/subAxiom"
-          />
-          <SocialRow spritePos="-40px" socialUrl="https://gab.com/subAxiom" />
-          <SocialRow
-            spritePos="-60px"
-            socialUrl="https://parler.com/subAxiom"
-          />
-          <SocialRow
-            spritePos="-80px"
-            socialUrl="https://truthsocial.com/@subAxiom"
-          />
-          <SocialRow
-            spritePos="-100px"
-            socialUrl="https://t.me/subAxiomChannel"
-          />
-          <SocialRow
-            spritePos="-120px"
-            socialUrl="https://subAxiom.substack.com"
-          />
+          <tbody>
+            <SocialRow
+              spritePos="0px"
+              socialUrl="https://twitter.com/subAxiom"
+            />
+            <SocialRow
+              spritePos="-20px"
+              socialUrl="https://gettr.com/user/subAxiom"
+            />
+            <SocialRow spritePos="-40px" socialUrl="https://gab.com/subAxiom" />
+            <SocialRow
+              spritePos="-60px"
+              socialUrl="https://parler.com/subAxiom"
+            />
+            <SocialRow
+              spritePos="-80px"
+              socialUrl="https://truthsocial.com/@subAxiom"
+            />
+            <SocialRow
+              spritePos="-100px"
+              socialUrl="https://t.me/subAxiomChannel"
+            />
+            <SocialRow
+              spritePos="-120px"
+              socialUrl="https://subAxiom.substack.com"
+            />
+          </tbody>
         </table>
       </div>
     </div>

@@ -51,7 +51,6 @@ topicsMap.set("war", { name: "war", selected: false });
 topicsMap.set("woke", { name: "wokeness", selected: false });
 topicsMap.set("wef", { name: "world economic forum", selected: false });
 topicsMap.set("who", { name: "world health organization", selected: false });
-
 peopleMap.set("ahitler", { name: "adolf hitler", selected: false });
 peopleMap.set("abourla", { name: "albert bourla", selected: false });
 peopleMap.set("ajones", { name: "alex jones", selected: false });
