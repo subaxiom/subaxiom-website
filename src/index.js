@@ -20,6 +20,8 @@ import { Footer } from "./Footer";
 
 nacl.util = naclUtil;
 
+let envTest = process.env.REACT_APP_CHRIS;
+
 let domain = window.location.hostname.replace("www.", "").toLowerCase();
 const testMode = !(domain === "subaxiom.com");
 
@@ -275,7 +277,7 @@ render(
         element={<Upload encrypt={encrypt} />}
       />
     </Routes>
-    <Footer />
+    <Footer envTest={envTest} />
   </BrowserRouter>,
 
   document.getElementById("root")
