@@ -15,8 +15,8 @@ galleryMap.set("0056", {
   title: "Biden Forces Twitter",
   tags: new Set()
     .add("censor")
-    .add("elect")
     .add("speech")
+    .add("elect")
     .add("smedia")
     .add("jbiden"),
   relevancy: 0
