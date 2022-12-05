@@ -5,8 +5,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 //import { useHistory } from "react-router";
 
 export const Footer = (props) => {
-  let envTest = props.envTest;
-
   return (
     <div className="footer">
       <div className="footer-section">
@@ -15,9 +13,6 @@ export const Footer = (props) => {
           <a href="mailto:subAxiom@protonmail.com">
             <FontAwesomeIcon icon={faEnvelope} /> subAxiom@protonmail.com
           </a>
-          <br />
-          <br />
-          {envTest}
         </div>
       </div>
       <div className="footer-section">
