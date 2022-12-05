@@ -21,6 +21,7 @@ import { Footer } from "./Footer";
 nacl.util = naclUtil;
 
 let envTest = process.env.REACT_APP_CHRIS;
+envTest = "footer test";
 
 let domain = window.location.hostname.replace("www.", "").toLowerCase();
 const testMode = !(domain === "subaxiom.com");
