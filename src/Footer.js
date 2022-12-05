@@ -4,7 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 //import { useHistory } from "react-router";
 
+
+
 export const Footer = () => {
+
+  const envTest = process.env.REACT_APP_CHRIS;
+
   return (
     <div className="footer">
       <div className="footer-section">
@@ -13,6 +18,8 @@ export const Footer = () => {
           <a href="mailto:subAxiom@protonmail.com">
             <FontAwesomeIcon icon={faEnvelope} /> subAxiom@protonmail.com
           </a>
+          <br/><br/>
+          {envTest}
         </div>
       </div>
       <div className="footer-section">
