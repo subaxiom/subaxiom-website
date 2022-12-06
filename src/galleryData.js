@@ -5,13 +5,13 @@ const galleryMap = new Map();
 
 galleryMap.set("0057", {
   thumbnailSrc: thumbnailSprite0041to0080,
-  thumbnailX: 1500,
+  thumbnailX: 1800,
   thumbnailY: 225,
   preview:
-    "https://55jcnb3iuwttb5haxqwsd3553pcoyvfxn3hqwn6kxw5y2a6m7kca.arweave.net/71Imh2ilpzD04LwtIe-928TsVLduzws3yr27jQPM-oQ",
+    "https://dsmkyl5lroddrxjioerpg6il5fh7hvq7zp2eh5jcuppjydx4af4a.arweave.net/HJisL6uLhjjdKHEi83kL6U_z1h_L9EP1IqPenA78AXg",
   original:
-    "a4b1a908eb2a093ff72eb9fe797758bb4839759c3a3773b3cc5a457974a7f3058051aa6a0f8ddb7e0ee099520cfcb9c9293eee47e9b29b153fcfb5fe0c614c445fdcb68884a586a2ee427f6ac9a4dc790cdca0068da21b65852a1a75ea5e74f24f9842b7562ba768ce7a1eadfd48f60e80f00a1add088065d5743e561a6df8ae3dbfd34d",
-  nonce: "581c13eba9cb57400196d80d4b5486cab56c7bda0d99cc73",
+    "1562c26df415cea5b0a6c4581dfa5da3f6e351328b74dbb09baf9c990c5d4320a7f4ca7c8d59c72d282b2680884d513b39cfe016e3444ebcab8a1ba9e4ad63bc16851fb9889c6cebe97a68529e5947e166cdd04cf83a94c60ac2b4c8a1c773130fe5412b4be860a476e0417468ed7e32a711349fb279596768fb38f15cff4f0785b3493f",
+  nonce: "fed670a37dbeed0983aa4219bf00e0c89ffce9670c09cb97",
   title: "Biden Big Brother Twitter Army",
   tags: new Set()
     .add("author")
