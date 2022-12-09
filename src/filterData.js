@@ -41,6 +41,7 @@ topicsMap.set("prop", { name: "propaganda", selected: false });
 topicsMap.set("protest", { name: "protest", selected: false });
 topicsMap.set("race", { name: "racism", selected: false });
 topicsMap.set("rewrite", { name: "rewrite history", selected: false });
+topicsMap.set("satan", { name: "satanism", selected: false });
 topicsMap.set("scredit", { name: "social credit scores", selected: false });
 topicsMap.set("smedia", { name: "social media", selected: false });
 topicsMap.set("schain", { name: "supply chain", selected: false });

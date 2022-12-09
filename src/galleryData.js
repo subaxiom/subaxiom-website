@@ -3,6 +3,25 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 
 const galleryMap = new Map();
 
+
+galleryMap.set("0058", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 2100,
+  thumbnailY: 225,
+  preview:
+    "https://m55jfey4in3hh5thn3wnakmty4xgwcnokuqvivk5v2vmtjvvijza.arweave.net/Z3qSkxxDdnP2Z27s0CmTxy5rCa5VIVRVXa6qyaa1QnI",
+  original: "03dc8f9cd7293410b00cb12ed414d5af48eb19d614cfa20f567e123862242c21e786eeb6e75c060ea83d16508d2d9e3302bc8162be8c7d7f7cd7d1ac215d376a0ab9bce9f4760988241aee8c6ea2f1e9a43fceb25eebd2601c9fa24a6a818b1e570113bf9495f585a10369072742db099d657a1a68f6ccd1e9db9c34349b4695f6a6482f",
+  nonce: "f65133221b3ce0c5b5cd946c2fabb235ea5401f370f85dfe",
+  title: "Balenciaga Ad Campaign",
+  tags: new Set()
+    .add("demon")
+    .add("htraf")
+    .add("satan")
+    .add("jbiden"),
+  relevancy: 0
+});
+
+
 galleryMap.set("0057", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 1800,
@@ -340,6 +359,7 @@ galleryMap.set("0039", {
     .add("nano")
     .add("nwo")
     .add("priv")
+    .add("satan")
     .add("scredit")
     .add("thuman")
     .add("wef"),
@@ -809,6 +829,7 @@ galleryMap.set("0015", {
     .add("nwo")
     .add("popctrl")
     .add("elitist")
+    .add("satan")
     .add("thuman")
     .add("wef"),
   relevancy: 0
