@@ -63,6 +63,7 @@ peopleMap.set("bclinton", { name: "bill clinton", selected: false });
 peopleMap.set("bgates", { name: "bill gates", selected: false });
 peopleMap.set("cschumer", { name: "chuck schumer", selected: false });
 peopleMap.set("dtrump", { name: "donald trump", selected: false });
+peopleMap.set("emusk", { name: "elon musk", selected: false });
 peopleMap.set("gnewsom", { name: "gavin newsom", selected: false });
 peopleMap.set("gsoros", { name: "george soros", selected: false });
 peopleMap.set("gwhitmer", { name: "gretchen whitmer", selected: false });

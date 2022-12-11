@@ -4,6 +4,26 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 const galleryMap = new Map();
 
 
+galleryMap.set("0059", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 2400,
+  thumbnailY: 225,
+  preview:
+    "https://vc3ebactnwt4juwgyyelkaefpywamggdydlbzedi75uzoqbdwtvq.arweave.net/qLZAgFNtp8TSxsYItQCFfiwGGMPA1hyQaP9pl0AjtOs",
+  original: "7511d7ebafd1187d6a793002d9702c8e74d8dd82b92817d110cf6df039041fab3099710164b81abc81eb8fdf7cb7b890b7aa01ea15f69ce88ed0ed2662067cf413591111aa29da7b2e035dc78fab559ee8cf3bf7f7d184922c236f75e539af6cb77bb8a2b4afb2e29eb7120c373c8a1803a6716060bc55441267cbd9cda40fb33f5f5397",
+   nonce: "26d5b5d4e6683ca3c1052df877fdfd7bf1e3a745e6b766ab",
+  title: "Elon Musk Surgery on Twitter",
+  tags: new Set()
+    .add("censor")
+    .add("speech")
+    .add("hero")
+    .add("matrix")
+    .add("smedia")
+    .add("emusk"),
+  relevancy: 0
+});
+
+
 galleryMap.set("0058", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 2100,
