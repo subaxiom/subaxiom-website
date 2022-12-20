@@ -3,6 +3,19 @@ import thumbnailSprite0041to0080 from "./img/thumbnailSprite0041to0080.png";
 
 const galleryMap = new Map();
 
+galleryMap.set("0060", {
+  thumbnailSrc: thumbnailSprite0041to0080,
+  thumbnailX: 2700,
+  thumbnailY: 225,
+  preview:
+    "https://j5z4qr2ouerlmzdyk445a7sce3rtqnwbrelkajeg7d3k2mp44vha.arweave.net/T3PIR06hIrZkeFc50H5CJuM4NsGJFqAkhvj2rTH85U4",
+  original:
+    "b7ff0d0224df3ecd59e2d5e7a31015d860e603b3edeb93f10ce66c73be5079105b693ba28d9903b22b901cc4825a2c48a533de560190b4c4a296eafdf18f3f31057d22b310b0e5840dc4df70d7f855a3e74a98cf7d002ad5b92c27f9e88bbab1355977d87eb110a504c4f7b353a2ef3bd06e2265dfae64722942d5ac05cb826eb2140ad7",
+  nonce: "a279cf3d10f606f95b97cbfeda1513b64a8390e3284748f8",
+  title: "Crackhead Story Time",
+  tags: new Set().add("school").add("gender").add("hbiden"),
+  relevancy: 0
+});
 
 galleryMap.set("0059", {
   thumbnailSrc: thumbnailSprite0041to0080,
@@ -10,8 +23,9 @@ galleryMap.set("0059", {
   thumbnailY: 225,
   preview:
     "https://vc3ebactnwt4juwgyyelkaefpywamggdydlbzedi75uzoqbdwtvq.arweave.net/qLZAgFNtp8TSxsYItQCFfiwGGMPA1hyQaP9pl0AjtOs",
-  original: "7511d7ebafd1187d6a793002d9702c8e74d8dd82b92817d110cf6df039041fab3099710164b81abc81eb8fdf7cb7b890b7aa01ea15f69ce88ed0ed2662067cf413591111aa29da7b2e035dc78fab559ee8cf3bf7f7d184922c236f75e539af6cb77bb8a2b4afb2e29eb7120c373c8a1803a6716060bc55441267cbd9cda40fb33f5f5397",
-   nonce: "26d5b5d4e6683ca3c1052df877fdfd7bf1e3a745e6b766ab",
+  original:
+    "7511d7ebafd1187d6a793002d9702c8e74d8dd82b92817d110cf6df039041fab3099710164b81abc81eb8fdf7cb7b890b7aa01ea15f69ce88ed0ed2662067cf413591111aa29da7b2e035dc78fab559ee8cf3bf7f7d184922c236f75e539af6cb77bb8a2b4afb2e29eb7120c373c8a1803a6716060bc55441267cbd9cda40fb33f5f5397",
+  nonce: "26d5b5d4e6683ca3c1052df877fdfd7bf1e3a745e6b766ab",
   title: "Elon Musk Surgery on Twitter",
   tags: new Set()
     .add("censor")
@@ -23,24 +37,24 @@ galleryMap.set("0059", {
   relevancy: 0
 });
 
-
 galleryMap.set("0058", {
   thumbnailSrc: thumbnailSprite0041to0080,
   thumbnailX: 2100,
   thumbnailY: 225,
   preview:
     "https://m55jfey4in3hh5thn3wnakmty4xgwcnokuqvivk5v2vmtjvvijza.arweave.net/Z3qSkxxDdnP2Z27s0CmTxy5rCa5VIVRVXa6qyaa1QnI",
-  original: "03dc8f9cd7293410b00cb12ed414d5af48eb19d614cfa20f567e123862242c21e786eeb6e75c060ea83d16508d2d9e3302bc8162be8c7d7f7cd7d1ac215d376a0ab9bce9f4760988241aee8c6ea2f1e9a43fceb25eebd2601c9fa24a6a818b1e570113bf9495f585a10369072742db099d657a1a68f6ccd1e9db9c34349b4695f6a6482f",
+  original:
+    "03dc8f9cd7293410b00cb12ed414d5af48eb19d614cfa20f567e123862242c21e786eeb6e75c060ea83d16508d2d9e3302bc8162be8c7d7f7cd7d1ac215d376a0ab9bce9f4760988241aee8c6ea2f1e9a43fceb25eebd2601c9fa24a6a818b1e570113bf9495f585a10369072742db099d657a1a68f6ccd1e9db9c34349b4695f6a6482f",
   nonce: "f65133221b3ce0c5b5cd946c2fabb235ea5401f370f85dfe",
   title: "Balenciaga Ad Campaign",
   tags: new Set()
     .add("demon")
     .add("htraf")
+    .add("gender")
     .add("satan")
     .add("jbiden"),
   relevancy: 0
 });
-
 
 galleryMap.set("0057", {
   thumbnailSrc: thumbnailSprite0041to0080,
@@ -638,6 +652,7 @@ galleryMap.set("0026", {
     .add("covid")
     .add("gthink")
     .add("pland")
+    .add("school")
     .add("tctrl")
     .add("war")
     .add("woke"),
@@ -991,7 +1006,7 @@ galleryMap.set("0008", {
     "2ea74d471f9867ae51d47b703c7855180b431cf11e7f8fd64ac25848542cdb3771ec83d867d96429c8d84e17d24123fcdb3a4a68303454b736517e949259f317fdb189d553d8c6b86bd6dc26c2f5409ec7e8b2c4bac461b3bb86429fd0ad3db03286b94a06af5e84cc78c012d22b31c73109024f324bd16da5b5853ba564b654c919eb9a",
   nonce: "1e369b19e7f4a991ba83fff6afb5a7ef8e8dd73838c39e12",
   title: "School Board Meeting",
-  tags: new Set().add("author").add("censor").add("nwo").add("protest"),
+  tags: new Set().add("author").add("censor").add("school").add("protest"),
   relevancy: 0
 });
 
