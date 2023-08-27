@@ -18,7 +18,7 @@ const SearchComponent = (props) => {
   }, [urlDomain, urlSearchQuery]);
 
   const [searchQueryState, setSearchQueryState] = useState({
-    searchQuery: "start here"
+    searchQuery: urlSearchQuery
   });
 
   let searchClicked = function () {
