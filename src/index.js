@@ -12,6 +12,9 @@ import { Elements } from "@stripe/react-stripe-js";
 import StripeCheckout from "./StripeCheckout";
 import Download from "./Download";
 import Keys from "./Keys";
+
+import Search from "./Search";
+
 import Upload from "./Upload";
 import { loadStripe } from "@stripe/stripe-js";
 import nacl from "tweetnacl";
@@ -232,6 +235,10 @@ render(
           />
         }
       />
+
+      <Route path="search" element={<Search />} />
+
+      <Route path="search/:domain/:searchquery" element={<Search />} />
 
       <Route
         path="stripecheckout"

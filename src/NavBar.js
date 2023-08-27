@@ -8,7 +8,6 @@ import cart from "./img/cart2.png";
 const NavBarComponent = (props) => {
   //let params = useParams();
   //let navigate = useNavigate();
-  let cartMap = props.cartMap;
 
   return (
     <div className="NavBar">
@@ -18,7 +17,7 @@ const NavBarComponent = (props) => {
       &nbsp;
       <Link className="cartLink" to="/cart">
         <img src={cart} alt="cart" className="cart" />
-        &nbsp;({cartMap.size})
+        &nbsp;(0)
       </Link>
     </div>
   );
@@ -27,7 +26,7 @@ const NavBarComponent = (props) => {
 export const NavBar = (props) => {
   return (
     <div>
-      <NavBarComponent cartMap={props.cartMap} />
+      <NavBarComponent />
     </div>
   );
 };
