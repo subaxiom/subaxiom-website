@@ -10,16 +10,34 @@ const SearchComponent = (props) => {
   let urlDomain = params.domain;
   let urlSearchQuery = params.searchquery;
 
-  useEffect(() => {
-    // put stuff here that should only be done once
-    if (urlDomain === "all") {
-      alert("get search results for = " + urlSearchQuery);
-    }
-  }, [urlDomain, urlSearchQuery]);
-
   const [searchQueryState, setSearchQueryState] = useState({
     searchQuery: urlSearchQuery
   });
+
+  const [searchResultsState, setSearchResultsState] = useState({
+    searchResults: "no search results yet"
+  });
+
+  useEffect(() => {
+    async function connectToApiForSearchResults(queryEncodedForFetch) {
+      //const response = await fetch("https://api.github.com/users/hadley/orgs");
+      const response = await fetch(
+        "https://api.subaxiom.com/?query=" + queryEncodedForFetch
+      );
+      //searchResults.current = await response.text();
+      let searchResultsResponse = await response.text();
+      setSearchResultsState({ searchResults: searchResultsResponse });
+      //alert(String(searchResults.current));
+    }
+
+    // put stuff here that should only be done once
+    if (urlDomain === "all") {
+      let queryEncodedForFetch = encodeURIComponent(urlSearchQuery);
+      //alert(queryEncodedForFetch);
+      //alert("get search results for = " + queryEncodedForFetch);
+      connectToApiForSearchResults(queryEncodedForFetch);
+    }
+  }, [urlDomain, urlSearchQuery]);
 
   let searchClicked = function () {
     let searchQueryPlainText = searchQueryState.searchQuery;
@@ -28,17 +46,6 @@ const SearchComponent = (props) => {
     //alert(searchQueryUriEncoded);
     navigate(`/search/all/${searchQueryUriEncoded}`, { replace: true });
   };
-
-  //let searchUrl = "https://149.28.123.181:8000/?query=Mr.%20Miyagi%20and%20Daniel%20fight%20Sensei%20Kreese%20and%20Johnny%20in%20a%20karate%20tournament%0A";
-  async function logMovies() {
-    //const response = await fetch("https://api.github.com/users/hadley/orgs");
-    const response = await fetch(
-      "https://api.subaxiom.com/?query=Mr.%20Miyagi%20and%20Daniel%20fight%20Sensei%20Kreese%20and%20Johnny%20in%20a%20karate%20tournament%0A"
-    );
-    const movies = await response.text();
-    //alert(String(movies));
-  }
-  logMovies();
 
   return (
     <div>
@@ -58,6 +65,10 @@ const SearchComponent = (props) => {
       />
 
       <div className="greenButton" onClick={(e) => searchClicked()} />
+      <br />
+      <br />
+      <br />
+      <div className="searchResults">{searchResultsState.searchResults}</div>
     </div>
   );
 };
