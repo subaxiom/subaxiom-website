@@ -14,9 +14,7 @@ const SearchComponent = (props) => {
     searchQuery: urlSearchQuery
   });
 
-  const [searchResultsState, setSearchResultsState] = useState({
-    searchResults: "no search results yet"
-  });
+  const [searchResultsState, setSearchResultsState] = useState([]);
 
   useEffect(() => {
     async function connectToApiForSearchResults(queryEncodedForFetch) {
@@ -25,8 +23,16 @@ const SearchComponent = (props) => {
         "https://api.subaxiom.com/?query=" + queryEncodedForFetch
       );
       //searchResults.current = await response.text();
-      let searchResultsResponse = await response.text();
-      setSearchResultsState({ searchResults: searchResultsResponse });
+      let apiResponse = await response.json();
+      //let apiResponseJson = JSON.parse(apiResponse);
+      //let searchResultsString = apiResponseJson.search_results;
+      //alert(apiResponse.search_results[1].title);
+      //alert(searchResultsString);
+      //let searchResultsArray = JSON.parse(searchResultsString);
+      //let searchResultsJson = JSON.parse(apiResponseJson.search_results);
+      //alert(searchResultJson.search_query);
+      let searchResultsString = JSON.stringify(apiResponse.search_results);
+      setSearchResultsState({ searchResults: searchResultsString });
       //alert(String(searchResults.current));
     }
 
