@@ -14,7 +14,9 @@ const SearchComponent = (props) => {
     searchQuery: urlSearchQuery
   });
 
-  const [searchResultsState, setSearchResultsState] = useState([]);
+  const [searchResultsState, setSearchResultsState] = useState({
+    searchResults: "none yet"
+  });
 
   useEffect(() => {
     async function connectToApiForSearchResults(queryEncodedForFetch) {
