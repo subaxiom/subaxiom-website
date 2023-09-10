@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { NavBar } from "./NavBar";
+import { SearchResultsList } from "./SearchResultsList";
 import "./styles.css";
 
 const SearchComponent = (props) => {
@@ -15,7 +16,7 @@ const SearchComponent = (props) => {
   });
 
   const [searchResultsState, setSearchResultsState] = useState({
-    searchResults: "none yet"
+    searchResults: "not yet"
   });
 
   useEffect(() => {
@@ -26,13 +27,6 @@ const SearchComponent = (props) => {
       );
       //searchResults.current = await response.text();
       let apiResponse = await response.json();
-      //let apiResponseJson = JSON.parse(apiResponse);
-      //let searchResultsString = apiResponseJson.search_results;
-      //alert(apiResponse.search_results[1].title);
-      //alert(searchResultsString);
-      //let searchResultsArray = JSON.parse(searchResultsString);
-      //let searchResultsJson = JSON.parse(apiResponseJson.search_results);
-      //alert(searchResultJson.search_query);
       let searchResultsString = JSON.stringify(apiResponse.search_results);
       setSearchResultsState({ searchResults: searchResultsString });
       //alert(String(searchResults.current));
@@ -76,7 +70,9 @@ const SearchComponent = (props) => {
       <br />
       <br />
       <br />
-      <div className="searchResults">{searchResultsState.searchResults}</div>
+      <SearchResultsList
+        searchResultsJsonString={searchResultsState.searchResults}
+      />
     </div>
   );
 };

@@ -49,18 +49,18 @@ h4 {
   background-color: transparent;
 }
 
-
-
-
-
 .searchResults {
-  color:gray;
-
+  color: gray;
 }
 
+.resultItemTitle {
+  color: blue;
+}
 
-
-
+.resultItemSnippet {
+  color: gray;
+  font-size: 6px;
+}
 
 .cartLink {
   float: right;
