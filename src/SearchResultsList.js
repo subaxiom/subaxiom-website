@@ -18,19 +18,23 @@ const SearchResultsListComponent = (props) => {
   let resultItems = [];
   while (typeof searchResultsJson[i] !== "undefined") {
     resultItems.push(
-      <ResultItem resultItemJsonString={JSON.stringify(searchResultsJson[i])} />
+      <ResultItem
+        resultItemJsonString={JSON.stringify(searchResultsJson[i])}
+        siteIconData={props.siteIconData}
+      />
     );
 
     i++;
   }
 
-  return <div className="searchResults">{resultItems}</div>;
+  return <div className="searchResultsContainer">{resultItems}</div>;
 };
 
 export const SearchResultsList = (props) => {
   return (
     <SearchResultsListComponent
       searchResultsJsonString={props.searchResultsJsonString}
+      siteIconData={props.siteIconData}
     />
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { galleryData } from "./galleryData";
+import { siteIconData } from "./siteIconData";
 import { topicsMap, peopleMap } from "./filterData";
 import App from "./App";
 import ImagePreview from "./Image";
@@ -31,7 +31,7 @@ let sorted = [];
 let similar = [];
 
 var addToCart = function (imageId) {
-  var image = galleryData.galleryMap.get(imageId);
+  var image = siteIconData.galleryMap.get(imageId);
   cartMap.set(imageId, image);
   return cartMap;
 };
@@ -68,7 +68,7 @@ var filterOrTagClicked = function (itemClicked) {
 };
 
 var updateRelevancy = function (tagCode, selected) {
-  let galleryMap = galleryData.galleryMap;
+  let galleryMap = siteIconData.galleryMap;
   let difference = -1;
   if (selected) difference = 1;
   sorted = [];
@@ -84,13 +84,13 @@ var updateRelevancy = function (tagCode, selected) {
   });
   //alert(JSON.stringify(sorted));
 
-  galleryData.sort = sorted;
+  siteIconData.sort = sorted;
 
   //var newMap = new Map([...galleryMap].sort((a, b) => a[1].relevancy > b[1].relevancy));
 };
 
 var findSimilar = function (imageId, tagSet) {
-  let galleryMap = galleryData.galleryMap;
+  let galleryMap = siteIconData.galleryMap;
   similar = [];
 
   galleryMap.forEach(function (image, index) {
@@ -118,7 +118,7 @@ var findSimilar = function (imageId, tagSet) {
   });
   similar = similar.slice(0, 10);
 
-  galleryData.similar = similar;
+  siteIconData.similar = similar;
 };
 
 var scrollToVertical = function (y) {
@@ -208,7 +208,7 @@ render(
             cartMap={cartMap}
             filter={filter}
             filterOrTagClicked={filterOrTagClicked}
-            galleryData={galleryData}
+            siteIconData={siteIconData}
             scrollToVertical={scrollToVertical}
           />
         }
@@ -238,7 +238,10 @@ render(
 
       <Route path="search" element={<Search />} />
 
-      <Route path="search/:domain/:searchquery" element={<Search />} />
+      <Route
+        path="search/:domain/:searchquery"
+        element={<Search siteIconData={siteIconData} />}
+      />
 
       <Route
         path="stripecheckout"
@@ -262,7 +265,7 @@ render(
           <Download
             cartMap={cartMap}
             removeFromCart={removeFromCart}
-            galleryData={galleryData}
+            siteIconData={siteIconData}
             decrypt={decrypt}
             testMode={testMode}
           />

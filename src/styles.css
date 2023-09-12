@@ -1,6 +1,6 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: black;
+  background-color: white;
 }
 
 * {
@@ -49,17 +49,55 @@ h4 {
   background-color: transparent;
 }
 
-.searchResults {
-  color: gray;
+.searchResultsContainerContainer {
+  max-width: 900px;
+  margin: 40px;
+}
+
+.searchResultsContainer {
+  max-width: 600px;
+  margin: auto;
+}
+
+.searchResultsItem {
+  font-family: Futura, "Product Sans", sans-serif;
+  margin: 36px 0px;
+  color: #464a4f;
+}
+
+.resultItemHeader div {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.siteIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.resultItemHeaderSiteName {
+  color: #303438;
+  font-size: 15px;
+}
+
+.resultItemHeaderUrl {
+  font-size: 12px;
 }
 
 .resultItemTitle {
-  color: blue;
+  color: #1a0dab;
+  font-size: 20px;
+  text-decoration: none;
+  line-height: 1.8em;
+}
+
+.resultItemTitle:hover {
+  text-decoration: underline;
 }
 
 .resultItemSnippet {
-  color: gray;
-  font-size: 6px;
+  font-size: 14px;
+  line-height: 1.4em;
 }
 
 .cartLink {
@@ -149,15 +187,6 @@ h4 {
   width: calc(100% - 10px);
   color: white;
   padding: 20px;
-}
-
-.thumbnail {
-  width: 300px;
-  height: 225px;
-  margin: 22px;
-  display: inline-block;
-  border: double #404040 4px;
-  cursor: pointer;
 }
 
 .thumbnail div {

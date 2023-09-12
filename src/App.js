@@ -9,7 +9,6 @@ export default function App(props) {
   //let params = useParams();
   let filter = props.filter;
   let filterOrTagClicked = props.filterOrTagClicked;
-  let galleryData = props.galleryData;
   let scrollToVertical = props.scrollToVertical;
 
   return (
@@ -20,7 +19,7 @@ export default function App(props) {
       <div>
         <Filter filter={filter} filterOrTagClicked={filterOrTagClicked} />
         <div className="page-wrapper">
-          <Search searchQuery={""} />
+          <Search searchQuery={""} galleryData={props.galleryData} />
         </div>
       </div>
     </div>

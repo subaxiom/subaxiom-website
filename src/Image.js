@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { saveAs } from "file-saver";
 import { HashLink as Link } from "react-router-hash-link";
-import { galleryData } from "./galleryData";
+import { siteIconData } from "./siteIconData";
 import { topicsMap, peopleMap } from "./filterData";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "./NavBar";
@@ -18,13 +18,13 @@ import {
 
 //import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 //import history from './history';
-//import { galleryMap } from "./galleryData";
+//import { galleryMap } from "./siteIconData";
 //import { withRouter } from "react-router";
 
 const ImageComponent = (props) => {
   let params = useParams();
   let imageId = params.imageId;
-  let image = galleryData.galleryMap.get(imageId);
+  let image = siteIconData.galleryMap.get(imageId);
   let tagSet = image.tags;
   let cartMap = props.cartMap;
   let findSimilar = props.findSimilar;
@@ -114,7 +114,7 @@ const ImageComponent = (props) => {
 
       <div className="tagsHeader">similar images: </div>
       <Gallery
-        galleryData={galleryData}
+        siteIconData={siteIconData}
         scrollToVertical={scrollToVertical}
         justSimilar
       />

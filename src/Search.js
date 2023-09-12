@@ -10,6 +10,7 @@ const SearchComponent = (props) => {
   let params = useParams();
   let urlDomain = params.domain;
   let urlSearchQuery = params.searchquery;
+  //let galleryMap = props.galleryMap;
 
   const [searchQueryState, setSearchQueryState] = useState({
     searchQuery: urlSearchQuery
@@ -57,22 +58,26 @@ const SearchComponent = (props) => {
       <br />
       <br />
       <br />
-      <div>{searchQueryState.searchQuery}</div>
+      <div className="searchResultsContainerContainer">
+        <div>{searchQueryState.searchQuery}</div>
 
-      <input
-        type="text"
-        defaultValue={searchQueryState.searchQuery}
-        onChange={(e) => setSearchQueryState({ searchQuery: e.target.value })}
-        className="largeInput"
-      />
+        <input
+          type="text"
+          defaultValue={searchQueryState.searchQuery}
+          onChange={(e) => setSearchQueryState({ searchQuery: e.target.value })}
+          className="largeInput"
+        />
 
-      <div className="greenButton" onClick={(e) => searchClicked()} />
-      <br />
-      <br />
-      <br />
-      <SearchResultsList
-        searchResultsJsonString={searchResultsState.searchResults}
-      />
+        <div className="greenButton" onClick={(e) => searchClicked()} />
+        <br />
+        <br />
+        <br />
+
+        <SearchResultsList
+          searchResultsJsonString={searchResultsState.searchResults}
+          siteIconData={props.siteIconData}
+        />
+      </div>
     </div>
   );
 };
@@ -80,7 +85,7 @@ const SearchComponent = (props) => {
 export const Search = (props) => {
   return (
     <div>
-      <SearchComponent />
+      <SearchComponent siteIconData={props.siteIconData} />
     </div>
   );
 };
