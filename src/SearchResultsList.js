@@ -1,7 +1,6 @@
 import React from "react";
 import { ResultItem } from "./ResultItem";
 import "./styles.css";
-import loadingGif from "./img/loading.gif";
 
 const SearchResultsListComponent = (props) => {
   let searchResultsJsonString = props.searchResultsJsonString;
@@ -27,7 +26,7 @@ const SearchResultsListComponent = (props) => {
     i++;
   }
 
-  return <div className="searchResultsContainer">{resultItems}</div>;
+  return <div className="leftInnerContainer">{resultItems}</div>;
 };
 
 export const SearchResultsList = (props) => {

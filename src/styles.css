@@ -20,7 +20,7 @@ h4 {
 
 .App {
   text-align: left;
-  padding: 0px;
+  padding: 200px;
 }
 
 .NavBar {
@@ -28,7 +28,7 @@ h4 {
   top: 0px;
   left: 0px;
   right: 0px;
-  padding: 2px 14px 4px 10px;
+  padding: 0px;
   background: rgba(10, 10, 20, 0.6);
   color: white;
   border-bottom: 1px solid #202030;
@@ -49,14 +49,21 @@ h4 {
   background-color: transparent;
 }
 
-.searchResultsContainerContainer {
+.leftOuterContainer {
   max-width: 900px;
-  margin: 40px;
+  margin: 4px 40px;
 }
 
-.searchResultsContainer {
+.leftInnerContainer {
   max-width: 600px;
   margin: auto;
+}
+
+.searchTextbox {
+  width: 90%;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
 }
 
 .searchResultsItem {
@@ -73,6 +80,7 @@ h4 {
 .siteIcon {
   width: 24px;
   height: 24px;
+  border-radius: 12px;
 }
 
 .resultItemHeaderSiteName {
@@ -98,6 +106,26 @@ h4 {
 .resultItemSnippet {
   font-size: 14px;
   line-height: 1.4em;
+}
+
+.greenButton {
+  display: inline;
+  background-image: linear-gradient(to bottom, lime, green);
+  border-radius: 10px;
+  padding: 10px 34px;
+  color: white;
+  font-size: 20px;
+  width: min-content;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border: solid black 1px;
+  white-space: nowrap;
+}
+
+.greenButton:hover {
+  background-image: linear-gradient(to bottom, rgb(20, 207, 20), rgb(1, 83, 1));
+  border-color: grey;
 }
 
 .cartLink {
@@ -363,26 +391,6 @@ h4 {
 
 .padding20 {
   padding: 20px;
-}
-
-.greenButton {
-  display: inline;
-  background-image: linear-gradient(to bottom, lime, green);
-  border-radius: 10px;
-  padding: 10px 34px;
-  color: white;
-  font-size: 20px;
-  width: min-content;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  border: solid black 1px;
-  white-space: nowrap;
-}
-
-.greenButton:hover {
-  background-image: linear-gradient(to bottom, rgb(20, 207, 20), rgb(1, 83, 1));
-  border-color: grey;
 }
 
 .invoiceTable td {

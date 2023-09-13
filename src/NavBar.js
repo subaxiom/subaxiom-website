@@ -1,8 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Link } from "react-router-dom";
-import logo from "./img/subaxiomLogoSmall2.png";
-import cart from "./img/cart2.png";
+import { SearchTextbox } from "./SearchTextbox";
 //import { useParams } from "react-router-dom";
 
 const NavBarComponent = (props) => {
@@ -11,14 +9,11 @@ const NavBarComponent = (props) => {
 
   return (
     <div className="NavBar">
-      <Link className="homeLink" to="/">
-        <img src={logo} alt="logo" className="logo" />
-      </Link>
-      &nbsp;
-      <Link className="cartLink" to="/cart">
-        <img src={cart} alt="cart" className="cart" />
-        &nbsp;(0)
-      </Link>
+      <div className="leftOuterContainer">
+        <div className="leftInnerContainer">
+          <SearchTextbox />
+        </div>
+      </div>
     </div>
   );
 };

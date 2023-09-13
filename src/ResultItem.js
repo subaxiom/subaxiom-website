@@ -1,5 +1,4 @@
 import React from "react";
-import iconCircleWhite from "./img/iconCircleWhite.png";
 import "./styles.css";
 
 const ResultItemComponent = (props) => {
@@ -33,9 +32,7 @@ const ResultItemComponent = (props) => {
             backgroundPosition: `${backgroundPos}`,
             backgroundRepeat: "no-repeat"
           }}
-        >
-          <img src={iconCircleWhite} alt="logo" />
-        </div>
+        ></div>
 
         <div>
           <span className="resultItemHeaderSiteName">{site}</span>
