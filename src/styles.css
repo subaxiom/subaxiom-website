@@ -20,7 +20,15 @@ h4 {
 
 .App {
   text-align: left;
-  padding: 200px;
+  padding: 100px;
+}
+
+.subaxiomLogo {
+  padding: 0px 44px 40px 0px;
+}
+
+.tagline {
+  padding: 40px 36px 0px 0px;
 }
 
 .NavBar {
@@ -29,14 +37,14 @@ h4 {
   left: 0px;
   right: 0px;
   padding: 0px;
-  background: rgba(10, 10, 20, 0.6);
-  color: white;
-  border-bottom: 1px solid #202030;
+  background: white;
+  color: black;
+  border-bottom: 1px solid #d0d0f0;
   z-index: 100;
 }
 
 .NavBar a {
-  color: white;
+  color: blue;
 }
 
 .homeLink {
@@ -55,15 +63,56 @@ h4 {
 }
 
 .leftInnerContainer {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
 }
 
+.searchTextboxContainer {
+  width: 660px;
+}
+
 .searchTextbox {
-  width: 90%;
+  display: inline-block;
+  vertical-align: middle;
+  width: 560px;
   font-size: 16px;
-  padding: 6px;
-  border-radius: 6px;
+  height: 40px;
+  border: solid #a0a0c0 1px;
+  border-right: solid #d0d0f0 1px;
+  border-radius: 20px 0px 0px 20px;
+  padding-left: 20px;
+  outline: none;
+}
+
+.searchButton {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: white;
+  border-radius: 0px 20px 20px 0px;
+  height: 40px;
+  color: limegreen;
+  font-size: 16px;
+  width: min-content;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border: solid #a0a0c0 1px;
+  border-left: none 0px;
+  white-space: nowrap;
+}
+
+.searchButton:hover {
+  background-color: #002d40;
+}
+
+.searchIcon {
+  padding: 11px 16px 11px 14px;
+}
+
+.horizontalCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .searchResultsItem {
@@ -106,26 +155,6 @@ h4 {
 .resultItemSnippet {
   font-size: 14px;
   line-height: 1.4em;
-}
-
-.greenButton {
-  display: inline;
-  background-image: linear-gradient(to bottom, lime, green);
-  border-radius: 10px;
-  padding: 10px 34px;
-  color: white;
-  font-size: 20px;
-  width: min-content;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  border: solid black 1px;
-  white-space: nowrap;
-}
-
-.greenButton:hover {
-  background-image: linear-gradient(to bottom, rgb(20, 207, 20), rgb(1, 83, 1));
-  border-color: grey;
 }
 
 .cartLink {
@@ -423,18 +452,6 @@ h4 {
   outline: 0;
   border-radius: 4px;
   background: white;
-}
-
-input::placeholder {
-  color: #aaaacc;
-}
-
-input:focus,
-.StripeElement--focus {
-  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
-    rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
-  -webkit-transition: all 150ms ease;
-  transition: all 150ms ease;
 }
 
 .stripeEmail {
