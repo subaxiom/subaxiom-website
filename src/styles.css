@@ -24,11 +24,11 @@ h4 {
 }
 
 .subaxiomLogo {
-  padding: 0px 44px 40px 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 .tagline {
-  padding: 40px 36px 0px 0px;
+  padding: 20px 00px 0px 0px;
 }
 
 .NavBar {
@@ -68,13 +68,15 @@ h4 {
 }
 
 .searchTextboxContainer {
-  width: 660px;
+  min-width: 500px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .searchTextbox {
   display: inline-block;
   vertical-align: middle;
-  width: 560px;
+  width: calc(100% - 70px);
   font-size: 16px;
   height: 40px;
   border: solid #a0a0c0 1px;
