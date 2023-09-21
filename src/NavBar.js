@@ -11,7 +11,9 @@ const NavBarComponent = (props) => {
     <div className="NavBar">
       <div className="leftOuterContainer">
         <div className="leftInnerContainer">
-          <SearchTextbox />
+          <div className="searchTextboxContainerNav">
+            <SearchTextbox />
+          </div>
         </div>
       </div>
     </div>

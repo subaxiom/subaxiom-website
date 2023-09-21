@@ -20,7 +20,7 @@ h4 {
 
 .App {
   text-align: left;
-  padding: 100px;
+  padding: 100px 10px;
 }
 
 .subaxiomLogo {
@@ -28,6 +28,7 @@ h4 {
 }
 
 .tagline {
+  display: inline-block;
   padding: 20px 00px 0px 0px;
 }
 
@@ -67,14 +68,20 @@ h4 {
   margin: auto;
 }
 
+.searchTextboxContainerHome {
+  margin-left: calc(max(50vw - 300px, 4px));
+  margin-right: calc(max(50vw - 300px, 4px));
+}
+
+.searchTextboxContainerNav {
+  width: 90%;
+}
+
 .searchTextboxContainer {
-  min-width: 500px;
-  margin: 0px;
-  padding: 0px;
+  width: 100%;
 }
 
 .searchTextbox {
-  display: inline-block;
   vertical-align: middle;
   width: calc(100% - 70px);
   font-size: 16px;
@@ -113,8 +120,7 @@ h4 {
 
 .horizontalCenter {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .searchResultsItem {

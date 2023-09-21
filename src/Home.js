@@ -13,7 +13,9 @@ export default function Home(props) {
         <img className="subaxiomLogo" src={subaxiomLogo} alt="subAxiom Logo" />
       </div>
       <div className="horizontalCenter">
-        <SearchTextbox />
+        <div className="searchTextboxContainerHome">
+          <SearchTextbox />
+        </div>
       </div>
       <div className="horizontalCenter">
         <span className="tagline">
