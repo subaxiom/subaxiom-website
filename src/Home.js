@@ -1,6 +1,5 @@
 import React from "react";
-import subaxiomLogo from "./img/subaxiomLogo_280x200.png";
-import tagline from "./img/tagline_500x25.png";
+import subaxiomLogo from "./img/subaxiomLogo_340x240.png";
 import "./styles.css";
 import { SearchTextbox } from "./SearchTextbox";
 
