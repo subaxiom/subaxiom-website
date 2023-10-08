@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 //import { useHistory } from "react-router";
 
-export const Footer = () => {
+export const Footer = (props) => {
   return (
     <div className="footer">
       <div className="footer-section">
